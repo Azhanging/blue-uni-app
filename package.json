@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "blue-utils": "^1.1.0"
+  },
+  "devDependencies": {
+    "chokidar": "^3.3.0"
+  }
+}

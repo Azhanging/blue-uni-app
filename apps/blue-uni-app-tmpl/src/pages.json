@@ -1,0 +1,47 @@
+//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/register/index",
+      "style": {
+        "navigationBarTitleText": "注册"
+      }
+    },
+    {
+      "path": "pages/map/index",
+      "style": {
+        "navigationBarTitleText": "地图"
+      }
+    },
+    {
+      "path": "pages/upload-img/index",
+      "style": {
+        "navigationBarTitleText": "上传图片"
+      }
+    },
+    {
+      "path": "pages/number-keyboard/index",
+      "style": {
+        "navigationBarTitleText": "数字键盘"
+      }
+    },
+    {
+      "path": "pages/car-number-keyboard/index",
+      "style": {
+        "navigationBarTitleText": "车牌键盘"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "blue-uni-app-tmpl",
+    "navigationBarBackgroundColor": "#0f8cca",
+    "backgroundColor": "white"
+  }
+}
