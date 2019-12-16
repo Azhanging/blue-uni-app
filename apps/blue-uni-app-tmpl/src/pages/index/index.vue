@@ -259,6 +259,12 @@
 				console.log(res);
 			});
 
+      this.$request({
+        url: '/check-401'
+      }).then((res) => {
+        console.log(res);
+      });
+
 			this.$loginTask.useMethod('runTask', [() => {
 				this.scrollLower();
 			}]);

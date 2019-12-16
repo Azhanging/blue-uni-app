@@ -45,7 +45,7 @@ const config = {
 
   //用户信息
   userInfo: {
-    url: ``,
+    url: `/update-info`,
     hooks: {
       got(data) {
         return data;

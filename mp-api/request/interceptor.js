@@ -3,7 +3,7 @@ import { codeHandler } from '$code';   //错误码处理
 
 //拦截处理
 export function requestInterceptor(opts) {
-  const { res, resolve, reject } = opts;
+  const { res, resolve, reject, requestOpts } = opts;
   //http code 处理
   if (res.statusCode === 200) {
     const { code: requestCode, status } = res.data;
@@ -13,7 +13,8 @@ export function requestInterceptor(opts) {
     } else {
       //错误码处理
       codeHandler({
-        code: requestCode
+        code: requestCode,
+        requestOpts
       });
       reject(res.data);
     }

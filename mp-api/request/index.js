@@ -2,7 +2,6 @@ import utils from 'blue-utils';
 import config from '@config';
 import * as mp from '$mp-api/compatible';
 
-
 //拦截处理
 import { requestInterceptor } from './interceptor';
 
@@ -85,7 +84,8 @@ export default function request(requestOpts) {
       requestInterceptor({
         res,
         resolve,
-        reject
+        reject,
+        requestOpts
       });
       //关闭油站
       _requestOpts.isShowLoading && mp.hideLoading();
@@ -97,7 +97,8 @@ export default function request(requestOpts) {
           requestInterceptor({
             res,
             resolve,
-            reject
+            reject,
+            requestOpts
           });
           //关闭loading
           _requestOpts.isShowLoading && mp.hideLoading();
@@ -109,8 +110,8 @@ export default function request(requestOpts) {
             msg = requireTips.timeout;
           }
           uni.showToast({
-	          title: msg,
-	          icon: 'none'
+            title: msg,
+            icon: 'none'
           });
           _requestOpts.isShowLoading && mp.hideLoading();
           reject(err);
