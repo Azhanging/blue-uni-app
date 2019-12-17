@@ -1,9 +1,12 @@
 import config from '@config';
+import { checkLocalLogin } from '$mp-api/login';
 
 const state = {
 
   //登录状态
-  login: false,
+  login: (() => {
+    return checkLocalLogin();
+  })(),
 
   //用户授权信息，userInfo.phone来判定是否存在手机号
   userInfo: {

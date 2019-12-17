@@ -21,11 +21,11 @@ function checkSession() {
 }
 
 //检查是否登录了,检查login的配置中在storage中是否存在
-function checkLocalLogin() {
+export function checkLocalLogin() {
   const keys = Object.keys(config.login.storage);
   let len = 0;
   utils.each(config.login.storage, (key, _key) => {
-    if (mp.getStorageSync(_key)) ++len;
+    if (uni.getStorageSync(_key)) ++len;
   });
   return keys.length === len;
 }
@@ -45,12 +45,12 @@ export function login(opts = {}) {
         //清空登录状态
         clearLoginStatus();
         //重新登录
-        login(opts).then(() => {
-          resolve();
+        login(opts).then((res) => {
+          resolve(res);
         });
       });
     } else {
-      //weixin login
+      //微信登录
       mp.login({
         //微信的授权timeout
         timeout: 5000,
@@ -63,18 +63,25 @@ export function login(opts = {}) {
             //发送login code
             sendLoginCode({
               params: utils.hook(null, config.login.params, [res]) || {}
-            }).then(() => {
+            }).then((res) => {
+              //登录成功
+              resolve(res);
               //查看是否存在异常的请求线，有则重新执行request线
               requestOpts && request(requestOpts);
             }).catch(() => {
               //尝试登录
               showLoginModal().then(() => {
-                login(opts);
+                login(opts).then((res) => {
+                  resolve(res);
+                });
               });
             });
           } else {
+            //登录失败，提醒重新登录
             showLoginModal().then(() => {
-              login(opts);
+              login(opts).then((res) => {
+                resolve(res);
+              });
             });
           }
         },
@@ -88,19 +95,15 @@ export function login(opts = {}) {
 
 //发送logon code,获取openid
 function sendLoginCode(opts = {}) {
-  return new Promise(((resolve, reject) => {
-    const { params } = opts;
-    apiLogin(params).then((res) => {
-      const { data } = res;
-      //设置信息到storage中
-      setLoginStorage(data);
-      //更新用户信息
-      updateUserInfo();
-      resolve();
-    }).catch(() => {
-      reject();
-    });
-  }));
+  const { params } = opts;
+  return apiLogin(params).then((res) => {
+    const { data } = res;
+    //设置信息到storage中
+    setLoginStorage(data);
+    //更新用户信息
+    updateUserInfo();
+    return res;
+  });
 }
 
 //设置指定的登录态到
@@ -108,7 +111,7 @@ function setLoginStorage(data) {
   const gotData = utils.hook(null, config.login.hooks.got, [data]);
   utils.each(config.login.storage, (key, _key) => {
     if (key in gotData) {
-      mp.setStorageSync(_key, gotData[key]);
+      uni.setStorageSync(_key, gotData[key]);
     }
   });
 }
@@ -125,7 +128,7 @@ export function clearLoginStatus() {
 //提醒重新重新登录
 function showLoginModal() {
   return new Promise((resolve) => {
-    mp.showModal({
+    uni.showModal({
       content: '登录失败',
       showCancel: false,
       confirmText: '重新登录',

@@ -1,21 +1,21 @@
 const routes = [{
-  url: `/mock/data`,
+  url: `/mock/login`,
+  method: 'post',
+  response() {
+    return {
+      code: 200,
+      data: {
+        token: '123456'
+      }
+    };
+  }
+}, {
+  url: `/mock/getUserInfo`,
   method: 'get',
   response() {
     return {
       code: 200,
       data: {}
-    };
-  }
-}, {
-  url: `/mock/data1`,
-  method: 'get',
-  response() {
-    return {
-      code: 200,
-      data: {
-        data: 1
-      }
     };
   }
 }];

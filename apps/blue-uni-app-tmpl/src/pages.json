@@ -6,6 +6,11 @@
       "style": {
         "navigationBarTitleText": "首页"
       }
+    },{
+      "path": "pages/login/index",
+      "style": {
+        "navigationBarTitleText": "登录相关"
+      }
     },
     {
       "path": "pages/register/index",

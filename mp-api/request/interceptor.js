@@ -18,6 +18,17 @@ export function requestInterceptor(opts) {
       });
       reject(res.data);
     }
+  } else if (res.statusCode === 401) {
+    //没有权限，登录失效
+    const { login, clearLoginStatus } = require('$mp-api/login');
+    //清空所有的存储
+    clearLoginStatus();
+    //重新登录
+    login({
+      requestOpts
+    }).then((res) => {
+      resolve(res);
+    });
   } else {
     reject(res.data);
   }
