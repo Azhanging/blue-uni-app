@@ -7,7 +7,7 @@ export function authorize(opts) {
   return new Promise((resolve, reject) => {
     //微信检查授权
     if (process.env.VUE_APP_PLATFORM === 'mp-weixin') {
-      wx.authorize({
+      uni.authorize({
         scope: opts.scope,
         success: (res) => {
           if (/ok/.test(res.errMsg)) {

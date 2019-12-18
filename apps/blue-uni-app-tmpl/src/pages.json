@@ -6,16 +6,17 @@
       "style": {
         "navigationBarTitleText": "首页"
       }
-    },{
-      "path": "pages/login/index",
-      "style": {
-        "navigationBarTitleText": "登录相关"
-      }
     },
     {
       "path": "pages/register/index",
       "style": {
         "navigationBarTitleText": "注册"
+      }
+    },
+    {
+      "path": "pages/bind-phone/index",
+      "style": {
+        "navigationBarTitleText": "绑定手机"
       }
     },
     {
@@ -44,9 +45,9 @@
     }
   ],
   "globalStyle": {
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "navigationBarTitleText": "blue-uni-app-tmpl",
-    "navigationBarBackgroundColor": "#0f8cca",
-    "backgroundColor": "white"
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#fff"
   }
 }

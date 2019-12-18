@@ -32,7 +32,7 @@ function getLocation(opts = {}) {
           const lat = res.latitude;
           const lgt = res.longitude;
           //设置到本地
-          store.commit('setLocation', {
+          store.commit('SET_LOCATION', {
             lat,
             lgt
           });

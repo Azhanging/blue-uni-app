@@ -43,7 +43,7 @@ function setExtend(opts) {
 function setRequestHeader() {
   const header = {};
   utils.each(config.login.storage, (key, _key) => {
-    header[_key] = mp.getStorageSync(_key);
+    header[_key] = uni.getStorageSync(_key);
   });
   return header;
 }

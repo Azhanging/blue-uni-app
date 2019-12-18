@@ -5,13 +5,12 @@ import { setShareQuery } from "../share";
 import { checkRegister } from '$mp-api/register';
 import utils from 'blue-utils';
 import config from '@config';
-import { redirectRegister } from "../register";
 
 //检查场景码
 export function checkScene(opts) {
 
   //避免没有参数
-  if (!opts.query) opts.query = {}
+  if (!opts.query) opts.query = {};
 
   //修改path
   opts.path = `/${opts.path}`;
@@ -34,10 +33,5 @@ export function checkScene(opts) {
     setShareQuery(query);
     //config中的show hook
     utils.hook(null, config.hooks.show, [opts]);
-
-    //检查是否注册
-    if(!(checkRegister())){
-	    redirectRegister(opts);
-    }
   }
 }

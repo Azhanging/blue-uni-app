@@ -1,16 +1,15 @@
 <script>
-
-  import { login } from '$mp-api/login';
+  import { getUserInfo } from '$mp-api/user-info';
   import { checkScene } from '$mp-api/scene';
   import { apiErrorReport } from '$api';
-  import { updateUserInfo } from '$mp-api/user-info';
 
   export default {
     created() {
-      updateUserInfo();
+      //初始化获取用户信息
+      getUserInfo();
     },
     onLaunch: function () {
-      console.log('App Launch')
+      console.log('App Launch');
     },
     onShow: function (opts) {
       //检查场景值

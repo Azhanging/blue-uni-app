@@ -1,8 +1,6 @@
-import { userInfoInVue } from './user-info';
 import { requestInVue } from './request';
+import { loginInVue } from './login';
 import { locationInVue } from './location';
-import { mpPayInVue } from './pay';
-import { phoneInVue } from './phone';
 import { imageInVue } from './image';
 import { modalInVue } from './modal';
 import { loginTaskInVue } from './login/task';
@@ -20,23 +18,16 @@ export function weChatInVue(Vue) {
   //检查更新小程序版本
   mpUpdate();
 
+  loginInVue(Vue);
+
   //设置分享
   shareInVue(Vue);
-
-  //扩展userInfo in Vue
-  userInfoInVue(Vue);
 
   //扩展 wx.request,带上session_key处理
   requestInVue(Vue);
 
   //扩展 wx.getLocation
   locationInVue(Vue);
-
-  //扩展支付 wx.requestPayment
-  mpPayInVue(Vue);
-
-  //扩展获取手机号
-  phoneInVue(Vue);
 
   //图片相关
   imageInVue(Vue);

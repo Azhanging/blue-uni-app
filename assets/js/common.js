@@ -12,10 +12,10 @@ function guid() {
 
 //获取ticket
 export function getTicket() {
-  let ticket = mp.getStorageSync("ticket");
+  let ticket = uni.getStorageSync("ticket");
   if (ticket === undefined || ticket === null || ticket === "") {
     ticket = guid();
-    mp.setStorageSync('ticket', ticket);
+    uni.setStorageSync('ticket', ticket);
   }
   return ticket;
 }

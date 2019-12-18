@@ -32,70 +32,58 @@
           </div>
         </div>
 
-        <div class="bc-row bc-pd-10rpx" v-if="!login">
-          <navigator url="/pages/login/index" class="bc-btn bc-btn-base">
+        <!-- 没登录显示登录按钮 -->
+        <div class="bc-row bc-pd-10rpx" v-if="!isLogin">
+          <button @click="$login" class="bc-btn bc-btn-base">
             登录
-          </navigator>
-        </div>
-
-        <div class="bc-row bc-pd-10rpx">
-          <!-- 微信获取手机号 -->
-          <button open-type="getPhoneNumber" @getphonenumber="$getPhone" class="bc-btn bc-btn-primary"
-                  v-if="platform === 'wx'">
-            获取手机号
-          </button>
-          <!-- 支付宝获取手机号 -->
-          <button open-type="getAuthorize" scope="phoneNumber" @getAuthorize="$getPhone" class="bc-btn bc-btn-primary"
-                  v-else-if="platform === 'my'">
-            获取手机号
           </button>
         </div>
 
         <div class="bc-row bc-pd-10rpx">
-          <button class="bc-btn bc-btn-primary" @click="scanCode">
+          <button class="bc-btn bc-btn-base" @click="scanCode">
             扫一扫
           </button>
         </div>
 
         <div class="bc-row bc-pd-10rpx">
-          <button class="bc-btn bc-btn-primary" @click="saveImg">
+          <button class="bc-btn bc-btn-base" @click="saveImg">
             保存图片
           </button>
         </div>
 
         <div class="bc-row bc-pd-10rpx">
-          <button class="bc-btn bc-btn-primary" @click="chooseInvoiceTitle">
+          <button class="bc-btn bc-btn-base" @click="chooseInvoiceTitle">
             发票抬头
           </button>
         </div>
 
         <div class="bc-row bc-pd-10rpx">
-          <navigator url="/pages/map/index" class="bc-btn bc-btn-primary">
+          <navigator url="/pages/map/index" class="bc-btn bc-btn-base">
             地图
           </navigator>
         </div>
 
         <div class="bc-row bc-pd-10rpx">
-          <navigator url="/pages/upload-img/index" class="bc-btn bc-btn-primary">
+          <navigator url="/pages/upload-img/index" class="bc-btn bc-btn-base">
             上传图片
           </navigator>
         </div>
 
         <div class="bc-row bc-pd-10rpx">
-          <navigator url="/pages/number-keyboard/index" class="bc-btn bc-btn-primary">
+          <navigator url="/pages/number-keyboard/index" class="bc-btn bc-btn-base">
             数字键盘
           </navigator>
         </div>
 
         <div class="bc-row bc-pd-10rpx">
-          <navigator url="/pages/car-number-keyboard/index" class="bc-btn bc-btn-primary">
+          <navigator url="/pages/car-number-keyboard/index" class="bc-btn bc-btn-base">
             车牌键盘
           </navigator>
         </div>
 
         <div class="bc-row bc-pd-10rpx">
           <!-- 微信客服 -->
-          <button open-type="contact" session-from="weapp" class="bc-btn bc-btn-primary">
+          <button open-type="contact" session-from="weapp" class="bc-btn bc-btn-base">
             客服测试
           </button>
         </div>
@@ -127,14 +115,14 @@
 
     <!-- 测试animation -->
     <div class="bc-row bc-pd-10rpx">
-      <button class="bc-btn bc-btn-primary" @click="toggleAction">
+      <button class="bc-btn bc-btn-base" @click="toggleAction">
         测试animation || BmpActionSheet组件
       </button>
     </div>
 
     <!-- 测试animation -->
     <div class="bc-row bc-pd-10rpx">
-      <button class="bc-btn bc-btn-primary" @click="toggleLayer">
+      <button class="bc-btn bc-btn-base" @click="toggleLayer">
         测试BmpLayer组件
       </button>
     </div>
@@ -200,7 +188,7 @@
       };
     },
     computed: {
-      ...mapState(['login'])
+      ...mapState(['isLogin'])
     },
     mounted() {
       this.$nextTick(() => {

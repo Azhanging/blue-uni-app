@@ -1,33 +1,90 @@
 <template>
-  <div class="bc-row bc-f-14rpx bc-t-c">
-
-    <div class="bc-pd-10rpx">
-      <button class="bc-btn bc-btn-primary" open-type="getUserInfo" @getphonenumber="$getUserInfo">获取用户信息</button>
+  <div class="bc-pd-14rp">
+    <div class="bc-t-c">
+      <div class="bc-pd-14rp">
+        <button class="bc-btn bc-btn-base" open-type="getUserInfo" @getuserinfo="getUserInfo">
+          授权登录
+        </button>
+      </div>
+      <div v-if="needBindMember">
+        <button class="bc-btn bc-btn-base" open-type="getPhoneNumber" @getphonenumber="getPhoneNumber">
+          快速登录
+        </button>
+        <navigator url="/pages/bind-phone/index" class="bc-btn bc-btn-base">
+          手机号绑定登录
+        </navigator>
+      </div>
     </div>
-
-    <div class="bc-pd-10rpx">
-      <button class="bc-btn bc-btn-primary" open-type="getPhoneNumber" @getphonenumber="bindPhone">获取手机号</button>
-    </div>
-
   </div>
 </template>
 
 <script>
 
-  import { backLastRoute } from '$mp-api/page';
+  import { reLaunchLastRoute } from '$mp-api/page';
+  import { updateUserInfo } from '$mp-api/user-info';
+  import { setUserInfo } from '$mp-api/user-info';
 
   export default {
-    name: "register",
+    name: "index",
+    data() {
+      return {
+        needBindMember: false
+      };
+    },
     methods: {
-      //绑定手机号
-      bindPhone(res) {
-        this.$bindPhone(res).then(() => {
-          //绑定成功后跳回到最后的路由地址
-          backLastRoute();
+
+      getUserInfo(e) {
+        const {
+          iv,
+          encryptedData,
+          errMsg
+        } = e.detail;
+
+        //取消授权
+        if (/fail/ig.test(errMsg)) return;
+
+        this.$request({
+          url: `/mock/setUserInfo`,
+          method: 'post',
+          data: {
+            iv,
+            encryptedData
+          }
+        }).then((res) => {
+          //未注册用户
+          if (res.errcode === 40001) {
+            this.needBindMember = true;
+          } else {
+            // 微信用户，未关注公众号，
+            // 不在一个主体内，需要获取一遍用户信息，
+            // 这里将自动补全用户信息
+            reLaunchLastRoute();
+            //登录成功后设置用户信息
+            setUserInfo(res);
+          }
+        });
+      },
+
+      //获取手机号
+      getPhoneNumber(e) {
+        const {
+          encryptedData,
+          iv
+        } = e.detail;
+        this.$request({
+          url: '/mock/bindPhone',
+          method: 'post',
+          data: {
+            encryptedData,
+            iv
+          }
+        }).then((res) => {
+          if (res.errcode === 200) {
+            //登录成功后设置用户信息
+            setUserInfo(res);
+          }
         });
       }
     }
   }
 </script>
-
-

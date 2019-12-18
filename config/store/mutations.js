@@ -2,20 +2,20 @@ import config from '@config';
 import * as mp from '$mp-api/compatible';
 
 const mutations = {
-  setUserInfo(state, userInfo) {
+  SET_USER_INFO(state, userInfo) {
     state.userInfo = userInfo;
   },
-  setLastPath(state, path) {
+  SET_LAST_PATH(state, path) {
     state.lastPath = path;
     console.log(path);
   },
-  setLogin(state, status) {
-    state.login = status;
+  SET_LOGIN(state, status) {
+    state.isLogin = status;
   },
   //设置定位
-  setLocation(state, status) {
+  SET_LOCATION(state, status) {
     //设置定位到本地存储
-    mp.setStorageSync(config.location.storageKey, JSON.stringify(status));
+    uni.setStorageSync(config.location.storageKey, JSON.stringify(status));
     state.location = status;
   }
 };

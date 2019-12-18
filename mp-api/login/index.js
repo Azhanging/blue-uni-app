@@ -1,10 +1,17 @@
 import config from '@config';
 import utils from 'blue-utils';
 import store from '@store';
-import { updateUserInfo } from '../user-info';
+import { setUserInfo } from '../user-info';
 import { apiLogin } from '$api';
 import * as mp from '$mp-api/compatible';
 import request from "../request";
+import { getLastPath } from "../page";
+import { redirectRegister } from '../register';
+
+//扩展到Vue中
+export function loginInVue(Vue) {
+  Vue.prototype.$login = login;
+}
 
 //check session
 function checkSession() {
@@ -34,12 +41,11 @@ export function checkLocalLogin() {
 export function login(opts = {}) {
   return new Promise(((resolve) => {
     const { requestOpts } = opts;
-    //检查登录状态，只在微信小程序中检查
+    //检查本地的登录状态，只在微信小程序中检查
     if (checkLocalLogin() && (process.env.VUE_APP_PLATFORM === 'mp-weixin')) {
       //检查session
       checkSession().then(() => {
-        //更新用户信息
-        updateUserInfo();
+        //检查正常不进行业务处理
         resolve();
       }).catch(() => {
         //清空登录状态
@@ -51,7 +57,7 @@ export function login(opts = {}) {
       });
     } else {
       //微信登录
-      mp.login({
+      uni.login({
         //微信的授权timeout
         timeout: 5000,
         //打开就授权支付宝主动授权
@@ -98,10 +104,18 @@ function sendLoginCode(opts = {}) {
   const { params } = opts;
   return apiLogin(params).then((res) => {
     const { data } = res;
-    //设置信息到storage中
-    setLoginStorage(data);
-    //更新用户信息
-    updateUserInfo();
+    if (res.errcode === 50001) {
+      //新用户，前往注册
+      redirectRegister({
+        path: getLastPath()
+      });
+    } else {
+      //新用户，设置用户信息值
+      //设置信息到storage中
+      setLoginStorage(data);
+      //设置用户信息
+      setUserInfo(data);
+    }
     return res;
   });
 }
@@ -122,7 +136,7 @@ export function clearLoginStatus() {
   //清空所有的存储
   uni.clearStorageSync();
   //重新设置登录状态
-  store.commit('setLogin', false);
+  store.commit('SET_LOGIN', false);
 }
 
 //提醒重新重新登录

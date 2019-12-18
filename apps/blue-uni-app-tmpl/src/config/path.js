@@ -8,25 +8,16 @@ const path = (() => {
     case 'prod':
       //生产环境path
       return {
-        base: `https://wxapp2.youzhanjia.com`,
-        phone: `https://portal.kindpetro.com.cn`,
-        file: `https://wxapp2.youzhanjia.com`,
-        img: `http://images.youzhanjia.com`,
-        pay: `http://wxapp2.youzhanjia.com/cashier-api`,
         static: ``,
-        home: `/pages/index/main`
+        home: `/pages/index/index`
       };
     default:
-	    //测试环境path
-	    return {
-		    base: `https://wxapp2.youzhanjia.com/api`,
-		    phone: `https://portal.kindpetro.com.cn`,
-		    file: `https://wxapp2.youzhanjia.com`,
-		    img: `http://images.youzhanjia.com`,
-		    pay: `http://wxapp2.youzhanjia.com/cashier-api`,
-		    static: ``,
-		    home: `/pages/index/main`
-	    };
+      //测试环境path
+      return {
+        static: ``,
+        home: `/pages/index/index`,
+        register: `/pages/register/index`
+      };
   }
 })();
 

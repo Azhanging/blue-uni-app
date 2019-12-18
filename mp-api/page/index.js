@@ -21,15 +21,22 @@ export function setLastPath(path = '') {
   //存在注册前的地址，返回到对应的位置，否则跳回到首页去
   const lastPath = store.state.lastPath;
   if (isRegisterPage(path)) {
-    store.commit('setLastPath', lastPath || config.path.home);
+    store.commit('SET_LAST_PATH', lastPath || config.path.home);
   } else {
-    store.commit('setLastPath', path);
+    store.commit('SET_LAST_PATH', path);
   }
 }
 
 //回到设置的最后一个路由上
 export function backLastRoute() {
-  uni.navigateTO({
+  uni.navigateTo({
+    url: store.state.lastPath
+  });
+}
+
+//回到设置的最后一个路由上
+export function reLaunchLastRoute() {
+  uni.reLaunch({
     url: store.state.lastPath
   });
 }
