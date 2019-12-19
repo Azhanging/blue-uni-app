@@ -1,6 +1,6 @@
 import code from './code';
 import { redirectRegister } from '$mp-api/register';
-import { getLastPath } from "$mp-api/page";
+import { getCurrentPath } from "$mp-api/page";
 import { login, clearLoginStatus } from '$mp-api/login';
 import * as mp from '$mp-api/compatible';
 
@@ -15,7 +15,7 @@ export function codeHandler(opts = {}) {
     case code.REGISTER:
       //没有注册绑定手机
       redirectRegister({
-        path: getLastPath()
+        path: getCurrentPath()
       });
       break;
     case code.UN_LOGIN:

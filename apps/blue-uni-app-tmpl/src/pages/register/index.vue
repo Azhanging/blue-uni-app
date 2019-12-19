@@ -21,8 +21,8 @@
 <script>
 
   import { reLaunchLastRoute } from '$mp-api/page';
-  import { updateUserInfo } from '$mp-api/user-info';
   import { setUserInfo } from '$mp-api/user-info';
+  import { setLoginStorage } from '$mp-api/login';
 
   export default {
     name: "index",
@@ -51,16 +51,14 @@
             encryptedData
           }
         }).then((res) => {
+          const { data } = res;
           //未注册用户
           if (res.errcode === 40001) {
             this.needBindMember = true;
           } else {
             // 微信用户，未关注公众号，
             // 不在一个主体内，需要获取一遍用户信息，
-            // 这里将自动补全用户信息
-            reLaunchLastRoute();
-            //登录成功后设置用户信息
-            setUserInfo(res);
+            this.registerSuccess(data);
           }
         });
       },
@@ -79,11 +77,21 @@
             iv
           }
         }).then((res) => {
+          const { data } = res;
           if (res.errcode === 200) {
-            //登录成功后设置用户信息
-            setUserInfo(res);
+            this.registerSuccess(data);
           }
         });
+      },
+
+      //注册成功
+      registerSuccess(data){
+        // 设置信息到storage中
+        setLoginStorage(data);
+        //登录成功后设置用户信息
+        setUserInfo(data);
+        // 这里将自动补全用户信息
+        reLaunchLastRoute();
       }
     }
   }

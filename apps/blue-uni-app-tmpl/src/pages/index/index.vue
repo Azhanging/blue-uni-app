@@ -34,7 +34,7 @@
 
         <!-- 没登录显示登录按钮 -->
         <div class="bc-row bc-pd-10rpx" v-if="!isLogin">
-          <button @click="$login" class="bc-btn bc-btn-base">
+          <button @click="login" class="bc-btn bc-btn-base">
             登录
           </button>
         </div>
@@ -201,6 +201,13 @@
       });
     },
     methods: {
+
+      //登录
+      login() {
+        this.$login().then(() => {
+          console.log('登录成功');
+        });
+      },
 
       changeSwitch(data) {
         this.formSwitch[data.index].status = data.status;

@@ -1,5 +1,4 @@
 import config from '@config';
-import * as mp from '$mp-api/compatible';
 
 const mutations = {
   SET_USER_INFO(state, userInfo) {
@@ -7,7 +6,6 @@ const mutations = {
   },
   SET_LAST_PATH(state, path) {
     state.lastPath = path;
-    console.log(path);
   },
   SET_LOGIN(state, status) {
     state.isLogin = status;

@@ -5,7 +5,7 @@ import { setUserInfo } from '../user-info';
 import { apiLogin } from '$api';
 import * as mp from '$mp-api/compatible';
 import request from "../request";
-import { getLastPath } from "../page";
+import { getCurrentPath } from "../page";
 import { redirectRegister } from '../register';
 
 //扩展到Vue中
@@ -39,7 +39,7 @@ export function checkLocalLogin() {
 
 //wx login
 export function login(opts = {}) {
-  return new Promise(((resolve) => {
+  return new Promise((resolve) => {
     const { requestOpts } = opts;
     //检查本地的登录状态，只在微信小程序中检查
     if (checkLocalLogin() && (process.env.VUE_APP_PLATFORM === 'mp-weixin')) {
@@ -51,8 +51,8 @@ export function login(opts = {}) {
         //清空登录状态
         clearLoginStatus();
         //重新登录
-        login(opts).then((res) => {
-          resolve(res);
+        login(opts).then(() => {
+          resolve();
         });
       });
     } else {
@@ -69,24 +69,21 @@ export function login(opts = {}) {
             //发送login code
             sendLoginCode({
               params: utils.hook(null, config.login.params, [res]) || {}
-            }).then((res) => {
-              //登录成功
-              resolve(res);
+            }).then(() => {
+              resolve();
               //查看是否存在异常的请求线，有则重新执行request线
               requestOpts && request(requestOpts);
             }).catch(() => {
-              //尝试登录
+              //登录失败，提醒重新登录
               showLoginModal().then(() => {
-                login(opts).then((res) => {
-                  resolve(res);
-                });
+                login(opts);
               });
             });
           } else {
             //登录失败，提醒重新登录
             showLoginModal().then(() => {
-              login(opts).then((res) => {
-                resolve(res);
+              login(opts).then(() => {
+                resolve();
               });
             });
           }
@@ -96,7 +93,7 @@ export function login(opts = {}) {
         }
       });
     }
-  }));
+  });
 }
 
 //发送logon code,获取openid
@@ -107,7 +104,7 @@ function sendLoginCode(opts = {}) {
     if (res.errcode === 50001) {
       //新用户，前往注册
       redirectRegister({
-        path: getLastPath()
+        path: getCurrentPath()
       });
     } else {
       //新用户，设置用户信息值

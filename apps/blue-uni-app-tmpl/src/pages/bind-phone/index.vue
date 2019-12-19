@@ -20,11 +20,11 @@
 <script>
 
   import { reLaunchLastRoute } from '$mp-api/page';
-  import { getLastPath } from "$mp-api/page";
+  import { getCurrentPath } from "$mp-api/page";
   import { setUserInfo } from '$mp-api/user-info';
 
   let timer = null;
-  const getCodeText = '获取验证码';
+  const codeText = '获取验证码';
 
   function setTimer() {
     timer = setTimeout(() => {
@@ -32,7 +32,7 @@
         --this.sendCodeText;
         setTimer.call(this);
       } else {
-        this.sendCodeText = getCodeText;
+        this.sendCodeText = codeText;
       }
     }, 1000);
   }
@@ -45,7 +45,7 @@
           phone: '',
           code: ''
         },
-        sendCodeText: getCodeText
+        sendCodeText: codeText
       }
     },
     methods: {
@@ -82,13 +82,20 @@
           }
         }).then((res) => {
           const { data } = res;
-          //设置用户信息
-          setUserInfo(data);
-          reLaunchLastRoute();
+          this.registerSuccess(data);
         });
+      },
+      //注册成功
+      registerSuccess(data) {
+        // 设置信息到storage中
+        setLoginStorage(data);
+        //登录成功后设置用户信息
+        setUserInfo(data);
+        // 这里将自动补全用户信息
+        reLaunchLastRoute();
       }
     },
-    unLoad() {
+    onUnload() {
       clearTimeout(timer);
     }
   }

@@ -8,7 +8,7 @@ const routes = [{
       data: {
         token: 'token_value'
       },
-      errcode: 50001
+      errcode: 50002  //模拟50001需要注册
     };
   }
 }, {

@@ -4,7 +4,7 @@ import utils from 'blue-utils';
 import { isRegisterPage } from '$mp-api/register';
 
 //获取最后一个地址链接
-export function getLastPath() {
+export function getCurrentPath() {
   const currentPage = getCurrentPages();
   const lastPath = currentPage[currentPage.length - 1];
   if (lastPath) {

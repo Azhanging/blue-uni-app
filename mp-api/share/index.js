@@ -1,7 +1,7 @@
 import config from '@config';
 import store from '@store';
 import utils from 'blue-utils';
-import { getLastPath } from '$mp-api/page';
+import { getCurrentPath } from '$mp-api/page';
 
 //分享的参数的
 export let shareQuery = {};
@@ -60,7 +60,7 @@ export function shareInVue(Vue) {
 //分享地址
 export function sharePath(path) {
   //小程序路由地址
-  const currentPath = path || getLastPath();
+  const currentPath = path || getCurrentPath();
   //没参数地址
   const _path = utils.getNoParamsLink(currentPath);
   //object params
