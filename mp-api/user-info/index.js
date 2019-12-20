@@ -1,6 +1,5 @@
 import store from "@store";
 import { apiGetUserInfo } from '$api';
-import { checkRegister } from '$mp-api/register';
 import loginTask from "$mp-api/login/task";
 import config from '@config';
 import utils from 'blue-utils';

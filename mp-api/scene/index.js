@@ -2,7 +2,6 @@
 * 场景码相关业务
 * */
 import { setShareQuery } from "../share";
-import { checkRegister } from '$mp-api/register';
 import utils from 'blue-utils';
 import config from '@config';
 

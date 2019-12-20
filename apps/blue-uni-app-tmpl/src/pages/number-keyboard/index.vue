@@ -13,11 +13,11 @@
 
     <!-- 数字键盘 -->
     <BmpNumberKeyboard
-      :number="number"
-      :isShow="isShowKeyboard"
-      @clickNumber="changeNumber"
-      @delNumber="changeNumber"
-      @closeKeyboard="closeKeyboard"
+            :number="number"
+            :isShow="isShowKeyboard"
+            @clickNumber="changeNumber"
+            @delNumber="changeNumber"
+            @closeKeyboard="closeKeyboard"
     />
 
   </div>
@@ -63,5 +63,4 @@
       }
     }
   };
-
 </script>

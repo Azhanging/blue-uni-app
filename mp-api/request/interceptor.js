@@ -1,6 +1,6 @@
 import code from '$code/code';    //错误码
 import { codeHandler } from '$code';   //错误码处理
-import { login, clearLoginStatus } from '$mp-api/login';
+import { login } from '$mp-api/login';
 
 //拦截处理
 export function requestInterceptor(opts) {
@@ -15,13 +15,13 @@ export function requestInterceptor(opts) {
       //错误码处理
       codeHandler({
         code: requestCode,
-        requestOpts
+        requestOpts,
+        resolve,
+        reject,
+        res
       });
-      reject(res.data);
     }
   } else if (res.statusCode === 401) {
-    //清空所有的存储
-    clearLoginStatus();
     //重新登录
     login({
       requestOpts

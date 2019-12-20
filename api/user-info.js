@@ -12,7 +12,7 @@ export function apiGetUserInfo(params) {
     const { data } = res;
     if (!data) {
       //在平台获取不到数据流，不进行用户设置
-      return Promise.reject('member not register');
+      return Promise.reject('用户为注册，暂无用户信息');
     }
     return res;
   });

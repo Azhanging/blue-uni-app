@@ -2,15 +2,19 @@ const routes = [{
   //默认登录接口
   url: `/mock/login`,
   method: 'post',
-  response() {
-    return {
-      code: 200,
-      data: {
-        token: 'token_value'
-      },
-      errcode: 50002  //模拟50001需要注册
-    };
-  }
+  response: (() => {
+    let i = 0;
+    return function () {
+      i++;
+      return {
+        code: i >= 2 ? 200 : 401,
+        data: {
+          token: 'token_value'
+        },
+        errcode: 50002  //模拟50001需要注册
+      };
+    }
+  })()
 }, {
   //获取手动号注册用户
   url: `/mock/setUserInfo`,
@@ -54,6 +58,21 @@ const routes = [{
       errcode: 40001
     };
   }
+}, {
+  url: `/mock/status401`,
+  method: 'get',
+  response: (() => {
+    let i = 0;
+    return function () {
+      i++;
+      return {
+        code: i === 2 ? 200 : 401,
+        data: {
+          data: 'data'
+        }
+      }
+    };
+  })()
 }];
 
 module.exports = routes;

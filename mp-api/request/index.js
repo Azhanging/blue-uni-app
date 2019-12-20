@@ -24,7 +24,7 @@ function setExtend(opts) {
   //原始的url
   opts.rawUrl = opts.url;
   //合并域名
-  opts.url = `${opts.baseUrl || config.url.base}${opts.url}`;
+  opts.url = `${opts.baseUrl || config.url.base || ''}${opts.url}`;
 
   const requestConfig = {
     data: "",

@@ -3,7 +3,6 @@ import utils from 'blue-utils';
 import store from '@store';
 import { setUserInfo } from '../user-info';
 import { apiLogin } from '$api';
-import * as mp from '$mp-api/compatible';
 import request from "../request";
 import { getCurrentPath } from "../page";
 import { redirectRegister } from '../register';
@@ -48,11 +47,9 @@ export function login(opts = {}) {
         //检查正常不进行业务处理
         resolve();
       }).catch(() => {
-        //清空登录状态
-        clearLoginStatus();
         //重新登录
-        login(opts).then(() => {
-          resolve();
+        login(opts).then((res) => {
+          resolve(res);
         });
       });
     } else {
@@ -63,33 +60,44 @@ export function login(opts = {}) {
         //打开就授权支付宝主动授权
         scopes: `auth_user`,
         success(res) {
-          mp.hideLoading();
           //login success
           if (/ok/g.test(res.errMsg)) {
             //发送login code
             sendLoginCode({
               params: utils.hook(null, config.login.params, [res]) || {}
             }).then(() => {
-              resolve();
-              //查看是否存在异常的请求线，有则重新执行request线
-              requestOpts && request(requestOpts);
+              if (requestOpts) {
+                //存在登录后处理的request的业务
+                request(requestOpts).then((res) => {
+                  resolve(res);
+                });
+              } else {
+                resolve();
+              }
             }).catch(() => {
               //登录失败，提醒重新登录
               showLoginModal().then(() => {
-                login(opts);
+                login(opts).then((res) => {
+                  resolve(res);
+                });
               });
             });
           } else {
             //登录失败，提醒重新登录
             showLoginModal().then(() => {
-              login(opts).then(() => {
-                resolve();
+              login(opts).then((res) => {
+                resolve(res);
               });
             });
           }
         },
         fail() {
-          mp.hideLoading();
+          //登录失败，提醒重新登录
+          showLoginModal().then(() => {
+            login(opts).then((res) => {
+              resolve(res);
+            });
+          });
         }
       });
     }
