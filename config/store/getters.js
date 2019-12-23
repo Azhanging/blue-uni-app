@@ -1,20 +1,17 @@
 const getters = {
   //是否授权过微信信息
-  hasUserInfo(state){
-    try{
-      if(state.userInfo instanceof Array){
+  hasUserInfo(state) {
+    try {
+      if (state.userInfo instanceof Array) {
         return false;
-      } else if(state.userInfo && state.userInfo.head_img){
+      } else if (state.userInfo && state.userInfo.head_img) {
         return true;
-      }else {
+      } else {
         return false;
       }
-    }catch (e){
+    } catch (e) {
       return false;
     }
-  },
-  hasPhone(state){
-    return !!(state.userInfo && state.userInfo.phone);
   }
 };
 

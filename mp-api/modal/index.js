@@ -1,6 +1,5 @@
 import config from '@config';
 import utils from 'blue-utils';
-import * as mp from '$mp-api/compatible';
 
 const defaultConfig = {
   confirmColor: config.css.baseColor,
@@ -8,8 +7,7 @@ const defaultConfig = {
 };
 
 export function modal(opts) {
-  const _opts = utils.extend(defaultConfig, opts);
-  mp.showModal(_opts);
+  uni.showModal(utils.extend(defaultConfig, opts));
 }
 
 export function modalInVue(Vue) {

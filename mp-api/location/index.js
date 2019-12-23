@@ -1,7 +1,22 @@
-import store from '@store';
+import config from '@config';
 import utils from 'blue-utils';
+import BlueQueuePipe from 'blue-queue-pipe';
 import * as mp from '$mp-api/compatible';
 import { authorize, authorizeFail } from "../authorize";
+
+//定位任务队列
+export const locationTask = new BlueQueuePipe({
+  methods: {
+    //执行任务
+    runTask(fn) {
+      if (getLocationStorage()) {
+        fn();
+      } else {
+        this.enqueue(fn);
+      }
+    }
+  }
+});
 
 //location 接口
 export function locationInVue(Vue) {
@@ -9,7 +24,9 @@ export function locationInVue(Vue) {
 }
 
 //获取地理位置
-function getLocation(opts = {}) {
+export function getLocation(opts = {
+  isShowFailModal: false
+}) {
   return authorize({
     scope: 'scope.userLocation'
   }).then(() => {
@@ -29,17 +46,14 @@ function getLocation(opts = {}) {
         type,
         success(res) {
           mp.hideLoading();
-          const lat = res.latitude;
-          const lgt = res.longitude;
-          //设置到本地
-          store.commit('SET_LOCATION', {
-            lat,
-            lgt
-          });
-          resolve({
-            lat,
-            lgt
-          });
+          //定位信息
+          const location = {
+            lat: res.latitude,
+            lng: res.longitude
+          };
+          //设置定位信息到本地到本地
+          setLocationStorage(location);
+          resolve(location);
         },
         fail(err) {
           mp.hideLoading();
@@ -49,12 +63,24 @@ function getLocation(opts = {}) {
     });
   }).catch((err) => {
     mp.hideLoading();
-    //针对微信提醒授权使用
-    if(/auth/.test(err.errMsg)){
-	    authorizeFail({
-		    type: 'location'
-	    });
+    //针对微信提醒授权使用 不设置isShowFailModal不进行授权提醒
+    if (/auth/.test(err.errMsg) && opts.isShowFailModal) {
+      authorizeFail({
+        type: 'location'
+      });
     }
     return Promise.reject(err);
   });
+}
+
+//设置定位到本地存储
+export function setLocationStorage(opts = {}) {
+  //{lat:0,lng:0}
+  uni.setStorageSync(config.location.storageKey, JSON.stringify(opts));
+}
+
+//获取本地的定位信息
+export function getLocationStorage() {
+  const locationStorage = uni.getStorageSync(config.location.storageKey);
+  return (locationStorage && JSON.parse(locationStorage)) || null;
 }

@@ -1,20 +1,15 @@
-import config from '@config';
-
 const mutations = {
+  //设置用户信息
   SET_USER_INFO(state, userInfo) {
     state.userInfo = userInfo;
   },
+  //设置用户最后访问的路径
   SET_LAST_PATH(state, path) {
     state.lastPath = path;
   },
+  //设置登录状态
   SET_LOGIN(state, status) {
     state.isLogin = status;
-  },
-  //设置定位
-  SET_LOCATION(state, status) {
-    //设置定位到本地存储
-    uni.setStorageSync(config.location.storageKey, JSON.stringify(status));
-    state.location = status;
   }
 };
 
