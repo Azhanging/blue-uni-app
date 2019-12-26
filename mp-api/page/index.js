@@ -3,6 +3,14 @@ import store from '@store';
 import utils from 'blue-utils';
 import { isRegisterPage } from '$mp-api/register';
 
+//页面参数
+export let query = {};
+
+//设置参数
+export function setQuery(pageQuery) {
+  query = pageQuery || {};
+}
+
 //获取最后一个地址链接
 export function getCurrentPath() {
   const currentPage = getCurrentPages();

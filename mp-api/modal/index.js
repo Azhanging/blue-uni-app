@@ -6,12 +6,12 @@ const defaultConfig = {
   showCancel: false
 };
 
-export function modal(opts) {
+export function showModal(opts) {
   uni.showModal(utils.extend(defaultConfig, opts));
 }
 
 export function modalInVue(Vue) {
-  Vue.prototype.$modal = function (opts) {
-    modal.call(this, opts);
+  Vue.prototype.$showModal = function (opts) {
+    showModal.call(this, opts);
   };
 }

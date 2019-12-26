@@ -1,6 +1,6 @@
 import utils from 'blue-utils';
-import * as mp from '$mp-api/compatible';
 import config from '@config';
+import { showLoading, hideLoading } from '$mp-api/loading';
 
 //选择图片,默认上传图片,isUpload为false时，将返回默认chooseImage的数据流
 export function chooseImage(opts = {}) {
@@ -40,7 +40,7 @@ export function uploadFile(opts = {
   const { filePaths } = opts;
   filePaths.forEach((filePath) => {
     all.push(new Promise((resolve, reject) => {
-      mp.showLoading();
+      showLoading();
       uni.uploadFile(utils.extend({
         //上传地址
         url: config.upload.url,
@@ -53,11 +53,11 @@ export function uploadFile(opts = {
         filePath
       }, opts, {
         success(res) {
-          mp.hideLoading();
+          hideLoading();
           resolve(res);
         },
         fail(err) {
-          mp.hideLoading();
+          hideLoading();
           reject(err);
         }
       }));

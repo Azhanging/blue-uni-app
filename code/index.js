@@ -2,7 +2,7 @@ import code from './code';
 import { redirectRegister } from '$mp-api/register';
 import { getCurrentPath } from "$mp-api/page";
 import { login } from '$mp-api/login';
-import * as mp from '$mp-api/compatible';
+import { showToast } from '$mp-api/toast';
 
 //错误码处理
 export function codeHandler(opts = {}) {
@@ -30,7 +30,7 @@ export function codeHandler(opts = {}) {
       });
     case code.MESSAGE:
       //提醒信息
-      message && mp.showToast({
+      message && showToast({
         title: message
       });
       break;

@@ -1,6 +1,6 @@
 import utils from 'blue-utils';
 import config from '@config';
-import * as mp from '$mp-api/compatible';
+import { showLoading, hideLoading } from '$mp-api/loading';
 
 //拦截处理
 import { requestInterceptor } from './interceptor';
@@ -55,7 +55,7 @@ export default function request(requestOpts) {
   let _requestOpts = setExtend(requestOpts);
 
   //request loading的处理
-  _requestOpts.isShowLoading && mp.showLoading({
+  _requestOpts.isShowLoading && showLoading({
     title: requireTips.loading,
     mask: true
   });
@@ -88,7 +88,7 @@ export default function request(requestOpts) {
         requestOpts
       });
       //关闭油站
-      _requestOpts.isShowLoading && mp.hideLoading();
+      _requestOpts.isShowLoading && hideLoading();
     } else {
       //从设置的配置中扩展
       uni.request(utils.extend(_requestOpts, {
@@ -101,7 +101,7 @@ export default function request(requestOpts) {
             requestOpts
           });
           //关闭loading
-          _requestOpts.isShowLoading && mp.hideLoading();
+          _requestOpts.isShowLoading && hideLoading();
         },
         fail: (err) => {
           let msg = requireTips.fail;
@@ -113,7 +113,7 @@ export default function request(requestOpts) {
             title: msg,
             icon: 'none'
           });
-          _requestOpts.isShowLoading && mp.hideLoading();
+          _requestOpts.isShowLoading && hideLoading();
           reject(err);
         }
       }));

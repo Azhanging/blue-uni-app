@@ -1,4 +1,3 @@
-import store from '@store';
 import config from '@config';
 import { setLastPath, getCurrentPath } from "../page";
 

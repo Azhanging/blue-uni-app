@@ -1,10 +1,10 @@
-import { modal } from '../modal';
+import { showModal } from '../modal';
 
 //微信小程序更新
 export function mpUpdate() {
   const updateManager = uni.getUpdateManager();
   updateManager.onUpdateReady(() => {
-    modal({
+    showModal({
       title: '更新提示',
       content: '发现新版本，小程序将会重启打开',
       showCancel: false,

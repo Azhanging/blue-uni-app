@@ -1,7 +1,7 @@
 import config from '@config';
 import utils from 'blue-utils';
 import BlueQueuePipe from 'blue-queue-pipe';
-import * as mp from '$mp-api/compatible';
+import { showLoading, hideLoading } from '$mp-api/loading';
 import { authorize, authorizeFail } from "../authorize";
 
 //定位任务队列
@@ -32,7 +32,7 @@ export function getLocation(opts = {
   }).then(() => {
     //使用定位,返回可以用于wx.openLocation的经纬度
     return new Promise((resolve, reject) => {
-      mp.showLoading();
+      showLoading();
       //区分不同端的地理位置类型
       const type = (() => {
         switch (process.env.VUE_APP_PLATFORM) {
@@ -45,7 +45,7 @@ export function getLocation(opts = {
       uni.getLocation(utils.extend({
         type,
         success(res) {
-          mp.hideLoading();
+          hideLoading();
           //定位信息
           const location = {
             lat: res.latitude,
@@ -56,13 +56,13 @@ export function getLocation(opts = {
           resolve(location);
         },
         fail(err) {
-          mp.hideLoading();
+          hideLoading();
           reject(err);
         }
       }, opts));
     });
   }).catch((err) => {
-    mp.hideLoading();
+    hideLoading();
     //针对微信提醒授权使用 不设置isShowFailModal不进行授权提醒
     if (/auth/.test(err.errMsg) && opts.isShowFailModal) {
       authorizeFail({

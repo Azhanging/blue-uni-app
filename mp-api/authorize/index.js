@@ -1,5 +1,5 @@
 import { getUserInfo } from '$mp-api/user-info';
-import { modal } from "../modal";
+import { showModal } from "../modal";
 import utils from 'blue-utils';
 
 //授权信息检查
@@ -46,7 +46,7 @@ export function authorizeFail(opts) {
   })();
 
   //授权失败提示，可以跳转授权设置
-  modal(utils.extend({
+  showModal(utils.extend({
     title: `授权失败，${ typeName }功能将无法使用`,
     confirmText: '前往设置',
     showCancel: true,

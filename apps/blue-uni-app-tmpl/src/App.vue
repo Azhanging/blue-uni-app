@@ -1,6 +1,6 @@
 <script>
   import { getUserInfo } from '$mp-api/user-info';
-  import { checkScene } from '$mp-api/scene';
+  import { setQuery } from '$mp-api/page';
   import { apiErrorReport } from '$api';
 
   export default {
@@ -12,8 +12,8 @@
       console.log('App Launch');
     },
     onShow: function (opts) {
-      //检查场景值
-      checkScene(opts);
+      //设置页面参数
+      setQuery(opts.query);
     },
     //错误处理
     onError(err) {

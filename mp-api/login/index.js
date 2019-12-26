@@ -6,6 +6,8 @@ import { apiLogin } from '$api';
 import request from "../request";
 import { getCurrentPath } from "../page";
 import { redirectRegister } from '../register';
+import { showLoading, hideLoading } from '$mp-api/loading';
+import loginTask from './task';
 
 //扩展到Vue中
 export function loginInVue(Vue) {
@@ -39,11 +41,15 @@ export function checkLocalLogin() {
 //wx login
 export function login(opts = {}) {
   return new Promise((resolve) => {
+    showLoading();
     const { requestOpts } = opts;
     //检查本地的登录状态，只在微信小程序中检查
     if (checkLocalLogin() && (process.env.VUE_APP_PLATFORM === 'mp-weixin')) {
+      hideLoading();
       //检查session
       checkSession().then(() => {
+        //走登录成功后的业务
+        loginTask.run();
         //检查正常不进行业务处理
         resolve();
       }).catch(() => {
@@ -60,6 +66,7 @@ export function login(opts = {}) {
         //打开就授权支付宝主动授权
         scopes: `auth_user`,
         success(res) {
+          hideLoading();
           //login success
           if (/ok/g.test(res.errMsg)) {
             //发送login code
@@ -92,6 +99,7 @@ export function login(opts = {}) {
           }
         },
         fail() {
+          hideLoading();
           //登录失败，提醒重新登录
           showLoginModal().then(() => {
             login(opts).then((res) => {
@@ -126,7 +134,7 @@ function sendLoginCode(opts = {}) {
 }
 
 //设置指定的登录态到
-function setLoginStorage(data) {
+export function setLoginStorage(data) {
   const gotData = utils.hook(null, config.login.hooks.got, [data]);
   utils.each(config.login.storage, (key, _key) => {
     if (key in gotData) {

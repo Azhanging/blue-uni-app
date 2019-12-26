@@ -1,24 +1,6 @@
 import config from '@config';
-import store from '@store';
 import utils from 'blue-utils';
 import { getCurrentPath } from '$mp-api/page';
-
-//分享的参数的
-export let shareQuery = {};
-
-//设置shareQuery到分享state
-export function setShareQuery(query) {
-  shareQuery = query || {};
-}
-
-//分享信息扩展
-export function shareParams(query = {}) {
-  const userInfo = store.state.userInfo;
-  const phone = userInfo.phone || "";
-  return encodeURIComponent(utils.stringifyParams(utils.extend({
-    [config.share.params.phone]: phone
-  }, query)));
-}
 
 //查询分享黑名单
 function shareBlackListFilter(path) {
@@ -68,7 +50,7 @@ export function sharePath(path) {
   //带入忽略参数地址
   const sharePath = shareBlackListFilter(_path);
   //返回链接
-  return `${sharePath}?${shareParams(objQuery)}`;
+  return `${sharePath}?${encodeURIComponent(utils.stringifyParams(objQuery))}`;
 }
 
 

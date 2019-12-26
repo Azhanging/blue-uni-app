@@ -69,7 +69,7 @@ function scrollLower(opts = {
 						data: ajax.params,
 					}).then((res) => {
 						//通过got拦截数据
-						const listData = utils.hooks(this, hooks.got, [res]) || [];
+						const listData = utils.hook(this, hooks.got, [res]) || [];
 						//合并list数据
 						data.list = data.list.concat(listData);
 						//(检查列表数据是为空 || 少于预期长度) 都是视为没有下一页数据

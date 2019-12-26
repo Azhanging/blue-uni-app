@@ -1,7 +1,7 @@
 //图片相关
+import { showToast } from '$mp-api/toast';
 import { authorize, authorizeFail } from "../authorize";
-import { modal } from "../modal";
-import * as mp from '$mp-api/compatible';
+import { showModal } from "../modal";
 
 //在Vue中扩展
 export function imageInVue(Vue) {
@@ -17,7 +17,7 @@ function saveImage(opts) {
     return downFile.call(this, opts);
   }).then((res) => {
     return saveImg.call(this, res).then(() => {
-      mp.showToast({
+      showToast({
         title: "保存图片成功"
       });
     });
@@ -31,7 +31,7 @@ function saveImage(opts) {
       });
     } else {
       //保存错误提示
-      modal({
+      showModal({
         title: "提示",
         content: "保存图片失败",
         confirmText: "我知道了"
