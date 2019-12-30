@@ -7,7 +7,9 @@ export function apiErrorReport(err) {
     baseUrl: '',
     method: 'POST',
     data: {
-      error: err
-    }
+      error: err,
+      systemInfo: uni.getSystemInfoSync()
+    },
+    isShowLoading: false
   });
 }

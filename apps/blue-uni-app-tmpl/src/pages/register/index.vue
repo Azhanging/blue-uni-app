@@ -67,8 +67,10 @@
       getPhoneNumber(e) {
         const {
           encryptedData,
-          iv
+          iv,
+          errMsg
         } = e.detail;
+        if (/fail/ig.test(errMsg)) return;
         this.$request({
           url: '/mock/bindPhone',
           method: 'post',
@@ -85,7 +87,7 @@
       },
 
       //注册成功
-      registerSuccess(data){
+      registerSuccess(data) {
         // 设置信息到storage中
         setLoginStorage(data);
         //登录成功后设置用户信息
