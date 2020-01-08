@@ -8,13 +8,8 @@ const loadingQueue = new BlueQueuePipe();
 export function showLoading(opts = {
   title: ``
 }) {
-  switch (process.env.VUE_APP_PLATFORM) {
-    case 'mp-alipay':
-      opts.content = opts.title;
-      break;
-  }
-  uni.showLoading(opts);
   loadingQueue.enqueue(1);
+  return uni.showLoading(opts);
 }
 
 //hide loading

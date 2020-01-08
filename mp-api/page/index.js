@@ -13,15 +13,20 @@ export function setQuery(pageQuery) {
 
 //获取最后一个地址链接
 export function getCurrentPath() {
-  const currentPage = getCurrentPages();
-  const lastPath = currentPage[currentPage.length - 1];
-  if (lastPath) {
+  const lastPage = getCurrentPage();
+  if (lastPage) {
     //获取到参数
-    const queryString = utils.stringifyParams(lastPath.options || {});
+    const queryString = utils.stringifyParams(lastPage.options || {});
     //微信的getCurrentPages方法的route地址首位不带/
-    return `/${lastPath.route}?${queryString}`;
+    return `/${lastPage.route}${queryString ? `?${queryString}` : ''}`;
   }
   return config.path.home;
+}
+
+//获取当前的page实例
+export function getCurrentPage() {
+  const currentPage = getCurrentPages();
+  return currentPage[currentPage.length - 1];
 }
 
 //设置最后一个路由地址

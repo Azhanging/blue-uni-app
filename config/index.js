@@ -19,20 +19,24 @@ const config = {
 
   //路径相关
   path: {
-    home: "/pages/index/main",       //首页地址
-    register: `/pages/register/main`                    //注册页面
+    home: "/pages/index/index"       //首页地址
   },
 
   //登录相关
   login: {
-    url: '/user/login.json',
-    //登录获取的状态
-    params() {
-      return {};
+    request: {
+      url: '/user/login.json',
+      //登录获取的状态
+      params() {
+        return {};
+      },
     },
     hooks: {
       got(data) {
         return data;
+      },
+      //登陆成功
+      success() {
       }
     },
     //登录状态
@@ -45,14 +49,16 @@ const config = {
 
   //用户信息
   userInfo: {
-    url: `/update-info`,
+    request: {
+      url: `/update-info`,
+      params(res) {
+        return res;
+      }
+    },
     hooks: {
       got(data) {
         return data;
       }
-    },
-    params(res) {
-      return res;
     }
   },
 
@@ -118,8 +124,29 @@ const config = {
   //css相关
   css: {
     baseColor: ""       //基色
-  }
+  },
 
+  request: {
+    options: {
+      data: "",
+      method: "GET",
+      dataType: "json",
+      responseType: "text",
+      ['content-type']: 'application/x-www-form-urlencoded',
+      isShowLoading: true,
+      tips: {}
+    },
+    tips: {
+      loading: '数据加载中',
+      fail: '连接错误',
+      timeout: `请求超时`
+    },
+    //拦截器(针对项目的拦截器自定义)
+    interceptor: {
+      request: null,
+      response: null
+    }
+  }
 };
 
 export default config;

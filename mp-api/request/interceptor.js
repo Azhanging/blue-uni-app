@@ -1,9 +1,10 @@
 import code from '$code/code';    //错误码
 import { codeHandler } from '$code';   //错误码处理
 import { login } from '$mp-api/login';
+import { showToast } from '$mp-api/toast';
 
 //拦截处理
-export function requestInterceptor(opts) {
+export function responseInterceptor(opts) {
   const { res, resolve, reject, requestOpts } = opts;
   //http code 处理
   if (res.statusCode === 200) {
@@ -21,6 +22,11 @@ export function requestInterceptor(opts) {
         res
       });
     }
+  } else if (res.statusCode === 404) {
+    showToast({
+      title: '服务异常',
+      icon: 'none'
+    });
   } else if (res.statusCode === 401) {
     //重新登录
     login({

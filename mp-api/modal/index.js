@@ -7,11 +7,12 @@ const defaultConfig = {
 };
 
 export function showModal(opts) {
-  uni.showModal(utils.extend(defaultConfig, opts));
+  return uni.showModal(utils.extend(defaultConfig, opts)).then(([err, res]) => {
+    if (err) return Promise.reject(err);
+    return res;
+  });
 }
 
 export function modalInVue(Vue) {
-  Vue.prototype.$showModal = function (opts) {
-    showModal.call(this, opts);
-  };
+  Vue.prototype.$showModal = showModal;
 }

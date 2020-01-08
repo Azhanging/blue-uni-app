@@ -8,6 +8,7 @@ import { getCurrentPath } from "../page";
 import { redirectRegister } from '../register';
 import { showLoading, hideLoading } from '$mp-api/loading';
 import loginTask from './task';
+import { showModal } from '../modal';
 
 //扩展到Vue中
 export function loginInVue(Vue) {
@@ -41,7 +42,9 @@ export function checkLocalLogin() {
 //wx login
 export function login(opts = {}) {
   return new Promise((resolve) => {
-    showLoading();
+    showLoading({
+      title: '登陆中'
+    });
     const { requestOpts } = opts;
     //检查本地的登录状态，只在微信小程序中检查
     if (checkLocalLogin() && (process.env.VUE_APP_PLATFORM === 'mp-weixin')) {
@@ -68,44 +71,31 @@ export function login(opts = {}) {
         success(res) {
           hideLoading();
           //login success
-          if (/ok/g.test(res.errMsg)) {
-            //发送login code
-            sendLoginCode({
-              params: utils.hook(null, config.login.params, [res]) || {}
-            }).then(() => {
-              if (requestOpts) {
-                //存在登录后处理的request的业务
-                request(requestOpts).then((res) => {
-                  resolve(res);
-                });
-              } else {
-                resolve();
-              }
-            }).catch(() => {
-              //登录失败，提醒重新登录
-              showLoginModal().then(() => {
-                login(opts).then((res) => {
-                  resolve(res);
-                });
-              });
-            });
-          } else {
+          if (!/ok/g.test(res.errMsg)) {
             //登录失败，提醒重新登录
-            showLoginModal().then(() => {
-              login(opts).then((res) => {
+            return showLoginModal(opts);
+          }
+          //发送login code
+          sendLoginCode({
+            params: utils.hook(null, config.login.params, [res]) || {}
+          }).then(() => {
+            if (requestOpts) {
+              //存在登录后处理的request的业务
+              request(requestOpts).then((res) => {
                 resolve(res);
               });
-            });
-          }
+            } else {
+              resolve();
+            }
+          }).catch(() => {
+            //登录失败，提醒重新登录
+            showLoginModal(opts);
+          });
         },
         fail() {
           hideLoading();
           //登录失败，提醒重新登录
-          showLoginModal().then(() => {
-            login(opts).then((res) => {
-              resolve(res);
-            });
-          });
+          showLoginModal(opts);
         }
       });
     }
@@ -128,6 +118,8 @@ function sendLoginCode(opts = {}) {
       setLoginStorage(data);
       //设置用户信息
       setUserInfo(data);
+      //调用成功后的钩子
+      utils.hook(null, config.login.hooks.success, [data]);
     }
     return res;
   });
@@ -143,7 +135,6 @@ export function setLoginStorage(data) {
   });
 }
 
-
 //clear login session in storage
 export function clearLoginStatus() {
   //清空所有的存储
@@ -153,15 +144,22 @@ export function clearLoginStatus() {
 }
 
 //提醒重新重新登录
-function showLoginModal() {
-  return new Promise((resolve) => {
-    uni.showModal({
+function showLoginModal(opts) {
+  return new Promise((resolve, reject) => {
+    showModal({
       content: '登录失败',
-      showCancel: false,
-      confirmText: '重新登录',
-      success() {
-        resolve();
+      showCancel: true,
+      confirmText: '重新登录'
+    }).then((res) => {
+      if (res.confirm === true) {
+        login(opts).then((res) => {
+          resolve(res);
+        });
+      } else if (res.cancel === false) {
+        reject();
       }
+    }).catch(() => {
+      reject();
     });
   });
 }

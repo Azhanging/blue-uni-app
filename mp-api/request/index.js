@@ -3,14 +3,11 @@ import config from '@config';
 import { showLoading, hideLoading } from '$mp-api/loading';
 
 //拦截处理
-import { requestInterceptor } from './interceptor';
+import { responseInterceptor } from './interceptor';
 
-//请求的提醒信息
-const requireTips = {
-  loading: '数据加载中',
-  fail: '连接错误',
-  timeout: `请求超时`
-};
+const { interceptor, tips } = config.request;
+//选择拦截器
+const _responseInterceptor = utils.hook(null, interceptor.response) || responseInterceptor;
 
 //在vue扩展
 export function requestInVue(Vue) {
@@ -20,23 +17,15 @@ export function requestInVue(Vue) {
 
 //设置扩展
 function setExtend(opts) {
-
   //原始的url
   opts.rawUrl = opts.url;
   //合并域名
   opts.url = `${opts.baseUrl || config.url.base || ''}${opts.url}`;
 
-  const requestConfig = {
-    data: "",
-    method: "GET",
-    dataType: "json",
-    responseType: "text",
-    isShowLoading: true,
-    header: utils.extend({
-      ['content-type']: 'application/x-www-form-urlencoded'
-    }, setRequestHeader())
-  };
-  return utils.extend(requestConfig, opts);
+  return utils.extend({
+    ...(config.request.options || {}),
+    header: setRequestHeader(),
+  }, opts);
 }
 
 //设置login header
@@ -54,9 +43,11 @@ export default function request(requestOpts) {
   //获取到添加login header options
   let _requestOpts = setExtend(requestOpts);
 
+  const requestOptsTips = _requestOpts.tips;
+
   //request loading的处理
   _requestOpts.isShowLoading && showLoading({
-    title: requireTips.loading,
+    title: requestOptsTips.loading || tips.loading,
     mask: true
   });
 
@@ -81,7 +72,7 @@ export default function request(requestOpts) {
     if (process.env.NODE_ENV !== 'production' && route) {
       const res = blueMpMock.response(route);
       //拦截器
-      requestInterceptor({
+      _responseInterceptor({
         res,
         resolve,
         reject,
@@ -94,7 +85,7 @@ export default function request(requestOpts) {
       uni.request(utils.extend(_requestOpts, {
         success: (res) => {
           //拦截器
-          requestInterceptor({
+          _responseInterceptor({
             res,
             resolve,
             reject,
@@ -104,10 +95,10 @@ export default function request(requestOpts) {
           _requestOpts.isShowLoading && hideLoading();
         },
         fail: (err) => {
-          let msg = requireTips.fail;
+          let msg = requestOptsTips.fail || tips.fail;
           //超时提醒
           if (err && /timeout/.test(err.errMsg)) {
-            msg = requireTips.timeout;
+            msg = requestOptsTips.timeout || tips.timeout;
           }
           uni.showToast({
             title: msg,

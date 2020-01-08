@@ -1,11 +1,11 @@
-import $request from '$request';
 import config from '@config';
+import $request from '$request';
 
 export function apiGetUserInfo(params) {
-  const userInfo = config.userInfo;
+  const { request: userInfoRequest } = config.userInfo;
   return $request({
-    url: userInfo.url,
-    baseUrl: userInfo.baseUrl,
+    url: userInfoRequest.url,
+    baseUrl: userInfoRequest.baseUrl,
     data: params,
     isShowLoading: false
   }).then((res) => {
