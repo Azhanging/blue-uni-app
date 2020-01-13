@@ -41,10 +41,26 @@ export function setLastPath(path = '') {
 }
 
 //回到设置的最后一个路由上
-export function backLastRoute() {
-  uni.navigateTo({
-    url: store.state.lastPath
-  });
+export function backLastRoute(opts = {
+  type: 'nav'
+}) {
+  const { type = 'nav' } = opts;
+  const url = store.state.lastPath;
+  switch (type) {
+    case 'launch':
+      return uni.reLaunch({
+        url
+      });
+    case 'tab':
+      return uni.switchTab({
+        url
+      });
+    case 'nav':
+    default :
+      uni.navigateTo({
+        url
+      });
+  }
 }
 
 //回到设置的最后一个路由上

@@ -5,12 +5,14 @@
     <!-- 操作菜单 -->
     <div class="bc-flex bc-flex-jc-sb menu">
       <div class="bc-flex-1">
-        <a class="bc-t-base bc-pd-10rpx" @click.stop="newEnergy">
+        <span class="bc-inline-block bc-t-base bc-pd-10rpx" @click.stop="newEnergy">
           {{carNumber && carNumber.isNewEnergy ? '关闭' : '使用' }}新能源号
-        </a>
+        </span>
       </div>
       <div class="bc-flex-1">
-        <a class="bc-t-base bc-pd-10rpx" @click.stop="closeKeyboard">关闭</a>
+        <span class="bc-inline-block bc-t-base bc-pd-10rpx" @click.stop="hide">
+          关闭
+        </span>
       </div>
     </div>
 
@@ -72,7 +74,7 @@
     },
     props: {
       //是否显示键盘
-      isShow: {
+      visible: {
         type: Boolean,
         default: false
       },
@@ -91,10 +93,10 @@
     computed: {
       //键盘动画
       animation() {
-        if (this.isShow) {
-          return this.$slide();
+        if (this.visible) {
+          return this.$slideAnimation();
         } else {
-          return this.$slide({
+          return this.$slideAnimation({
             y: '100%',
             opacity: 0
           });
@@ -117,8 +119,8 @@
         });
       },
       //关闭键盘
-      closeKeyboard() {
-        this.$emit('closeKeyboard', false);
+      hide() {
+        this.$emit('update:visible', false);
       },
       //删除
       del() {
@@ -146,12 +148,9 @@
       //完成按钮
       result() {
         //关闭键盘
-        this.closeKeyboard();
+        this.hide();
         this.$emit('result', this.carNumber.value);
       }
-    },
-    mounted() {
-      console.log(this.carNumber);
     }
   }
 </script>

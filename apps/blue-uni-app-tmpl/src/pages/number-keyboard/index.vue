@@ -14,7 +14,7 @@
     <!-- 数字键盘 -->
     <BmpNumberKeyboard
             :number="number"
-            :isShow="isShowKeyboard"
+            :visible.sync="isShowKeyboard"
             @clickNumber="changeNumber"
             @delNumber="changeNumber"
             @closeKeyboard="closeKeyboard"

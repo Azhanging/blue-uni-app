@@ -128,10 +128,7 @@
     </div>
 
     <!-- 询问层 -->
-    <BmpActionSheet :isShow="actionShow" @shadeClick="toggleAction">
-      <div class="bc-row bc-t-r">
-        <span class="bc-t-base bc-inline-block bc-pd-10rpx" @click.stop="toggleAction">关闭</span>
-      </div>
+    <BmpActionSheet :visible.sync="actionShow" title="BmpActionSheet">
       <scroll-view scroll-y="true" style="height:500rpx;">
         <ul class="bc-reset-ul">
           <li v-for="i in list" :key="i" class="bc-pd-10rpx">
@@ -142,10 +139,7 @@
     </BmpActionSheet>
 
     <!-- 弹层 -->
-    <BmpLayer :isShow="layerShow" @shadeClick="toggleLayer">
-      <div class="bc-row bc-t-r">
-        <a class="bc-t-base bc-pd-10rpx" @click="toggleLayer">关闭</a>
-      </div>
+    <BmpLayer :visible.sync="layerShow">
       <div class="bc-bg-white" style="width:200rpx;height:200rpx;">
         layer 内容
       </div>
@@ -177,7 +171,13 @@
     })],
     data() {
       return {
-        list: [0, 1, 2, 3, 4, 5, 6],
+        list: (() => {
+          const arr = [];
+          for (let i = 0; i < 30; i++) {
+            arr.push(i);
+          }
+          return arr;
+        })(),
         actionShow: false,
         layerShow: false,
         formSwitch: [{
@@ -252,9 +252,9 @@
 
     },
     created() {
-      this.$loginTask.useMethod('runTask', [() => {
+      this.$isLogin().then(() => {
         //this.scrollLower();
-      }]);
+      });
     }
   };
 </script>

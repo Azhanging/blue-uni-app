@@ -3,7 +3,6 @@ import { loginInVue } from './login';
 import { locationInVue } from './location';
 import { imageInVue } from './image';
 import { modalInVue } from './modal';
-import { loginTaskInVue } from './login/task';
 import { mpUpdate } from './update';
 import { shareInVue } from './share';
 import { scanCodeInVue } from "./scan-code";
@@ -36,8 +35,6 @@ export function weChatInVue(Vue) {
   scanCodeInVue(Vue);
   //动画相关
   animationInVue(Vue);
-  //任务队列，针对登录的任务队列
-  loginTaskInVue(Vue);
   //上传相关
   uploadInVue(Vue);
   //发票

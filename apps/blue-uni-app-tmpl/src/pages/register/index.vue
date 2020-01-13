@@ -20,7 +20,7 @@
 
 <script>
 
-  import { reLaunchLastRoute } from '$mp-api/page';
+  import { backLastRoute } from '$mp-api/page';
   import { setUserInfo } from '$mp-api/user-info';
   import { setLoginStorage } from '$mp-api/login';
 
@@ -93,7 +93,9 @@
         //登录成功后设置用户信息
         setUserInfo(data);
         // 这里将自动补全用户信息
-        reLaunchLastRoute();
+        backLastRoute({
+          type: 'launch'
+        });
       }
     }
   }

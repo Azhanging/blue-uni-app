@@ -2,8 +2,8 @@
 
 //在vue扩展
 export function animationInVue(Vue) {
-  Vue.prototype.$slide = slide;
-  Vue.prototype.$scale = scale;
+  Vue.prototype.$slideAnimation = slideAnimation;
+  Vue.prototype.$scaleAnimation = scaleAnimation;
 }
 
 const defaultAnimationOpts = {
@@ -17,7 +17,7 @@ function createAnimation(opts = defaultAnimationOpts) {
 }
 
 //上动画 不带参数都是返回open状态
-function slide(opts = {
+function slideAnimation(opts = {
   animationOpts: defaultAnimationOpts,
   opacity: 1,
   y: 0
@@ -34,7 +34,7 @@ function slide(opts = {
 }
 
 //缩放动画  不带参数都是返回open状态
-function scale(opts = {
+function scaleAnimation(opts = {
   animationOpts: defaultAnimationOpts,
   opacity: 1,
   scale: 1

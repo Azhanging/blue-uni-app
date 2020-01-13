@@ -13,18 +13,23 @@
     name: "bmp-layer",
     props: {
       //是否显示
-      isShow: {
+      visible: {
         type: Boolean,
         default: false
+      },
+      //点击遮罩关闭
+      clickShadeClose: {
+        type: Boolean,
+        default: true
       }
     },
     computed: {
       //固定的动画
       animation() {
-        if (this.isShow) {
-          return this.$scale();
+        if (this.visible) {
+          return this.$scaleAnimation();
         } else {
-          return this.$scale({
+          return this.$scaleAnimation({
             opacity: 0,
             scale: 0
           });
@@ -32,9 +37,9 @@
       }
     },
     methods: {
-      //遮罩点击
       shadeClick() {
-        this.$emit('shadeClick');
+        if (!this.clickShadeClose) return;
+        this.$emit('update:visible', false);
       }
     }
   }

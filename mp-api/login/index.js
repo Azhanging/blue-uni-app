@@ -7,12 +7,12 @@ import request from "../request";
 import { getCurrentPath } from "../page";
 import { redirectRegister } from '../register';
 import { showLoading, hideLoading } from '$mp-api/loading';
-import loginTask from './task';
 import { showModal } from '../modal';
 
 //扩展到Vue中
 export function loginInVue(Vue) {
   Vue.prototype.$login = login;
+  Vue.prototype.$isLogin = isLogin;
 }
 
 //check session
@@ -51,8 +51,6 @@ export function login(opts = {}) {
       hideLoading();
       //检查session
       checkSession().then(() => {
-        //走登录成功后的业务
-        loginTask.run();
         //检查正常不进行业务处理
         resolve();
       }).catch(() => {
@@ -98,6 +96,17 @@ export function login(opts = {}) {
           showLoginModal(opts);
         }
       });
+    }
+  });
+}
+
+//检查登录状态
+export function isLogin() {
+  return new Promise((resolve, reject) => {
+    if (store.state.isLogin) {
+      resolve();
+    } else {
+      reject();
     }
   });
 }

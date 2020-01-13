@@ -4,7 +4,9 @@
 
     <!-- 操作菜单 -->
     <div class="bc-row bc-t-r menu">
-      <a class="bc-t-base bc-pd-10rpx" @click.stop="closeKeyboard">关闭</a>
+      <span class="bc-inline-block bc-t-base bc-pd-10rpx" @click.stop="hide">
+        关闭
+      </span>
     </div>
 
     <div class="bc-flex bc-flex-jc-c">
@@ -44,7 +46,7 @@
     name: "bmp-number-key-bord",
     props: {
       //是否显示键盘
-      isShow: {
+      visible: {
         type: Boolean,
         default: false
       },
@@ -79,10 +81,10 @@
     computed: {
       //键盘动画
       animation() {
-        if (this.isShow) {
-          return this.$slide();
+        if (this.visible) {
+          return this.$slideAnimation();
         } else {
-          return this.$slide({
+          return this.$slideAnimation({
             y: '100%',
             opacity: 0
           });
@@ -91,8 +93,8 @@
     },
     methods: {
       //关闭键盘
-      closeKeyboard() {
-        this.$emit('closeKeyboard', false);
+      hide() {
+        this.$emit('update:visible', false);
       },
       //删除
       del() {
@@ -117,13 +119,9 @@
       },
       //完成按钮
       result() {
-
-        this.closeKeyboard();
+        this.hide();
         this.$emit('result', this.number.value);
       }
-    },
-    mounted() {
-      console.log(this);
     }
   }
 </script>

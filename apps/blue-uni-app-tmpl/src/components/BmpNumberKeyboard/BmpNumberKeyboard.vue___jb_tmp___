@@ -4,9 +4,9 @@
 
     <!-- 操作菜单 -->
     <div class="bc-row bc-t-r menu">
-      <span class="bc-inline-block bc-t-base bc-pd-10rpx" @click.stop="hide">
+      <a href="" class="bc-t-base bc-pd-10rpx" @click.stop="hide">
         关闭
-      </span>
+      </a>
     </div>
 
     <div class="bc-flex bc-flex-jc-c">

@@ -5,7 +5,7 @@ import { showLoading, hideLoading } from '$mp-api/loading';
 import { authorize, authorizeFail } from "../authorize";
 
 //定位任务队列
-export const locationTask = new BlueQueuePipe({
+export const locationQueue = new BlueQueuePipe({
   methods: {
     //执行任务
     runTask(fn) {
@@ -20,7 +20,10 @@ export const locationTask = new BlueQueuePipe({
 
 //location 接口
 export function locationInVue(Vue) {
+  //获取定位
   Vue.prototype.$getLocation = getLocation;
+  //定位队列
+  Vue.prototype.$locationQueue = locationQueue;
 }
 
 //获取地理位置

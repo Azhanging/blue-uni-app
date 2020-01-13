@@ -13,12 +13,12 @@
 
     <!-- 数字键盘 -->
     <BmpCarNumberKeyboard
-      :isShow="isShowKeyboard"
-      :carNumber="number"
-      @clickNumber="changeNumber"
-      @delNumber="changeNumber"
-      @closeKeyboard="closeKeyboard"
-      @newEnergy="newEnergy"
+            :visible.sync="isShowKeyboard"
+            :carNumber="number"
+            @clickNumber="changeNumber"
+            @delNumber="changeNumber"
+            @closeKeyboard="closeKeyboard"
+            @newEnergy="newEnergy"
     />
 
   </div>

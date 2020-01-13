@@ -56,9 +56,9 @@ export default {
   methods: {
     openMarker(e) {
       console.log(e);
-      wx.navigateTo({
+      uni.navigateTo({
         url: "/pages/index/main"
-      })
+      });
     },
     regionchange(e) {
       this.mapCtx.getRegion({

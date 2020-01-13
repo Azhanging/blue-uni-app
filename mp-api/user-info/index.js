@@ -1,6 +1,5 @@
 import store from "@store";
 import { apiGetUserInfo } from '$api';
-import loginTask from "$mp-api/login/task";
 import config from '@config';
 import utils from 'blue-utils';
 
@@ -21,8 +20,6 @@ export function setUserInfo(data) {
   store.commit('SET_USER_INFO', utils.hook(null, configUserInfo.hooks.got, [data]));
   //设置登录状态
   store.commit('SET_LOGIN', true);
-  //执行登录后的任务队列
-  loginTask.run();
 }
 
 
