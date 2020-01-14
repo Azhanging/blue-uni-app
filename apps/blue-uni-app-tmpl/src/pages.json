@@ -42,6 +42,12 @@
       "style": {
         "navigationBarTitleText": "车牌键盘"
       }
+    },
+    {
+      "path": "pages/bmp/index",
+      "style": {
+        "navigationBarTitleText": "Bmp组件"
+      }
     }
   ],
   "globalStyle": {
