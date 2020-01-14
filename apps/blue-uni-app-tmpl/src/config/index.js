@@ -21,6 +21,13 @@ const config = utils.extend(publicConfig, {
   //路径相关
   path,
 
+  pages: {
+    //设置最后的路由黑名单配置
+    lastPathBlackList: [{
+      path: /register|bind-phone/
+    }]
+  },
+
   //登陆相关
   login: {
     url: `/mock/login`,
@@ -50,7 +57,7 @@ const config = utils.extend(publicConfig, {
   //分享相关
   share: {
     blackList: [{
-      path: /pages\/register\/main/
+      path: /register|bind-phone/
     }]
   }
 });

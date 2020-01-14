@@ -22,6 +22,17 @@ const config = {
     home: "/pages/index/index"       //首页地址
   },
 
+  //页面相关
+  pages: {
+    //设置最后的路由黑名单配置
+    lastPathBlackList: [/*{
+      //校验分享路径 Regexp 或者 String
+      path: /regexp/ || 'string',
+      //转换的 String || Function
+      sharePath: ''
+    }*/]
+  },
+
   //登录相关
   login: {
     request: {
@@ -76,13 +87,6 @@ const config = {
     },
   },
 
-  //钩子相关，执行当前项目相关的钩子任务
-  hooks: {
-    show() {
-
-    }
-  },
-
   //分享相关的
   share: {
     title: "blue-wx-mini-program",
@@ -95,7 +99,7 @@ const config = {
     //分享黑名单,限于公共分享触发，page定义的分享走默认的规则
     blackList: [/*{
       path: '', //分享的黑名单地址 String || RegExp
-      sharePath: `` //指派的地址,可选，不填写会跳转到config.path.home
+      sharePath: `` //指派的地址,可选，不填写会跳转到config.path.home String || Function
     }*/]
   },
 

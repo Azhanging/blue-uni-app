@@ -6,7 +6,7 @@
     <div class="bc-flex bc-flex-jc-sb menu">
       <div class="bc-flex-1">
         <span class="bc-inline-block bc-t-base bc-pd-10rpx" @click.stop="newEnergy">
-          {{carNumber && carNumber.isNewEnergy ? '关闭' : '使用' }}新能源号
+          {{isNewEnergy ? '关闭' : '使用' }}新能源号
         </span>
       </div>
       <div class="bc-flex-1">
@@ -17,7 +17,7 @@
     </div>
 
     <!-- 省份键盘区域 -->
-    <div v-show="carNumber && carNumber.value.length === 0">
+    <div v-show="carNumber.length === 0">
       <div class="key-row" v-for="(provinces,index) in allProvince" :key="index">
         <div class="key-btn" v-for="(key,_index) in provinces" :key="_index">
           <div :class="key !== '' &&  'key'" @click.stop="clickNumber(key)">
@@ -31,11 +31,11 @@
     </div>
 
     <!-- 全键盘 -->
-    <div v-show="carNumber && carNumber.value.length > 0">
+    <div v-show="carNumber.length > 0">
       <div class="key-row" v-for="(keys,index) in fullKeyboard" :key="index">
         <div class="key-btn" v-for="(key,_index) in keys" :key="_index">
           <div class="key"
-               :class="index === 0 && carNumber && carNumber.value.length < 2 && 'disabled'"
+               :class="index === 0 && carNumber && carNumber.length < 2 && 'disabled'"
                :hover-class="'bc-btn-hover'"
                @click.stop="clickNumber(key,index)"
           >
@@ -78,16 +78,15 @@
         type: Boolean,
         default: false
       },
+      //是否新能源
+      isNewEnergy: {
+        type: Boolean,
+        default: false
+      },
       //输入的数字
       carNumber: {
-        type: Object,
-        default() {
-          return {
-            //是否为新能源
-            isNewEnergy: false,
-            value: ''
-          };
-        }
+        type: String,
+        default: ''
       }
     },
     computed: {
@@ -106,17 +105,13 @@
     methods: {
       //使用新能源
       newEnergy() {
-        const carNumber = this.carNumber;
-        const isNewEnergy = !carNumber.isNewEnergy;
-        let value = carNumber.value;
+        let carNumber = this.carNumber;
+        const isNewEnergy = !this.isNewEnergy;
         //删掉后面一位
-        if (!isNewEnergy && value.length === 8) {
-          value = value.substr(0, value.length - 1);
+        if (!isNewEnergy && carNumber.length === 8) {
+          this.$emit('update:carNumber', carNumber.substr(0, carNumber.length - 1));
         }
-        this.$emit('newEnergy', {
-          isNewEnergy: !carNumber.isNewEnergy,
-          value
-        });
+        this.$emit('update:isNewEnergy', isNewEnergy);
       },
       //关闭键盘
       hide() {
@@ -124,32 +119,25 @@
       },
       //删除
       del() {
-        const carNumber = this.carNumber.value;
+        const carNumber = this.carNumber;
         if (carNumber.length < 1) return;
-        this.$emit('delNumber', carNumber.substr(0, carNumber.length - 1));
+        this.$emit('update:carNumber', carNumber.substr(0, carNumber.length - 1));
       },
       //点击数字
       clickNumber(number, index) {
         const carNumber = this.carNumber;
-        //不存在输入源，跳出
-        if (!carNumber) return;
-        const oldNumber = carNumber.value;
+        const isNewEnergy = this.isNewEnergy;
+        const oldNumber = carNumber;
         //输入完省份地区才能输入数字
         if (index === 0 && oldNumber.length < 2) return;
         //新能源规则
-        if ((!carNumber.isNewEnergy && oldNumber.length === 7) ||
-          (carNumber.isNewEnergy && oldNumber.length === 8)) {
-          return;
-        }
-        let newNumber = oldNumber;
-        newNumber += number;
-        this.$emit('clickNumber', newNumber);
+        if ((!isNewEnergy && oldNumber.length === 7) || (isNewEnergy && oldNumber.length === 8)) return;
+        this.$emit('update:carNumber', oldNumber + number);
       },
       //完成按钮
       result() {
         //关闭键盘
         this.hide();
-        this.$emit('result', this.carNumber.value);
       }
     }
   }

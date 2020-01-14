@@ -12,25 +12,15 @@
     </div>
 
     <!-- 数字键盘 -->
-    <BmpNumberKeyboard
-            :number="number"
-            :visible.sync="isShowKeyboard"
-            @clickNumber="changeNumber"
-            @delNumber="changeNumber"
-            @closeKeyboard="closeKeyboard"
-    />
+    <BmpNumberKeyboard :number.sync="number.value" :visible.sync="isShowKeyboard"/>
 
   </div>
 </template>
 
 <script>
-  import BmpNumberKeyboard from '$components/BmpNumberKeyboard/BmpNumberKeyboard';
 
   export default {
     name: "number-keyboard",
-    components: {
-      BmpNumberKeyboard
-    },
     data() {
       return {
         number: {
@@ -43,7 +33,7 @@
           value: ''
         },
         //显示键盘状态
-        isShowKeyboard: true
+        isShowKeyboard: false
       }
     },
     methods: {

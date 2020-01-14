@@ -12,26 +12,16 @@
     </div>
 
     <!-- 数字键盘 -->
-    <BmpCarNumberKeyboard
-            :visible.sync="isShowKeyboard"
-            :carNumber="number"
-            @clickNumber="changeNumber"
-            @delNumber="changeNumber"
-            @closeKeyboard="closeKeyboard"
-            @newEnergy="newEnergy"
-    />
+    <BmpCarNumberKeyboard :visible.sync="isShowKeyboard" :carNumber.sync="number.value"
+                          :isNewEnergy.sync="number.isNewEnergy"/>
 
   </div>
 </template>
 
 <script>
-  import BmpCarNumberKeyboard from '$components/BmpCarNumberKeyboard/BmpCarNumberKeyboard';
 
   export default {
     name: "car-number-keyboard",
-    components: {
-      BmpCarNumberKeyboard
-    },
     data() {
       return {
         number: {
@@ -50,25 +40,10 @@
       }
     },
     methods: {
-      //使用新能源
-      newEnergy(data) {
-        const number = this.number;
-        number.isNewEnergy = data.isNewEnergy;
-        number.value = data.value;
-      },
       //选中某个数字
       focusNumber(number) {
         this.isShowKeyboard = true;
         this.number = number;
-      },
-
-      closeKeyboard(state) {
-        this.isShowKeyboard = state;
-      },
-
-      //修改数据
-      changeNumber(number) {
-        this.number.value = number;
       }
     }
   };

@@ -1,26 +1,7 @@
 import config from '@config';
 import utils from 'blue-utils';
 import { getCurrentPath } from '$mp-api/page';
-
-//查询分享黑名单
-function shareBlackListFilter(path) {
-  const homePath = config.path.home;
-  //配置的黑名单
-  const blackList = config.share.blackList;
-  for (let i = 0; i < blackList.length; i++) {
-    const item = blackList[i];
-    //匹配字符串类型
-    if (typeof item.path === 'string' && item.path === path) {
-      return item.sharePath || homePath;
-    } else if (item.path instanceof RegExp && item.path.test(path)) {
-      //通过正则匹配
-      return item.sharePath || homePath;
-    }
-  }
-  //没有查询到返回默认的地址
-  return path;
-}
-
+import { blackListFilter } from '$assets/js/black-list';
 
 export function shareInVue(Vue) {
   //分享地址生成
@@ -29,12 +10,14 @@ export function shareInVue(Vue) {
   //默认的分享，有需要的在自己的实例中使用onShareAppMessage
   Vue.mixin({
     onShareAppMessage() {
-      return {
+      const share = {
         title: config.share.title,
         imageUrl: config.share.imgUrl,
         //分享走最后的path
         path: sharePath()
       };
+      console.log(`分享参数:`, share);
+      return share;
     }
   });
 }
@@ -48,9 +31,13 @@ export function sharePath(path) {
   //object params
   const objQuery = utils.parseParams(utils.getLinkParams(currentPath));
   //带入忽略参数地址
-  const sharePath = shareBlackListFilter(_path);
+  const sharePath = blackListFilter({
+    path: _path,
+    blackList: config.share.blackList
+  });
   //返回链接
-  return `${sharePath}?${encodeURIComponent(utils.stringifyParams(objQuery))}`;
+  const query = utils.stringifyParams(objQuery);
+  return `${sharePath}${query ? `?${encodeURIComponent(query)}` : ''}`;
 }
 
 

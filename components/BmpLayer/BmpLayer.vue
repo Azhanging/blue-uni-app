@@ -48,5 +48,19 @@
 <style scoped lang="scss">
   .bmp-shade {
     transform: scale(0);
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .6);
+    opacity: 0;
+    .bmp-layer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 </style>

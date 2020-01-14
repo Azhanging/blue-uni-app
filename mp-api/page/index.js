@@ -2,6 +2,7 @@ import config from '@config';
 import store from '@store';
 import utils from 'blue-utils';
 import { isRegisterPage } from '$mp-api/register';
+import { blackListFilter } from '$assets/js/black-list';
 
 //页面参数
 export let query = {};
@@ -16,9 +17,9 @@ export function getCurrentPath() {
   const lastPage = getCurrentPage();
   if (lastPage) {
     //获取到参数
-    const queryString = utils.stringifyParams(lastPage.options || {});
+    const query = utils.stringifyParams(lastPage.options || {});
     //微信的getCurrentPages方法的route地址首位不带/
-    return `/${lastPage.route}${queryString ? `?${queryString}` : ''}`;
+    return `/${lastPage.route}${query ? `?${query}` : ''}`;
   }
   return config.path.home;
 }
@@ -31,20 +32,16 @@ export function getCurrentPage() {
 
 //设置最后一个路由地址
 export function setLastPath(path = '') {
-  //存在注册前的地址，返回到对应的位置，否则跳回到首页去
-  const lastPath = store.state.lastPath;
-  if (isRegisterPage(path)) {
-    store.commit('SET_LAST_PATH', lastPath || config.path.home);
-  } else {
-    store.commit('SET_LAST_PATH', path);
-  }
+  //设置最后的路由，过滤掉地址信息
+  store.commit('SET_LAST_PATH', blackListFilter({
+    path,
+    blackList: config.pages.lastPathBlackList
+  }));
 }
 
 //回到设置的最后一个路由上
-export function backLastRoute(opts = {
-  type: 'nav'
-}) {
-  const { type = 'nav' } = opts;
+export function backLastRoute(opts = {}) {
+  const { type } = opts;
   const url = store.state.lastPath;
   switch (type) {
     case 'launch':
@@ -61,11 +58,4 @@ export function backLastRoute(opts = {
         url
       });
   }
-}
-
-//回到设置的最后一个路由上
-export function reLaunchLastRoute() {
-  uni.reLaunch({
-    url: store.state.lastPath
-  });
 }

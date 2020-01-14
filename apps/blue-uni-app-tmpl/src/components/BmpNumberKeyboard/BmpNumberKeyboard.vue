@@ -52,14 +52,16 @@
       },
       //输入的数字
       number: {
-        type: Object,
-        default() {
-          return {
-            value: '',
-            min: 0,
-            max: 99999
-          };
-        }
+        type: [String, Number],
+        default: ''
+      },
+      min: {
+        type: Number,
+        default: 1
+      },
+      max: {
+        type: Number,
+        default: 99999
       },
       //只能输入整数
       isInt: {
@@ -98,14 +100,13 @@
       },
       //删除
       del() {
-        const number = this.number.value;
+        const number = this.number;
         if (number.length < 1) return;
-        this.$emit('delNumber', number.substr(0, number.length - 1));
+        this.$emit('update:number', number.substr(0, number.length - 1));
       },
       //点击数字
       clickNumber(number) {
-        if (!this.number) return;
-        const oldNumber = this.number.value;
+        const oldNumber = this.number;
         let newNumber = oldNumber;
         //首位为0,后面只能跟0
         if (oldNumber.length === 1 && oldNumber === '0' && number !== '.') return;
@@ -115,12 +116,12 @@
         if (!(number === `.` && /\./.test(oldNumber))) {
           newNumber += number;
         }
-        this.$emit('clickNumber', newNumber);
+        this.$emit('update:number', newNumber);
       },
       //完成按钮
       result() {
         this.hide();
-        this.$emit('result', this.number.value);
+        this.$emit('result', this.number);
       }
     }
   }

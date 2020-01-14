@@ -92,10 +92,8 @@
         <div class="bc-pd-15rpx bc-flex bc-flex-ai-c bc-flex-jc-c">
           switch:
           <BmpSwitch
-                  v-for="(status,index) in formSwitch"
-                  @change="(data)=>{changeSwitch(data)}"
-                  :value="status"
-                  :index="index"
+                  v-for="(item,index) in formSwitch"
+                  :status.sync="item.status"
                   :key="index"
           />
         </div>
