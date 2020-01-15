@@ -1,5 +1,5 @@
 <template>
-  <div class="bc-t-c bc-f-14rpx bc-pd-15rpx">
+  <div class="bc-t-c bc-f-28rpx bc-pd-30rpx">
     <div class="scroll-view-wrap">
       <scroll-view class="scroll-view" scroll-y="true" @scrolltolower="scrollLower"
                    :lower-threshold="loadMore.lowerThreshold">
@@ -33,55 +33,55 @@
         </div>
 
         <!-- 没登录显示登录按钮 -->
-        <div class="bc-row bc-pd-10rpx" v-if="!isLogin">
+        <div class="bc-row bc-pd-20rpx" v-if="!isLogin">
           <button @click="login" class="bc-btn bc-btn-base">
             登录
           </button>
         </div>
 
-        <div class="bc-row bc-pd-10rpx">
+        <div class="bc-row bc-pd-20rpx">
           <button class="bc-btn bc-btn-base" @click="scanCode">
             扫一扫
           </button>
         </div>
 
-        <div class="bc-row bc-pd-10rpx">
+        <div class="bc-row bc-pd-20rpx">
           <button class="bc-btn bc-btn-base" @click="saveImg">
             保存图片
           </button>
         </div>
 
-        <div class="bc-row bc-pd-10rpx">
+        <div class="bc-row bc-pd-20rpx">
           <button class="bc-btn bc-btn-base" @click="chooseInvoiceTitle">
             发票抬头
           </button>
         </div>
 
-        <div class="bc-row bc-pd-10rpx">
+        <div class="bc-row bc-pd-20rpx">
           <navigator url="/pages/map/index" class="bc-btn bc-btn-base">
             地图
           </navigator>
         </div>
 
-        <div class="bc-row bc-pd-10rpx">
+        <div class="bc-row bc-pd-20rpx">
           <navigator url="/pages/upload-img/index" class="bc-btn bc-btn-base">
             上传图片
           </navigator>
         </div>
 
-        <div class="bc-row bc-pd-10rpx">
+        <div class="bc-row bc-pd-20rpx">
           <navigator url="/pages/number-keyboard/index" class="bc-btn bc-btn-base">
             数字键盘
           </navigator>
         </div>
 
-        <div class="bc-row bc-pd-10rpx">
+        <div class="bc-row bc-pd-20rpx">
           <navigator url="/pages/car-number-keyboard/index" class="bc-btn bc-btn-base">
             车牌键盘
           </navigator>
         </div>
 
-        <div class="bc-row bc-pd-10rpx">
+        <div class="bc-row bc-pd-20rpx">
           <!-- 微信客服 -->
           <button open-type="contact" session-from="weapp" class="bc-btn bc-btn-base">
             客服测试
@@ -91,14 +91,14 @@
         <!-- switch -->
         <div class="bc-pd-15rpx bc-flex bc-flex-ai-c bc-flex-jc-c">
           switch:
-          <BmpSwitch
+          <BcSwitch
                   v-for="(item,index) in formSwitch"
                   :status.sync="item.status"
                   :key="index"
           />
         </div>
 
-        <div class="bc-row bc-pd-10rpx">
+        <div class="bc-row bc-pd-20rpx">
           <div v-for="item in loadMore.data.list" :key="item">
             {{item}}
           </div>
@@ -112,36 +112,36 @@
     </div>
 
     <!-- 测试animation -->
-    <div class="bc-row bc-pd-10rpx">
+    <div class="bc-row bc-pd-20rpx">
       <button class="bc-btn bc-btn-base" @click="toggleAction">
-        测试animation || BmpActionSheet组件
+        测试animation || BcActionSheet组件
       </button>
     </div>
 
     <!-- 测试animation -->
-    <div class="bc-row bc-pd-10rpx">
+    <div class="bc-row bc-pd-20rpx">
       <button class="bc-btn bc-btn-base" @click="toggleLayer">
-        测试BmpLayer组件
+        测试BcLayer组件
       </button>
     </div>
 
     <!-- 询问层 -->
-    <BmpActionSheet :visible.sync="actionShow" title="BmpActionSheet">
+    <BcActionSheet :visible.sync="actionShow" title="BcActionSheet">
       <scroll-view scroll-y="true" style="height:500rpx;">
         <ul class="bc-reset-ul">
-          <li v-for="i in list" :key="i" class="bc-pd-10rpx">
+          <li v-for="i in list" :key="i" class="bc-pd-20rpx">
             选项{{i}}
           </li>
         </ul>
       </scroll-view>
-    </BmpActionSheet>
+    </BcActionSheet>
 
     <!-- 弹层 -->
-    <BmpLayer :visible.sync="layerShow">
+    <BcLayer :visible.sync="layerShow">
       <div class="bc-bg-white" style="width:200rpx;height:200rpx;">
         layer 内容
       </div>
-    </BmpLayer>
+    </BcLayer>
 
   </div>
 </template>
@@ -151,8 +151,9 @@
   import { login } from '$mp-api/login';
   import Vuex from 'vuex';
   import scrollLower from '$mixin-components/scroll-lower';
+  import BcSwitch from '$components/Bc/Form/BcSwitch';
 
-  const { mapState, mapGetters } = Vuex;
+  const { mapState } = Vuex;
 
   export default {
     mixins: [scrollLower({
@@ -167,6 +168,9 @@
         }
       }
     })],
+    components: {
+      BcSwitch
+    },
     data() {
       return {
         list: (() => {

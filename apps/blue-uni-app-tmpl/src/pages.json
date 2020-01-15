@@ -44,9 +44,9 @@
       }
     },
     {
-      "path": "pages/bmp/index",
+      "path": "pages/bc/index",
       "style": {
-        "navigationBarTitleText": "Bmp组件"
+        "navigationBarTitleText": "Bc组件"
       }
     }
   ],
