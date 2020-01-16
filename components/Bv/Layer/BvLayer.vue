@@ -1,8 +1,8 @@
 <template>
   <!-- 组件通过默认的animation关闭显示 -->
   <!-- 弹层 -->
-  <div class="bv-shade" :animation="animation" @click.stop="shadeClick">
-    <div class="bv-layer">
+  <div class="bz-shade" :animation="animation" @click.stop="shadeClick">
+    <div class="bz-layer">
       <slot/>
     </div>
   </div>
@@ -46,7 +46,7 @@
 </script>
 
 <style scoped lang="scss">
-  .bv-shade {
+  .bz-shade {
     transform: scale(0);
     position: fixed;
     z-index: 10000;
@@ -56,7 +56,7 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, .6);
     opacity: 0;
-    .bv-layer {
+    .bz-layer {
       position: absolute;
       top: 50%;
       left: 50%;

@@ -3,7 +3,7 @@
     <div class="bz-form-item-label" v-if="label">
       {{label}}
     </div>
-    <div class="form-item-elm">
+    <div class="bz-form-item-elm">
       <slot name="input">
         <input :type="type" :placeholder="placeholder" :maxlength="maxlength" v-model="currentValue"/>
       </slot>
@@ -18,7 +18,7 @@
   import { formModelMixin } from './form-mixins';
 
   export default {
-    name: "bz-input",
+    name: "bv-input",
     mixins: [formModelMixin()],
     props: {
       type: {

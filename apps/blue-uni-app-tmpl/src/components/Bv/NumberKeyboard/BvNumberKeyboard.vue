@@ -1,9 +1,9 @@
 <template>
   <!-- 数字键盘 -->
-  <div class="number-keyboard" :animation="animation">
+  <div class="bz-number-keyboard" :animation="animation">
 
     <!-- 操作菜单 -->
-    <div class="bz-row bz-t-r menu">
+    <div class="bz-row bz-t-r bz-number-keyboard-menu">
       <span class="bz-inline-block bz-t-base bz-pd-10rpx" @click.stop="hide">
         关闭
       </span>
@@ -129,7 +129,7 @@
 
 <style scoped lang="scss">
   //数字键盘
-  .number-keyboard {
+  .bz-number-keyboard {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -139,7 +139,7 @@
     opacity: 0;
 
     //键盘菜单
-    .menu {
+    .bz-number-keyboard-menu {
       border-bottom: 1px solid #f4f4f4;
     }
 
@@ -179,6 +179,5 @@
       height: 100%;
       border-bottom: 1px solid #f4f4f4;
     }
-
   }
 </style>
