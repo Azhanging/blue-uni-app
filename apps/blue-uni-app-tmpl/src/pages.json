@@ -48,6 +48,12 @@
       "style": {
         "navigationBarTitleText": "Bv组件"
       }
+    },
+    {
+      "path": "pages/webview/index",
+      "style": {
+        "navigationBarTitleText": "webview"
+      }
     }
   ],
   "globalStyle": {

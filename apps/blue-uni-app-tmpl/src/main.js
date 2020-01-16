@@ -10,10 +10,10 @@ import '@css/blue-zone.scss';
 import '$assets/css/app.scss';
 
 /*------ 公共组件START -------*/
-import BvActionSheet from '$components/Bv/ActionSheet/BvActionSheet';
-import BvLayer from '$components/Bv/Layer/BvLayer';
-import BvCarNumberKeyboard from '$components/Bv/CarNumberKeyboard/BvCarNumberKeyboard';
-import BvNumberKeyboard from '$components/Bv/NumberKeyboard/BvNumberKeyboard';
+import BvActionSheet from '$components/Bv/BvActionSheet/BvActionSheet';
+import BvLayer from '$components/Bv/BvLayer/BvLayer';
+import BvCarNumberKeyboard from '$components/Bv/BvCarNumberKeyboard/BvCarNumberKeyboard';
+import BvNumberKeyboard from '$components/Bv/BvNumberKeyboard/BvNumberKeyboard';
 
 //注册全局的组件
 Vue.component('BvActionSheet', BvActionSheet);

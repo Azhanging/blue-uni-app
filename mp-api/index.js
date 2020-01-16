@@ -11,6 +11,7 @@ import { uploadInVue } from './upload';
 import { invoiceInVue } from './invoice';
 import { toastInVue } from './toast';
 import { loadingInVue } from './loading';
+import { webViewInVue } from './webview';
 
 export function weChatInVue(Vue) {
   //检查更新小程序版本
@@ -39,6 +40,8 @@ export function weChatInVue(Vue) {
   uploadInVue(Vue);
   //发票
   invoiceInVue(Vue);
+  //webView相关
+  webViewInVue(Vue);
 }
 
 export default weChatInVue;

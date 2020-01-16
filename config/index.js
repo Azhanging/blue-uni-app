@@ -19,7 +19,8 @@ const config = {
 
   //路径相关
   path: {
-    home: "/pages/index/index"       //首页地址
+    home: "/pages/index/index",       //首页地址
+    webview: "/pages/webview/index"
   },
 
   //页面相关

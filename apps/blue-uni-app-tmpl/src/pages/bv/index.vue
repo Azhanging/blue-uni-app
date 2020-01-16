@@ -21,7 +21,7 @@
 
 <script>
 
-  import BvInput from '$components/Bv/Form/BvInput';
+  import BvInput from '$components/Bv/BvForm/BvInput';
 
   export default {
     name: "index",

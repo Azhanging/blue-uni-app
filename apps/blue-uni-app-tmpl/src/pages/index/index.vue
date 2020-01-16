@@ -39,6 +39,13 @@
           </button>
         </div>
 
+        <!-- 没登录显示登录按钮 -->
+        <div class="bz-row bz-pd-20rpx">
+          <button @click="openWebView" class="bz-btn bz-btn-base">
+            webview
+          </button>
+        </div>
+
         <div class="bz-row bz-pd-20rpx">
           <button class="bz-btn bz-btn-base" @click="scanCode">
             扫一扫
@@ -151,7 +158,7 @@
   import { login } from '$mp-api/login';
   import Vuex from 'vuex';
   import scrollLower from '$mixin-components/scroll-lower';
-  import BvSwitch from '$components/Bv/Form/BvSwitch';
+  import BvSwitch from '$components/Bv/BvForm/BvSwitch';
 
   const { mapState } = Vuex;
 
@@ -208,6 +215,13 @@
       login() {
         this.$login().then(() => {
           console.log('登录成功');
+        });
+      },
+
+      openWebView() {
+        this.$webView.navigateTo({
+          src: 'https://mp.weixin.qq.com/s/GwC0FQ8yuzXtqrVKZEMZBA',
+          title: '新闻'
         });
       },
 
