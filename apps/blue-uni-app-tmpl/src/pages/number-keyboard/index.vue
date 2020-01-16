@@ -1,12 +1,12 @@
 <template>
-  <div class="bc-t-333 bc-f-14rpx bc-t-c bc-pd-10rpx">
+  <div class="bz-t-333 bz-f-14rpx bz-t-c bz-pd-10rpx">
 
     <!-- 测试键盘输入 -->
-    <div class="bc-flex">
-      <div class="bc-flex-1" @click="focusNumber(number0)">
+    <div class="bz-flex">
+      <div class="bz-flex-1" @click="focusNumber(number0)">
         number-0:{{number0.value}}
       </div>
-      <div class="bc-flex-1" @click="focusNumber(number1)">
+      <div class="bz-flex-1" @click="focusNumber(number1)">
         number-1:{{number1.value}}
       </div>
     </div>

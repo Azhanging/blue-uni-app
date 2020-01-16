@@ -10,16 +10,16 @@ import '@css/blue-zone.scss';
 import '$assets/css/app.scss';
 
 /*------ 公共组件START -------*/
-import BcActionSheet from '$components/Bc/ActionSheet/BcActionSheet';
-import BcLayer from '$components/Bc/Layer/BcLayer';
-import BcCarNumberKeyboard from '$components/Bc/CarNumberKeyboard/BcCarNumberKeyboard';
-import BcNumberKeyboard from '$components/Bc/NumberKeyboard/BcNumberKeyboard';
+import BvActionSheet from '$components/Bv/ActionSheet/BvActionSheet';
+import BvLayer from '$components/Bv/Layer/BvLayer';
+import BvCarNumberKeyboard from '$components/Bv/CarNumberKeyboard/BvCarNumberKeyboard';
+import BvNumberKeyboard from '$components/Bv/NumberKeyboard/BvNumberKeyboard';
 
 //注册全局的组件
-Vue.component('BcActionSheet', BcActionSheet);
-Vue.component('BcLayer', BcLayer);
-Vue.component('BcCarNumberKeyboard', BcCarNumberKeyboard);
-Vue.component('BcNumberKeyboard', BcNumberKeyboard);
+Vue.component('BvActionSheet', BvActionSheet);
+Vue.component('BvLayer', BvLayer);
+Vue.component('BvCarNumberKeyboard', BvCarNumberKeyboard);
+Vue.component('BvNumberKeyboard', BvNumberKeyboard);
 /*------ 公共组件END -------*/
 
 //使用插件到Vue，相对于公共的插件

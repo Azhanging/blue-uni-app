@@ -1,6 +1,6 @@
 <template>
-  <div class="bc-form-item">
-    <div class="bc-form-item-label" v-if="label">
+  <div class="bz-form-item">
+    <div class="bz-form-item-label" v-if="label">
       {{label}}
     </div>
     <div class="form-item-elm">
@@ -18,7 +18,7 @@
   import { formModelMixin } from './form-mixins';
 
   export default {
-    name: "bc-input",
+    name: "bz-input",
     mixins: [formModelMixin()],
     props: {
       type: {

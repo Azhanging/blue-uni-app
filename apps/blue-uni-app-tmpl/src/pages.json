@@ -44,9 +44,9 @@
       }
     },
     {
-      "path": "pages/bc/index",
+      "path": "pages/bv/index",
       "style": {
-        "navigationBarTitleText": "Bc组件"
+        "navigationBarTitleText": "Bv组件"
       }
     }
   ],

@@ -3,34 +3,34 @@
   <div class="number-keyboard" :animation="animation">
 
     <!-- 操作菜单 -->
-    <div class="bc-row bc-t-r menu">
-      <span class="bc-inline-block bc-t-base bc-pd-10rpx" @click.stop="hide">
+    <div class="bz-row bz-t-r menu">
+      <span class="bz-inline-block bz-t-base bz-pd-10rpx" @click.stop="hide">
         关闭
       </span>
     </div>
 
-    <div class="bc-flex bc-flex-jc-c">
+    <div class="bz-flex bz-flex-jc-c">
 
       <!-- 数字操作键盘 -->
-      <div class="bc-flex-3">
+      <div class="bz-flex-3">
         <div class="key-row" v-for="(keys,index) in numberKey" :key="index">
           <div class="key-btn" v-for="(keyNumber,_index) in keys" :key="_index"
-               :hover-class="keyNumber !== '' && 'bc-btn-hover'" @click.stop="clickNumber(keyNumber)">
+               :hover-class="keyNumber !== '' && 'bz-btn-hover'" @click.stop="clickNumber(keyNumber)">
             {{ (isInt && keyNumber === '.') ? '' : keyNumber }}
           </div>
         </div>
       </div>
 
       <!-- 其他操作 -->
-      <div class="bc-flex-1">
-        <div class="bc-flex bc-flex-d-c bc-flex-jc-c bc-flex-ai-c other-btn">
-          <div class="bc-flex-1 bc-w-100" @click.stop="del">
-            <div class="bc-flex bc-flex-jc-c bc-flex-d-c del-btn" hover-class="bc-btn-hover">
+      <div class="bz-flex-1">
+        <div class="bz-flex bz-flex-d-c bz-flex-jc-c bz-flex-ai-c other-btn">
+          <div class="bz-flex-1 bz-w-100" @click.stop="del">
+            <div class="bz-flex bz-flex-jc-c bz-flex-d-c del-btn" hover-class="bz-btn-hover">
               删除
             </div>
           </div>
-          <div class="bc-flex-1 bc-w-100" @click.stop="result">
-            <div class="bc-flex bc-flex-jc-c bc-flex-d-c result-btn" hover-class="bc-btn-hover">
+          <div class="bz-flex-1 bz-w-100" @click.stop="result">
+            <div class="bz-flex bz-flex-jc-c bz-flex-d-c result-btn" hover-class="bz-btn-hover">
               确定
             </div>
           </div>

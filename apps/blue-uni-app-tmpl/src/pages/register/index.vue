@@ -1,16 +1,16 @@
 <template>
-  <div class="bc-pd-14rp">
-    <div class="bc-t-c">
-      <div class="bc-pd-14rp">
-        <button class="bc-btn bc-btn-base" open-type="getUserInfo" @getuserinfo="getUserInfo">
+  <div class="bz-pd-14rp">
+    <div class="bz-t-c">
+      <div class="bz-pd-14rp">
+        <button class="bz-btn bz-btn-base" open-type="getUserInfo" @getuserinfo="getUserInfo">
           授权登录
         </button>
       </div>
       <div v-if="needBindMember">
-        <button class="bc-btn bc-btn-base" open-type="getPhoneNumber" @getphonenumber="getPhoneNumber">
+        <button class="bz-btn bz-btn-base" open-type="getPhoneNumber" @getphonenumber="getPhoneNumber">
           快速登录
         </button>
-        <navigator url="/pages/bind-phone/index" class="bc-btn bc-btn-base">
+        <navigator url="/pages/bind-phone/index" class="bz-btn bz-btn-base">
           手机号绑定登录
         </navigator>
       </div>

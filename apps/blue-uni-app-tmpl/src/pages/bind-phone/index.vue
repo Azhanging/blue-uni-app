@@ -1,16 +1,16 @@
 <template>
-  <div class="bc-row bc-f-14rpx bc-t-c">
-    <div class="bc-flex">
-      <input type="text" class="bc-input bc-flex-1" placeholder="请输入手机号" v-model="form.phone">
-      <button @click="sendCode">
+  <div class="bz-row bz-f-28rpx bz-t-c">
+    <div class="bz-flex">
+      <input type="text" class="bz-input bz-flex-1" placeholder="请输入手机号" v-model="form.phone">
+      <button @click="sendCode" class="bz-btn bz-btn-base">
         {{sendCodeText}}
       </button>
     </div>
-    <div class="bc-flex">
-      <input type="text" class="bc-flex-1 bc-input" placeholder="请输入短信验证码" v-model="form.code">
+    <div class="bz-flex">
+      <input type="text" class="bz-flex-1 bz-input" placeholder="请输入短信验证码" v-model="form.code">
     </div>
-    <div class="bc-t-c">
-      <button class="bc-btn bc-btn-base" @click="login">
+    <div class="bz-t-c">
+      <button class="bz-btn bz-btn-base" @click="login">
         登录
       </button>
     </div>

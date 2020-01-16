@@ -1,5 +1,5 @@
 <template>
-  <div class="bc-t-c bc-f-28rpx bc-pd-30rpx">
+  <div class="bz-t-c bz-f-28rpx bz-pd-30rpx">
     <div class="scroll-view-wrap">
       <scroll-view class="scroll-view" scroll-y="true" @scrolltolower="scrollLower"
                    :lower-threshold="loadMore.lowerThreshold">
@@ -13,12 +13,12 @@
         <div v-if="!hasUserInfo">
           <!-- 获取授权 -->
           <button open-type="getAuthorize" @getAuthorize="$authorizeUserInfo" scope="userInfo"
-                  class="bc-btn bc-btn-danger"
+                  class="bz-btn bz-btn-danger"
                   v-if="platform === 'my'">
             获取授权
           </button>
           <!-- 获取授权 -->
-          <button open-type="getUserInfo" @getuserinfo="$authorizeUserInfo" class="bc-btn bc-btn-danger"
+          <button open-type="getUserInfo" @getuserinfo="$authorizeUserInfo" class="bz-btn bz-btn-danger"
                   v-else-if="platform === 'wx'">
             获取授权
           </button>
@@ -33,72 +33,72 @@
         </div>
 
         <!-- 没登录显示登录按钮 -->
-        <div class="bc-row bc-pd-20rpx" v-if="!isLogin">
-          <button @click="login" class="bc-btn bc-btn-base">
+        <div class="bz-row bz-pd-20rpx" v-if="!isLogin">
+          <button @click="login" class="bz-btn bz-btn-base">
             登录
           </button>
         </div>
 
-        <div class="bc-row bc-pd-20rpx">
-          <button class="bc-btn bc-btn-base" @click="scanCode">
+        <div class="bz-row bz-pd-20rpx">
+          <button class="bz-btn bz-btn-base" @click="scanCode">
             扫一扫
           </button>
         </div>
 
-        <div class="bc-row bc-pd-20rpx">
-          <button class="bc-btn bc-btn-base" @click="saveImg">
+        <div class="bz-row bz-pd-20rpx">
+          <button class="bz-btn bz-btn-base" @click="saveImg">
             保存图片
           </button>
         </div>
 
-        <div class="bc-row bc-pd-20rpx">
-          <button class="bc-btn bc-btn-base" @click="chooseInvoiceTitle">
+        <div class="bz-row bz-pd-20rpx">
+          <button class="bz-btn bz-btn-base" @click="chooseInvoiceTitle">
             发票抬头
           </button>
         </div>
 
-        <div class="bc-row bc-pd-20rpx">
-          <navigator url="/pages/map/index" class="bc-btn bc-btn-base">
+        <div class="bz-row bz-pd-20rpx">
+          <navigator url="/pages/map/index" class="bz-btn bz-btn-base">
             地图
           </navigator>
         </div>
 
-        <div class="bc-row bc-pd-20rpx">
-          <navigator url="/pages/upload-img/index" class="bc-btn bc-btn-base">
+        <div class="bz-row bz-pd-20rpx">
+          <navigator url="/pages/upload-img/index" class="bz-btn bz-btn-base">
             上传图片
           </navigator>
         </div>
 
-        <div class="bc-row bc-pd-20rpx">
-          <navigator url="/pages/number-keyboard/index" class="bc-btn bc-btn-base">
+        <div class="bz-row bz-pd-20rpx">
+          <navigator url="/pages/number-keyboard/index" class="bz-btn bz-btn-base">
             数字键盘
           </navigator>
         </div>
 
-        <div class="bc-row bc-pd-20rpx">
-          <navigator url="/pages/car-number-keyboard/index" class="bc-btn bc-btn-base">
+        <div class="bz-row bz-pd-20rpx">
+          <navigator url="/pages/car-number-keyboard/index" class="bz-btn bz-btn-base">
             车牌键盘
           </navigator>
         </div>
 
-        <div class="bc-row bc-pd-20rpx">
+        <div class="bz-row bz-pd-20rpx">
           <!-- 微信客服 -->
-          <button open-type="contact" session-from="weapp" class="bc-btn bc-btn-base">
+          <button open-type="contact" session-from="weapp" class="bz-btn bz-btn-base">
             客服测试
           </button>
         </div>
 
         <!-- switch -->
-        <div class="bc-pd-15rpx bc-flex bc-flex-ai-c bc-flex-jc-c">
+        <div class="bz-pd-15rpx bz-flex bz-flex-ai-c bz-flex-jc-c">
           switch:
-          <BcSwitch
+          <BvSwitch
                   v-for="(item,index) in formSwitch"
                   :status.sync="item.status"
                   :key="index"
           />
         </div>
 
-        <div class="bc-row bc-pd-20rpx">
+        <div class="bz-row bz-pd-20rpx">
           <div v-for="item in loadMore.data.list" :key="item">
             {{item}}
           </div>
@@ -112,36 +112,36 @@
     </div>
 
     <!-- 测试animation -->
-    <div class="bc-row bc-pd-20rpx">
-      <button class="bc-btn bc-btn-base" @click="toggleAction">
-        测试animation || BcActionSheet组件
+    <div class="bz-row bz-pd-20rpx">
+      <button class="bz-btn bz-btn-base" @click="toggleAction">
+        测试animation || BvActionSheet组件
       </button>
     </div>
 
     <!-- 测试animation -->
-    <div class="bc-row bc-pd-20rpx">
-      <button class="bc-btn bc-btn-base" @click="toggleLayer">
-        测试BcLayer组件
+    <div class="bz-row bz-pd-20rpx">
+      <button class="bz-btn bz-btn-base" @click="toggleLayer">
+        测试BvLayer组件
       </button>
     </div>
 
     <!-- 询问层 -->
-    <BcActionSheet :visible.sync="actionShow" title="BcActionSheet">
+    <BvActionSheet :visible.sync="actionShow" title="BvActionSheet">
       <scroll-view scroll-y="true" style="height:500rpx;">
-        <ul class="bc-reset-ul">
-          <li v-for="i in list" :key="i" class="bc-pd-20rpx">
+        <ul class="bz-reset-ul">
+          <li v-for="i in list" :key="i" class="bz-pd-20rpx">
             选项{{i}}
           </li>
         </ul>
       </scroll-view>
-    </BcActionSheet>
+    </BvActionSheet>
 
     <!-- 弹层 -->
-    <BcLayer :visible.sync="layerShow">
-      <div class="bc-bg-white" style="width:200rpx;height:200rpx;">
+    <BvLayer :visible.sync="layerShow">
+      <div class="bz-bg-white" style="width:200rpx;height:200rpx;">
         layer 内容
       </div>
-    </BcLayer>
+    </BvLayer>
 
   </div>
 </template>
@@ -151,7 +151,7 @@
   import { login } from '$mp-api/login';
   import Vuex from 'vuex';
   import scrollLower from '$mixin-components/scroll-lower';
-  import BcSwitch from '$components/Bc/Form/BcSwitch';
+  import BvSwitch from '$components/Bv/Form/BvSwitch';
 
   const { mapState } = Vuex;
 
@@ -169,7 +169,7 @@
       }
     })],
     components: {
-      BcSwitch
+      BvSwitch
     },
     data() {
       return {
