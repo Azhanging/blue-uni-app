@@ -71,7 +71,11 @@ export function login(opts = {}) {
           //login success
           if (!/ok/g.test(res.errMsg)) {
             //登录失败，提醒重新登录
-            return showLoginModal(opts);
+            showLoginModal().then(()=>{
+              login(opts).then((res) => {
+                resolve(res);
+              });
+            });
           }
           //发送login code
           sendLoginCode({
@@ -87,13 +91,21 @@ export function login(opts = {}) {
             }
           }).catch(() => {
             //登录失败，提醒重新登录
-            showLoginModal(opts);
+            showLoginModal().then(()=>{
+              login(opts).then((res) => {
+                resolve(res);
+              });
+            });
           });
         },
         fail() {
           hideLoading();
           //登录失败，提醒重新登录
-          showLoginModal(opts);
+          showLoginModal().then(()=>{
+            login(opts).then((res) => {
+              resolve(res);
+            });
+          });
         }
       });
     }
@@ -147,13 +159,15 @@ export function setLoginStorage(data) {
 //clear login session in storage
 export function clearLoginStatus() {
   //清空所有的存储
-  uni.clearStorageSync();
+  utils.each(config.login.storage, (key, _key) => {
+    uni.removeStorageSync(_key);
+  });
   //重新设置登录状态
   store.commit('SET_LOGIN', false);
 }
 
 //提醒重新重新登录
-function showLoginModal(opts) {
+function showLoginModal() {
   return new Promise((resolve, reject) => {
     showModal({
       content: '登录失败',
@@ -161,9 +175,7 @@ function showLoginModal(opts) {
       confirmText: '重新登录'
     }).then((res) => {
       if (res.confirm === true) {
-        login(opts).then((res) => {
-          resolve(res);
-        });
+        resolve();
       } else if (res.cancel === false) {
         reject();
       }

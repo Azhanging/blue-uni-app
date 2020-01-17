@@ -21,16 +21,16 @@
         <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/bv/index.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="261">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mp-api/request/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
+            <state relative-caret-position="-116">
               <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
@@ -90,8 +90,30 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+            <state relative-caret-position="207">
+              <caret line="135" column="14" lean-forward="false" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mp-api/login/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="505">
+              <caret line="110" column="5" lean-forward="true" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/config/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="555">
+              <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -109,26 +131,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1044">
-              <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="button-mixin.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/css/blue-zone/src/form/button/button-mixin.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -142,8 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>carNumber</find>
-      <find>isNewEnergy</find>
       <find>clickNumber</find>
       <find>closeKeyboard</find>
       <find>length</find>
@@ -172,6 +172,8 @@
       <find>bz-</find>
       <find>.navigateTo</find>
       <find>uni.navigateTo</find>
+      <find>shoeLogin</find>
+      <find>showLoginModal</find>
     </findStrings>
     <replaceStrings>
       <replace>mp.</replace>
@@ -214,7 +216,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/components/BmpCarNumberKeyboard/BmpCarNumberKeyboard.vue" />
         <option value="$PROJECT_DIR$/components/BmpNumberKeyboard/BmpNumberKeyboard.vue" />
         <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/number-keyboard/index.vue" />
         <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/car-number-keyboard/index.vue" />
@@ -256,7 +257,6 @@
         <option value="$PROJECT_DIR$/components/Bv/NumberKeyboard/BvNumberKeyboard.vue" />
         <option value="$PROJECT_DIR$/assets/css/blue-zone/src/form/button/index.scss" />
         <option value="$PROJECT_DIR$/assets/css/blue-zone/src/form/button/button-mixin.scss" />
-        <option value="$PROJECT_DIR$/config/index.js" />
         <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages.json" />
         <option value="$PROJECT_DIR$/mp-api/webview/index.js" />
         <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/webview/index.vue" />
@@ -265,6 +265,8 @@
         <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/bv/index.vue" />
         <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/index/index.vue" />
         <option value="$PROJECT_DIR$/mp-api/request/index.js" />
+        <option value="$PROJECT_DIR$/config/index.js" />
+        <option value="$PROJECT_DIR$/mp-api/login/index.js" />
       </list>
     </option>
   </component>
@@ -303,8 +305,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1920" />
-    <option name="height" value="1100" />
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -334,13 +337,7 @@
             <path>
               <item name="blue-uni-app-program" type="b2602c69:ProjectViewProjectNode" />
               <item name="blue-uni-app-program" type="462c0819:PsiDirectoryNode" />
-              <item name="mp-api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blue-uni-app-program" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blue-uni-app-program" type="462c0819:PsiDirectoryNode" />
-              <item name="mp-api" type="462c0819:PsiDirectoryNode" />
-              <item name="request" type="462c0819:PsiDirectoryNode" />
+              <item name="apps" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -499,12 +496,12 @@
       <workItem from="1579049886962" duration="14615000" />
       <workItem from="1579073387077" duration="8914000" />
       <workItem from="1579135649695" duration="15192000" />
-      <workItem from="1579228412429" duration="17000" />
+      <workItem from="1579228412429" duration="4203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237635000" />
+    <option name="totallyTimeSpent" value="241821000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -533,6 +530,11 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../typescript/src/interface1.js" />
+      </list>
+    </option>
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.wxml" />
@@ -547,14 +549,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vue-config/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/blue-component/src/text/index.scss" />
     <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/assets/css/index.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -735,14 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1044">
@@ -805,18 +791,44 @@
     <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/bv/index.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mp-api/request/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
+        <state relative-caret-position="-116">
           <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="135" column="14" lean-forward="false" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp-api/login/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="110" column="5" lean-forward="true" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/config/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

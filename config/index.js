@@ -133,7 +133,7 @@ const config = {
 
   request: {
     options: {
-      data: "",
+      data: {},
       method: "GET",
       dataType: "json",
       responseType: "text",
