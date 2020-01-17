@@ -22,8 +22,7 @@ function setExtend(opts) {
   //合并域名
   opts.url = `${opts.baseUrl || config.url.base || ''}${opts.url}`;
 
-  return utils.extend({
-    ...(config.request.options || {}),
+  return utils.extend(config.request.options, {
     header: setRequestHeader(),
   }, opts);
 }
