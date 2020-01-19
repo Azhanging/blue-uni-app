@@ -1,5 +1,6 @@
 import config from '@config';
 import utils from 'blue-utils';
+import BlueQueuePipe from 'blue-queue-pipe';
 import store from '@store';
 import { setUserInfo } from '../user-info';
 import { apiLogin } from '$api';
@@ -14,6 +15,20 @@ export function loginInVue(Vue) {
   Vue.prototype.$login = login;
   Vue.prototype.$isLogin = isLogin;
 }
+
+//登录重连请求队列
+const loginRequestQueue = new BlueQueuePipe({
+  method: {
+    request() {
+      while (!this.isEmpty()) {
+        const loginRequest = this.dequeue();
+        loginRequest
+      }
+    }
+  }
+});
+//当前的登录进行状态
+let loginStatus = false;
 
 //check session
 function checkSession() {
@@ -47,7 +62,7 @@ export function login(opts = {}) {
     });
     const { requestOpts } = opts;
     //检查本地的登录状态，只在微信小程序中检查
-    if (checkLocalLogin() && (process.env.VUE_APP_PLATFORM === 'mp-weixin')) {
+    if (checkLocalLogin()) {
       hideLoading();
       //检查session
       checkSession().then(() => {
@@ -60,6 +75,18 @@ export function login(opts = {}) {
         });
       });
     } else {
+      //如果存在请求链，写入到队列中处理，去掉重复请求链路
+      if (requestOpts) {
+        loginRequestQueue.enqueue(() => {
+          request(requestOpts).then((res) => {
+            resolve(res);
+          });
+        });
+      }
+      //还在登录状态
+      if (loginStatus === true) return;
+      //设置登录状态
+      loginStatus = true;
       //微信登录
       uni.login({
         //微信的授权timeout
@@ -71,18 +98,20 @@ export function login(opts = {}) {
           //login success
           if (!/ok/g.test(res.errMsg)) {
             //登录失败，提醒重新登录
-            showLoginModal().then(()=>{
-              login(opts).then((res) => {
-                resolve(res);
-              });
+            showLoginModal({
+              opts,
+              resolve
             });
           }
           //发送login code
           sendLoginCode({
             params: utils.hook(null, config.login.params, [res]) || {}
           }).then(() => {
+            //设置登录状态
+            loginStatus = false;
             if (requestOpts) {
               //存在登录后处理的request的业务
+              loginRequestQueue.useMethod('request');
               request(requestOpts).then((res) => {
                 resolve(res);
               });
@@ -91,20 +120,18 @@ export function login(opts = {}) {
             }
           }).catch(() => {
             //登录失败，提醒重新登录
-            showLoginModal().then(()=>{
-              login(opts).then((res) => {
-                resolve(res);
-              });
+            showLoginModal({
+              opts,
+              resolve
             });
           });
         },
         fail() {
           hideLoading();
           //登录失败，提醒重新登录
-          showLoginModal().then(()=>{
-            login(opts).then((res) => {
-              resolve(res);
-            });
+          showLoginModal({
+            opts,
+            resolve
           });
         }
       });
@@ -167,20 +194,24 @@ export function clearLoginStatus() {
 }
 
 //提醒重新重新登录
-function showLoginModal() {
-  return new Promise((resolve, reject) => {
-    showModal({
-      content: '登录失败',
-      showCancel: true,
-      confirmText: '重新登录'
-    }).then((res) => {
-      if (res.confirm === true) {
-        resolve();
-      } else if (res.cancel === false) {
-        reject();
-      }
-    }).catch(() => {
-      reject();
-    });
+function showLoginModal({
+  resolve,
+  opts
+}) {
+  showModal({
+    content: '登录失败',
+    showCancel: true,
+    confirmText: '重新登录'
+  }).then((res) => {
+    if (res.confirm === true) {
+      //设置登录状态
+      loginStatus = false;
+      login(opts).then((res) => {
+        resolve(res);
+      });
+    } else if (res.cancel === true) {
+      //设置登录状态
+      loginStatus = false;
+    }
   });
 }
