@@ -18,10 +18,20 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/bv/index.vue">
+        <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/re-login/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="433">
+              <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pages.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -30,58 +40,62 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mp-api/request/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+            <state relative-caret-position="1392">
+              <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="interceptor.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mp-api/request/interceptor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="986">
+              <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#87#143#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mp-api/webview/index.js">
+      <file leaf-file-name="code.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/code/code.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="899">
-              <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mp-api/index.js">
+        <entry file="file://$PROJECT_DIR$/code/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="348">
+              <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="10" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.vue" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/index/index.vue">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4640">
-              <caret line="163" column="0" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-              <folding>
-                <element signature="e#4369#4407#0" expanded="true" />
-                <element signature="e#4627#4810#0" expanded="false" />
-                <element signature="e#4865#5207#0" expanded="false" />
-                <element signature="e#5277#5440#0" expanded="false" />
-                <element signature="e#6632#6714#0" expanded="false" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/index.js">
+        <entry file="file://$PROJECT_DIR$/mp-api/register/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3915">
-              <caret line="135" column="14" lean-forward="false" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
+            <state relative-caret-position="87">
+              <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mp-api/toast/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -90,8 +104,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mp-api/login/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="116" column="17" lean-forward="true" selection-start-line="116" selection-start-column="17" selection-end-line="116" selection-end-column="17" />
+            <state relative-caret-position="321">
+              <caret line="86" column="38" lean-forward="true" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -99,33 +113,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vendor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/dist/dev/mp-weixin/common/vendor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="11222" column="6" lean-forward="false" selection-start-line="11222" selection-start-column="6" selection-end-line="11222" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/config/index.js">
+        <entry file="file://$PROJECT_DIR$/mp-api/loading/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+            <state relative-caret-position="435">
+              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding>
-                <element signature="e#253#324#0" expanded="true" />
+                <element signature="e#8#52#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,31 +131,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>length</find>
-      <find>value</find>
-      <find>newEnergy</find>
-      <find>min</find>
-      <find>number.min</find>
-      <find>@for</find>
-      <find>$color-group</find>
-      <find>#{</find>
-      <find>rpx</find>
-      <find>hover</find>
-      <find>defa</find>
-      <find>$color-default</find>
-      <find>BvSwitch</find>
-      <find>bmp-</find>
-      <find>Vue.component</find>
-      <find>%form-elm-pd</find>
-      <find>default-line-height</find>
-      <find>$bv-prefix-name</find>
       <find>$bc-prefix-name</find>
       <find>Bv</find>
       <find>Bc</find>
@@ -171,9 +147,27 @@
       <find>.navigateTo</find>
       <find>uni.navigateTo</find>
       <find>shoeLogin</find>
-      <find>showLoginModal</find>
-      <find>loginStatus</find>
       <find>isEmpty</find>
+      <find>/mock/login</find>
+      <find>/user/login.json</find>
+      <find>loginStatus</find>
+      <find>EXPIRE_LOGIN</find>
+      <find>pages/re-login</find>
+      <find>modal</find>
+      <find>showModal</find>
+      <find>mpLogin</find>
+      <find>redirectRegister</find>
+      <find>getCurrentPath</find>
+      <find>rpx</find>
+      <find>Bmp</find>
+      <find>backLastRoute</find>
+      <find>function backLastRoute</find>
+      <find>/pages/index/index</find>
+      <find>pages/index/index</find>
+      <find>mask</find>
+      <find>showLoading(</find>
+      <find>opts</find>
+      <find>showLoginModal</find>
     </findStrings>
     <replaceStrings>
       <replace>mp.</replace>
@@ -200,13 +194,16 @@
       <replace>blackListFilter(</replace>
       <replace>bv-</replace>
       <replace>$prefix-name</replace>
-      <replace>Bv</replace>
       <replace>bz-</replace>
+      <replace>Bv</replace>
+      <replace>/pages/home/index</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/mp-api</dir>
       <dir>E:\achang\github\blue-uni-app-program\apps\blue-uni-app-tmpl</dir>
       <dir>E:\achang\github\blue-uni-app-program\components</dir>
+      <dir>E:\achang\github\blue-uni-app-program\mp-api</dir>
+      <dir>E:\achang\github\blue-uni-app-program\apps\blue-uni-app-tmpl\src\pages</dir>
       <dir>E:\achang\github\blue-uni-app-program</dir>
     </dirStrings>
   </component>
@@ -216,19 +213,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/components/BmpNumberKeyboard/BmpNumberKeyboard.vue" />
-        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/number-keyboard/index.vue" />
-        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/car-number-keyboard/index.vue" />
-        <option value="$PROJECT_DIR$/components/Bmp/form/Input.vue" />
-        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/assets/css/config.scss" />
-        <option value="$PROJECT_DIR$/components/Bmp/config.scss" />
-        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/bmp/index.vue" />
-        <option value="$PROJECT_DIR$/assets/css/blue-component/src/config/viewport.scss" />
-        <option value="$PROJECT_DIR$/components/Bmp/form/form-mixins.js" />
-        <option value="$PROJECT_DIR$/components/Bmp/form/BmpInput.vue" />
-        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/assets/css/index.scss" />
-        <option value="$PROJECT_DIR$/components/Bmp/form/BmpButton.vue" />
-        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/vue.config.js" />
         <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/assets/css/blue-zone.scss" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/components/Bv/Layer/BvLayer.vue" />
@@ -257,15 +241,28 @@
         <option value="$PROJECT_DIR$/components/Bv/NumberKeyboard/BvNumberKeyboard.vue" />
         <option value="$PROJECT_DIR$/assets/css/blue-zone/src/form/button/index.scss" />
         <option value="$PROJECT_DIR$/assets/css/blue-zone/src/form/button/button-mixin.scss" />
-        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages.json" />
         <option value="$PROJECT_DIR$/mp-api/webview/index.js" />
         <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/webview/index.vue" />
         <option value="$PROJECT_DIR$/mp-api/index.js" />
         <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/main.js" />
         <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/bv/index.vue" />
+        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/package.json" />
+        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/config/index.js" />
         <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/index/index.vue" />
-        <option value="$PROJECT_DIR$/mp-api/request/index.js" />
+        <option value="$PROJECT_DIR$/mp-api/authorize/index.js" />
+        <option value="$PROJECT_DIR$/mp-api/image/index.js" />
+        <option value="$PROJECT_DIR$/mp-api/update/index.js" />
+        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/mock/routes.js" />
+        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/car-number-keyboard/index.vue" />
+        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/number-keyboard/index.vue" />
         <option value="$PROJECT_DIR$/config/index.js" />
+        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages.json" />
+        <option value="$PROJECT_DIR$/mp-api/request/index.js" />
+        <option value="$PROJECT_DIR$/mp-api/toast/index.js" />
+        <option value="$PROJECT_DIR$/mp-api/loading/index.js" />
+        <option value="$PROJECT_DIR$/mp-api/request/interceptor.js" />
+        <option value="$PROJECT_DIR$/code/index.js" />
+        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/re-login/index.vue" />
         <option value="$PROJECT_DIR$/mp-api/login/index.js" />
       </list>
     </option>
@@ -328,13 +325,17 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="blue-uni-app-program" type="b2602c69:ProjectViewProjectNode" />
               <item name="blue-uni-app-program" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blue-uni-app-program" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blue-uni-app-program" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="blue-uni-app-program" type="b2602c69:ProjectViewProjectNode" />
@@ -351,6 +352,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -456,8 +458,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Gulp.js.default" />
-        <item index="1" class="java.lang.String" itemvalue="npm.dev:mp-weixin" />
+        <item index="0" class="java.lang.String" itemvalue="npm.dev:mp-weixin" />
+        <item index="1" class="java.lang.String" itemvalue="Gulp.js.default" />
         <item index="2" class="java.lang.String" itemvalue="npm.dev:mp-weixin (1)" />
         <item index="3" class="java.lang.String" itemvalue="npm.build:mp-weixin" />
         <item index="4" class="java.lang.String" itemvalue="npm.build:mp-alipay" />
@@ -504,11 +506,13 @@
       <workItem from="1579135649695" duration="15192000" />
       <workItem from="1579228412429" duration="4203000" />
       <workItem from="1579421207685" duration="3469000" />
+      <workItem from="1579481702866" duration="20484000" />
+      <workItem from="1579568276784" duration="5230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="245290000" />
+    <option name="totallyTimeSpent" value="271004000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -516,17 +520,17 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36312848" sideWeight="0.70837986" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18124342" sideWeight="0.71284914" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2659218" sideWeight="0.7162011" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18124342" sideWeight="0.71841705" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.326257" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16859852" sideWeight="0.7105263" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18124342" sideWeight="0.28715083" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18124342" sideWeight="0.7173184" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18124342" sideWeight="0.28158295" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -551,80 +555,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/css/blue-zone/src/config/color.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="39" column="24" lean-forward="false" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/blue-component/src/link/index.scss" />
-    <entry file="file://$PROJECT_DIR$/assets/css/blue-component/src/link/link-mixin.scss" />
-    <entry file="file://$PROJECT_DIR$/assets/css/blue-component/src/form/input/index.scss" />
-    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/vue.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="30" column="48" lean-forward="false" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/assets/css/blue-zone.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="3" column="57" lean-forward="false" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/components/Bc/Layer/BvLayer.vue" />
-    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/components/Bc/NumberKeyboard/BvNumberKeyboard.vue" />
-    <entry file="file://$PROJECT_DIR$/components/Bv/Form/BvButton.vue" />
-    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/components/Bc/CarNumberKeyboard/BvCarNumberKeyboard.vue" />
-    <entry file="file://$PROJECT_DIR$/assets/css/blue-zone/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="203">
-            <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/blue-zone/src/border/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/blue-zone/src/main/bc.scss" />
-    <entry file="file://$PROJECT_DIR$/assets/css/blue-zone/src/bv/form/index.scss" />
-    <entry file="file://$PROJECT_DIR$/assets/css/blue-zone/src/bv/form/button.scss" />
-    <entry file="file://$PROJECT_DIR$/mp-api/register/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/blue-zone/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -633,13 +568,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/blue-zone/src/bv/form/input.scss" />
-    <entry file="file://$PROJECT_DIR$/mp-api/request/interceptor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/blue-zone/src/main/blue-zone.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -723,13 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="36" column="30" lean-forward="false" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/Bv/Layer/BvLayer.vue" />
     <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/webview/index.vue">
       <provider selected="true" editor-type-id="text-editor">
@@ -739,20 +660,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mp-api/webview/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="899">
-          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mp-api/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -761,72 +674,239 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
           <caret line="17" column="9" lean-forward="false" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-          <folding>
-            <element signature="e#253#324#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/index/index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4640">
-          <caret line="163" column="0" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-          <folding>
-            <element signature="e#4369#4407#0" expanded="true" />
-            <element signature="e#4627#4810#0" expanded="false" />
-            <element signature="e#4865#5207#0" expanded="false" />
-            <element signature="e#5277#5440#0" expanded="false" />
-            <element signature="e#6632#6714#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/bv/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
+        <state relative-caret-position="0">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mp-api/request/index.js">
+    <entry file="file://$PROJECT_DIR$/mp-api/webview/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="26" column="11" lean-forward="false" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="638">
+          <caret line="31" column="16" lean-forward="false" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/index.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3915">
-          <caret line="135" column="14" lean-forward="false" selection-start-line="135" selection-start-column="14" selection-end-line="135" selection-end-column="14" />
+        <state relative-caret-position="232">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/config/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="58" column="17" lean-forward="true" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
-          <folding />
+        <state relative-caret-position="-435">
+          <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <folding>
+            <element signature="e#50#85#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/home/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding>
+            <element signature="e#4627#4810#0" expanded="false" />
+            <element signature="e#6758#6840#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp-api/authorize/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp-api/modal/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="8" column="16" lean-forward="false" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp-api/image/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/mock/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp-api/update/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/mock/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="83" column="20" lean-forward="false" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/car-number-keyboard/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/number-keyboard/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp-api/page/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="33" column="16" lean-forward="false" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/dist/dev/mp-weixin/common/vendor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="11222" column="6" lean-forward="false" selection-start-line="11222" selection-start-column="6" selection-end-line="11222" selection-end-column="6" />
+        <state relative-caret-position="337995">
+          <caret line="11655" column="0" lean-forward="false" selection-start-line="11655" selection-start-column="0" selection-end-line="11655" selection-end-column="0" />
+          <folding>
+            <marker date="1579573528784" expanded="true" signature="362174:362177" ph="/*...*/" />
+            <marker date="1579573528784" expanded="true" signature="362491:362508" ph="{...}" />
+            <marker date="1579573528784" expanded="true" signature="362590:363047" ph="{...}" />
+            <marker date="1579573528784" expanded="true" signature="362603:362692" ph="{...}" />
+            <marker date="1579573528784" expanded="true" signature="362618:362686" ph="{&quot;default&quot;: ''...}" />
+            <marker date="1579573528784" expanded="true" signature="362923:362957" ph="{&quot;currentValue&quot;: ''...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1189">
+          <caret line="41" column="20" lean-forward="false" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="19" column="8" lean-forward="false" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp-api/loading/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="e#8#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp-api/toast/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp-api/register/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp-api/request/interceptor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+          <folding>
+            <element signature="e#87#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/re-login/index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="42" column="13" lean-forward="false" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/code.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mp-api/request/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1392">
+          <caret line="87" column="32" lean-forward="false" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mp-api/login/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="116" column="17" lean-forward="true" selection-start-line="116" selection-start-column="17" selection-end-line="116" selection-end-column="17" />
+        <state relative-caret-position="321">
+          <caret line="86" column="38" lean-forward="true" selection-start-line="86" selection-start-column="38" selection-end-line="86" selection-end-column="38" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>

@@ -96,7 +96,7 @@
         </div>
 
         <!-- switch -->
-        <div class="bz-pd-15rpx bz-flex bz-flex-ai-c bz-flex-jc-c">
+        <div class="bz-pd-30rpx bz-flex bz-flex-ai-c bz-flex-jc-c">
           switch:
           <BvSwitch
                   v-for="(item,index) in formSwitch"
@@ -199,14 +199,11 @@
     computed: {
       ...mapState(['isLogin'])
     },
-    mounted() {
-      this.$nextTick(() => {
-        //微信支付
-        /*this.$pay({
-          success() {
-            console.log('123');
-          }
-        });*/
+    onShow() {
+      this.$isLogin().then(()=>{
+        this.getData();
+        this.getData();
+        this.getData();
       });
     },
     methods: {
@@ -214,6 +211,9 @@
       //登录
       login() {
         this.$login().then(() => {
+          this.getData();
+          this.getData();
+          this.getData();
           console.log('登录成功');
         });
       },
@@ -264,8 +264,12 @@
         }).then(() => {
           console.log(`saveImage`);
         });
+      },
+      getData() {
+        this.$request({
+          url: `/mock/data`
+        });
       }
-
     },
     created() {
       this.$isLogin().then(() => {

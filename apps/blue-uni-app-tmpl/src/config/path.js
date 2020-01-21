@@ -9,13 +9,13 @@ const path = (() => {
       //生产环境path
       return {
         static: ``,
-        home: `/pages/index/index`
+        home: `/pages/home/index`
       };
     default:
       //测试环境path
       return {
         static: ``,
-        home: `/pages/index/index`,
+        home: `/pages/home/index`,
         register: `/pages/register/index`
       };
   }

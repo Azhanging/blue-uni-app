@@ -35,7 +35,7 @@
     "@dcloudio/uni-stat": "^2.0.0-24220191115006",
     "blue-mp-mock-interceptor": "^1.0.0",
     "blue-queue-pipe": "^1.0.6",
-    "blue-utils": "^1.1.0",
+    "blue-utils": "^1.1.1",
     "flyio": "^0.6.2",
     "regenerator-runtime": "^0.12.1",
     "vue": "^2.6.10",

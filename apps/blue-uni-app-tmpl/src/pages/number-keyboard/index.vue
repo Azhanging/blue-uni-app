@@ -1,5 +1,5 @@
 <template>
-  <div class="bz-t-333 bz-f-14rpx bz-t-c bz-pd-10rpx">
+  <div class="bz-t-333 bz-f-28rpx bz-t-c bz-pd-20rpx">
 
     <!-- 测试键盘输入 -->
     <div class="bz-flex">
@@ -12,7 +12,7 @@
     </div>
 
     <!-- 数字键盘 -->
-    <BmpNumberKeyboard :number.sync="number.value" :visible.sync="isShowKeyboard"/>
+    <BvNumberKeyboard :number.sync="number.value" :visible.sync="isShowKeyboard"/>
 
   </div>
 </template>

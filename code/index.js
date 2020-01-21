@@ -1,16 +1,15 @@
 import code from './code';
 import { redirectRegister } from '$mp-api/register';
 import { getCurrentPath } from "$mp-api/page";
-import { login } from '$mp-api/login';
+import { login, clearLoginStatus } from '$mp-api/login';
 import { showToast } from '$mp-api/toast';
+import { redirectReLogin } from '$mp-api/login';
 
 //错误码处理
 export function codeHandler(opts = {}) {
   const {
     code: requestCode,
     message,
-    requestOpts,
-    resolve,
     reject,
     res
   } = opts;
@@ -21,12 +20,9 @@ export function codeHandler(opts = {}) {
         path: getCurrentPath()
       });
     case code.EXPIRE_LOGIN:
-      //鉴权失效
-      //重新登录
-      return login({
-        requestOpts
-      }).then((res) => {
-        resolve(res);
+      clearLoginStatus();
+      return redirectReLogin({
+        path: getCurrentPath()
       });
     case code.MESSAGE:
       //提醒信息

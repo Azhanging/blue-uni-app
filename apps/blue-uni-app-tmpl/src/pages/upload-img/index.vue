@@ -1,5 +1,5 @@
 <template>
-  <div class="bz-f-14rpx bz-t-c">
+  <div class="bz-f-28rpx bz-t-c">
     <button @click="uploadImg" class="bz-btn bz-btn-primary">点击上传</button>
   </div>
 </template>

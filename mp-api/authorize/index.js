@@ -49,14 +49,13 @@ export function authorizeFail(opts) {
   showModal(utils.extend({
     title: `授权失败，${ typeName }功能将无法使用`,
     confirmText: '前往设置',
-    showCancel: true,
-    success(res) {
-      const { confirm } = res;
-      //openSetting这里的显示设置可配置
-      if (confirm === true && opts.openSetting !== false) {
-        //打开到设置的页面
-        uni.openSetting();
-      }
+    showCancel: true
+  }, opts)).then((res) => {
+    const { confirm } = res;
+    //openSetting这里的显示设置可配置
+    if (confirm === true && opts.openSetting !== false) {
+      //打开到设置的页面
+      uni.openSetting();
     }
-  }, opts));
+  });
 }

@@ -7,11 +7,10 @@ export function mpUpdate() {
     showModal({
       title: '更新提示',
       content: '发现新版本，小程序将会重启打开',
-      showCancel: false,
-      success(res) {
-        if (!res.confirm) return;
-        updateManager.applyUpdate();
-      }
+      showCancel: false
+    }).then((res) => {
+      if (!res.confirm) return;
+      updateManager.applyUpdate();
     });
   });
 
@@ -22,5 +21,4 @@ export function mpUpdate() {
       console.log('当前版本为最新版本');
     }
   });
-
 }

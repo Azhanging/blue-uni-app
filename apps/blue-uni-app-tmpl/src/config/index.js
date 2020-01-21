@@ -30,13 +30,17 @@ const config = utils.extend(publicConfig, {
 
   //登陆相关
   login: {
-    url: `/mock/login`,
-    //登录获取的状态
-    params(res) {
-      return {
-        appid: config.app.id,
-        code: res.code
-      };
+    request: {
+      url() {
+        return `/mock/login`;
+      },
+      //登录获取的状态
+      params(res) {
+        return {
+          appid: config.app.id,
+          code: res.code
+        };
+      },
     },
     hooks: {
       got(data) {

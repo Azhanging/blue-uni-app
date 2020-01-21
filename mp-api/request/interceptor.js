@@ -1,7 +1,9 @@
 import code from '$code/code';    //错误码
 import { codeHandler } from '$code';   //错误码处理
-import { login } from '$mp-api/login';
+import { login, clearLoginStatus } from '$mp-api/login';
 import { showToast } from '$mp-api/toast';
+import { redirectReLogin } from "$mp-api/login";
+import { getCurrentPath } from "$mp-api/page";
 
 //拦截处理
 export function responseInterceptor(opts) {
@@ -28,11 +30,10 @@ export function responseInterceptor(opts) {
       icon: 'none'
     });
   } else if (res.statusCode === 401) {
-    //重新登录
-    login({
-      requestOpts
-    }).then((res) => {
-      resolve(res);
+    clearLoginStatus();
+    //跳转重新登录页面
+    redirectReLogin({
+      path: getCurrentPath()
     });
   } else {
     reject(res.data);

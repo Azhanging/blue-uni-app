@@ -7,7 +7,7 @@ const routes = [{
     return function () {
       i++;
       return {
-        code: i >= 2 ? 200 : 401,
+        code: 200,
         data: {
           token: 'token_value'
         },
@@ -66,7 +66,22 @@ const routes = [{
     return function () {
       i++;
       return {
-        code: i === 2 ? 200 : 401,
+        code: i >= 2 ? 200 : 401,
+        data: {
+          data: 'data'
+        }
+      }
+    };
+  })()
+}, {
+  url: `/mock/data`,
+  method: 'get',
+  response: (() => {
+    let i = 0;
+    return function () {
+      i++;
+      return {
+        code: i >= 4 ? 200 : 401,
         data: {
           data: 'data'
         }

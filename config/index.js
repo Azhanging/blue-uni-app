@@ -19,8 +19,9 @@ const config = {
 
   //路径相关
   path: {
-    home: "/pages/index/index",       //首页地址
-    webview: "/pages/webview/index"
+    home: "/pages/home/index",       //首页地址
+    webview: "/pages/webview/index",
+    reLogin: "/pages/re-login/index",
   },
 
   //页面相关
@@ -37,7 +38,8 @@ const config = {
   //登录相关
   login: {
     request: {
-      url: '/user/login.json',
+      url: '/mock/login.json',
+      method: 'post',
       //登录获取的状态
       params() {
         return {};
@@ -53,8 +55,6 @@ const config = {
     },
     //登录状态
     storage: {
-      /*openid: "openid",
-      unionid: "unionid",*/
       [tokenName]: "token"
     }
   },

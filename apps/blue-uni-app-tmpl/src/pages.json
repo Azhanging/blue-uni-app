@@ -2,7 +2,7 @@
 {
   "pages": [
     {
-      "path": "pages/index/index",
+      "path": "pages/home/index",
       "style": {
         "navigationBarTitleText": "首页"
       }
@@ -11,6 +11,12 @@
       "path": "pages/register/index",
       "style": {
         "navigationBarTitleText": "注册"
+      }
+    },
+    {
+      "path": "pages/re-login/index",
+      "style": {
+        "navigationBarTitleText": "重新登录"
       }
     },
     {

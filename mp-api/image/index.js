@@ -48,7 +48,7 @@ function downFile(opts) {
     uni.downloadFile({
       url,
       success: (res) => {
-        if (res.statusCode == 200) {
+        if (res.statusCode === 200) {
           resolve.call(this, res);
         } else {
           reject.call(this, res);

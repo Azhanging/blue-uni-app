@@ -46,8 +46,7 @@ export default function request(requestOpts) {
 
   //request loading的处理
   _requestOpts.isShowLoading && showLoading({
-    title: requestOptsTips.loading || tips.loading,
-    mask: true
+    title: requestOptsTips.loading || tips.loading
   });
 
   //uni.request ,context看需要执行
@@ -83,6 +82,8 @@ export default function request(requestOpts) {
       //从设置的配置中扩展
       uni.request(utils.extend(_requestOpts, {
         success: (res) => {
+          //关闭loading
+          _requestOpts.isShowLoading && hideLoading();
           //拦截器
           _responseInterceptor({
             res,
@@ -90,8 +91,6 @@ export default function request(requestOpts) {
             reject,
             requestOpts
           });
-          //关闭loading
-          _requestOpts.isShowLoading && hideLoading();
         },
         fail: (err) => {
           let msg = requestOptsTips.fail || tips.fail;
