@@ -7,7 +7,6 @@ import { getCurrentPath, setLastPath } from "$mp-api/page";
 import { showLoading, hideLoading } from '$mp-api/loading';
 import { redirectRegister } from '$mp-api/register';
 import { showModal } from '$mp-api/modal';
-import request from "$mp-api/request";
 
 //扩展到Vue中
 export function loginInVue(Vue) {
