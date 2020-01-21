@@ -200,7 +200,7 @@
       ...mapState(['isLogin'])
     },
     onShow() {
-      this.$isLogin().then(()=>{
+      this.$loggedIn().then(()=>{
         this.getData();
         this.getData();
         this.getData();
@@ -272,7 +272,7 @@
       }
     },
     created() {
-      this.$isLogin().then(() => {
+      this.$loggedIn().then(() => {
         //this.scrollLower();
       });
     }

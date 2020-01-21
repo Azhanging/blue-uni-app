@@ -11,7 +11,7 @@ import { showModal } from '$mp-api/modal';
 //扩展到Vue中
 export function loginInVue(Vue) {
   Vue.prototype.$login = login;
-  Vue.prototype.$isLogin = isLogin;
+  Vue.prototype.$loggedIn = loggedIn;
 }
 
 //check session
@@ -118,7 +118,7 @@ export function login() {
 }
 
 //检查登录状态
-export function isLogin() {
+export function loggedIn() {
   return new Promise((resolve, reject) => {
     if (store.state.isLogin) {
       resolve();
