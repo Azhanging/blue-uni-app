@@ -53,7 +53,7 @@
       sendCode() {
         const form = this.form;
         if (!/1\d{10}/.test(form.tel)) {
-          return uni.showToast({
+          return this.$showToast({
             title: `手机格式错误`,
             icon: 'none'
           });

@@ -1,6 +1,7 @@
 import utils from 'blue-utils';
 import config from '@config';
 import { showLoading, hideLoading } from '$mp-api/loading';
+import { showToast } from '$mp-api/toast';
 
 //拦截处理
 import { responseInterceptor } from './interceptor';
@@ -98,7 +99,7 @@ export default function request(requestOpts) {
           if (err && /timeout/.test(err.errMsg)) {
             msg = requestOptsTips.timeout || tips.timeout;
           }
-          uni.showToast({
+          showToast({
             title: msg,
             icon: 'none'
           });
