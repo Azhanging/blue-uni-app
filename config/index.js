@@ -51,6 +51,9 @@ const config = {
       },
       //登陆成功
       success() {
+      },
+      //清空登录状态
+      clear() {
       }
     },
     //登录状态

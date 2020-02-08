@@ -74,8 +74,7 @@ export default function request(requestOpts) {
       _responseInterceptor({
         res,
         resolve,
-        reject,
-        requestOpts
+        reject
       });
       //关闭油站
       _requestOpts.isShowLoading && hideLoading();
@@ -89,8 +88,7 @@ export default function request(requestOpts) {
           _responseInterceptor({
             res,
             resolve,
-            reject,
-            requestOpts
+            reject
           });
         },
         fail: (err) => {

@@ -7,7 +7,7 @@ import { getCurrentPath } from "$mp-api/page";
 
 //拦截处理
 export function responseInterceptor(opts) {
-  const { res, resolve, reject, requestOpts } = opts;
+  const { res, resolve, reject } = opts;
   //http code 处理
   if (res.statusCode === 200) {
     const { code: requestCode } = res.data;
@@ -18,7 +18,6 @@ export function responseInterceptor(opts) {
       //错误码处理
       codeHandler({
         code: requestCode,
-        requestOpts,
         resolve,
         reject,
         res

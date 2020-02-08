@@ -167,6 +167,8 @@ export function clearLoginStatus() {
   utils.each(config.login.storage, (key, _key) => {
     uni.removeStorageSync(_key);
   });
+  //调用登录后的钩子
+  utils.hook(null, config.login.hooks.clear);
   //重新设置登录状态
   store.commit('SET_LOGIN', false);
 }
