@@ -195,7 +195,7 @@ function showLoginModal({
 }
 
 //跳转重登页面
-export function redirectReLogin(opts = {}) {
+export function navigateToReLogin(opts = {}) {
   //设置最后的路由地址
   setLastPath(opts.path);
   //跳转绑定手机页面
@@ -203,7 +203,7 @@ export function redirectReLogin(opts = {}) {
     //清空登录态
     clearLoginStatus();
     //跳转绑定手机页面
-    uni.reLaunch({
+    uni.navigateTo({
       url: config.path.reLogin
     });
   }

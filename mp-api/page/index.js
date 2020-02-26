@@ -52,6 +52,10 @@ export function backLastRoute(opts = {}) {
       return uni.switchTab({
         url
       });
+    case 'redirect':
+      return uni.redirectTo({
+        url
+      });
     case 'nav':
     default :
       uni.navigateTo({

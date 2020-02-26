@@ -2,7 +2,7 @@ import code from '$code/code';    //错误码
 import { codeHandler } from '$code';   //错误码处理
 import { login, clearLoginStatus } from '$mp-api/login';
 import { showToast } from '$mp-api/toast';
-import { redirectReLogin } from "$mp-api/login";
+import { navigateToReLogin } from "$mp-api/login";
 import { getCurrentPath } from "$mp-api/page";
 
 //拦截处理
@@ -13,7 +13,7 @@ export function responseInterceptor(opts) {
     const { code: requestCode } = res.data;
     //业务code处理
     if (requestCode === code.SUCCESS) {
-      resolve.call(this, res.data);
+      resolve(res.data);
     } else {
       //错误码处理
       codeHandler({
@@ -23,18 +23,19 @@ export function responseInterceptor(opts) {
         res
       });
     }
-  } else if (res.statusCode === 404) {
-    showToast({
-      title: '服务异常',
-      icon: 'none'
-    });
-  } else if (res.statusCode === 401) {
-    clearLoginStatus();
-    //跳转重新登录页面
-    redirectReLogin({
-      path: getCurrentPath()
-    });
   } else {
+    if (res.statusCode === 404) {
+      showToast({
+        title: '服务异常',
+        icon: 'none'
+      });
+    } else if (res.statusCode === 401) {
+      clearLoginStatus();
+      //跳转重新登录页面
+      navigateToReLogin({
+        path: getCurrentPath()
+      });
+    }
     reject(res.data);
   }
 }

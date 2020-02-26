@@ -19,78 +19,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>shoeLogin</find>
-      <find>isEmpty</find>
-      <find>/mock/login</find>
-      <find>/user/login.json</find>
-      <find>loginStatus</find>
-      <find>EXPIRE_LOGIN</find>
-      <find>pages/re-login</find>
-      <find>modal</find>
-      <find>showModal</find>
-      <find>mpLogin</find>
-      <find>redirectRegister</find>
-      <find>getCurrentPath</find>
-      <find>rpx</find>
-      <find>Bmp</find>
-      <find>backLastRoute</find>
-      <find>function backLastRoute</find>
-      <find>/pages/index/index</find>
-      <find>pages/index/index</find>
-      <find>mask</find>
-      <find>showLoading(</find>
-      <find>opts</find>
-      <find>showLoginModal</find>
-      <find>request</find>
-      <find>isLogin</find>
-      <find>wx.check</find>
-      <find>$isLogin</find>
-      <find>$loggedIn</find>
-      <find>uni.showToast</find>
-      <find>redirectReLogin</find>
-      <find>requestOpts</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>mp.</replace>
-      <replace>uni.</replace>
-      <replace>uni.getSystemInfoSync().platform</replace>
-      <replace>&lt;navigator url=&quot;</replace>
-      <replace>uni</replace>
-      <replace>process.env.NODE_ENV</replace>
-      <replace>process.env.UNI_PLATFORM</replace>
-      <replace>process.env.VUE_APP_PLATFORM</replace>
-      <replace>mp-alipay</replace>
-      <replace>'mp-weixin'</replace>
-      <replace>commit('SET_USER_INFO</replace>
-      <replace>commit('SET_LAST_PATH</replace>
-      <replace>commit('SET_LOGIN</replace>
-      <replace>commit('SET_LOCATION</replace>
-      <replace>apiGetUserInfo</replace>
-      <replace>base</replace>
-      <replace>getCurrentPath</replace>
-      <replace>EXPIRE_LOGIN</replace>
-      <replace>locationQueue</replace>
-      <replace>$slideAnimation(</replace>
-      <replace>$scaleAnimation(</replace>
-      <replace>blackListFilter(</replace>
-      <replace>bv-</replace>
-      <replace>$prefix-name</replace>
-      <replace>bz-</replace>
-      <replace>Bv</replace>
-      <replace>/pages/home/index</replace>
-      <replace>$loggedIn</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/mp-api</dir>
-      <dir>E:\achang\github\blue-uni-app-program\apps\blue-uni-app-tmpl</dir>
-      <dir>E:\achang\github\blue-uni-app-program\components</dir>
-      <dir>E:\achang\github\blue-uni-app-program\mp-api</dir>
-      <dir>E:\achang\github\blue-uni-app-program\apps\blue-uni-app-tmpl\src\pages</dir>
-      <dir>E:\achang\github\blue-uni-app-program</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -257,6 +185,7 @@
       <workItem from="1580698918105" duration="2219000" />
       <workItem from="1581145944138" duration="39000" />
       <workItem from="1581145994090" duration="746000" />
+      <workItem from="1582725447856" duration="725000" />
     </task>
     <servers />
   </component>
@@ -271,5 +200,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581146139938" />
+    <state width="1899" height="215" key="GridCell.Tab.0.bottom" timestamp="1582725984553">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="215" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582725984553" />
+    <state width="1899" height="215" key="GridCell.Tab.0.center" timestamp="1582725984553">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="215" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582725984553" />
+    <state width="1899" height="215" key="GridCell.Tab.0.left" timestamp="1582725984553">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="215" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582725984553" />
+    <state width="1899" height="215" key="GridCell.Tab.0.right" timestamp="1582725984553">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="215" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582725984553" />
+    <state x="636" y="253" width="786" height="600" key="find.popup" timestamp="1582725745186">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="636" y="253" width="786" height="600" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582725745186" />
   </component>
 </project>

@@ -3,7 +3,7 @@ import { redirectRegister } from '$mp-api/register';
 import { getCurrentPath } from "$mp-api/page";
 import { login, clearLoginStatus } from '$mp-api/login';
 import { showToast } from '$mp-api/toast';
-import { redirectReLogin } from '$mp-api/login';
+import { navigateToReLogin } from '$mp-api/login';
 
 //错误码处理
 export function codeHandler(opts = {}) {
@@ -21,7 +21,7 @@ export function codeHandler(opts = {}) {
       });
     case code.EXPIRE_LOGIN:
       clearLoginStatus();
-      return redirectReLogin({
+      return navigateToReLogin({
         path: getCurrentPath()
       });
     case code.MESSAGE:

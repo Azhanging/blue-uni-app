@@ -34,7 +34,7 @@
         this.$login().then(() => {
           //回到最后的路由页面
           backLastRoute({
-            type: 'launch'
+            type: 'redirect'
           });
         }).catch(() => {
           this.reLoginStatus = false;
