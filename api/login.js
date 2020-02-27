@@ -13,7 +13,7 @@ export function apiLogin(opts = {}) {
     data: params,
     tips: {
       loading: '登录中',
-      fail: '登录失败',
+      /*fail: '登录失败',*/
       timeout: '登录超时'
     }
   });
