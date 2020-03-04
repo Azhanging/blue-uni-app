@@ -22,6 +22,8 @@ const config = {
     home: "/pages/home/index",       //首页地址
     webview: "/pages/webview/index",
     reLogin: "/pages/re-login/index",
+    //底部地址信息，暂时用于relogin的时候的回跳处理
+    tabBarPath: []
   },
 
   //页面相关

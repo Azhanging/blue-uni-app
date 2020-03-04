@@ -8,7 +8,7 @@ import path from './path';
 const config = utils.extend(publicConfig, {
   app: {
     name: "blue-wx-program-tmpl",               //小程序名
-    id: "wx27b9d7d5baaa8687",                 //appid
+    appid: "",                 //appid
     login_form: 1          //来源
   },
 
