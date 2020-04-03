@@ -7,13 +7,22 @@ import { getCurrentPath } from "$mp-api/page";
 
 //拦截处理
 export function responseInterceptor(opts) {
-  const { res, resolve, reject } = opts;
+  const { res, resolve, reject, requestOpts } = opts;
   //http code 处理
   if (res.statusCode === 200) {
     const { code: requestCode } = res.data;
     //业务code处理
     if (requestCode === code.SUCCESS) {
-      resolve(res.data);
+      //提醒处理，默认false
+      if (requestOpts.isShowToast) {
+        showToast({
+          title: data.msg
+        }).then(() => {
+          resolve(res.data);
+        });
+      } else {
+        resolve(res.data);
+      }
     } else {
       //错误码处理
       codeHandler({

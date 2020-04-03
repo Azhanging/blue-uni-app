@@ -1,11 +1,23 @@
 import config from '@config';
 import store from '@store';
 import utils from 'blue-utils';
-import { isRegisterPage } from '$mp-api/register';
+import PageID from './page-id';
 import { blackListFilter } from '$assets/js/black-list';
 
 //页面参数
 export let query = {};
+
+//实例化页面id
+export const pageID = new PageID();
+
+//扩展onShow设置新的page id
+export function pageInVue(Vue) {
+  Vue.mixin({
+    onShow() {
+      pageID.setCurrentID();
+    }
+  });
+}
 
 //设置参数
 export function setQuery(pageQuery) {

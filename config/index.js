@@ -143,18 +143,14 @@ const config = {
       dataType: "json",
       responseType: "text",
       ['content-type']: 'application/x-www-form-urlencoded',
+      //是否显示
       isShowLoading: true,
-      tips: {}
-    },
-    tips: {
-      loading: '数据加载中',
-      fail: '连接错误',
-      timeout: `请求超时`
-    },
-    //拦截器(针对项目的拦截器自定义)
-    interceptor: {
-      request: null,
-      response: null
+      isShowToast: false,
+      tips: {
+        loading: '数据加载中',
+        fail: '连接错误',
+        timeout: `请求超时`
+      }
     }
   }
 };

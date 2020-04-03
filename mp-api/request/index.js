@@ -2,13 +2,9 @@ import utils from 'blue-utils';
 import config from '@config';
 import { showLoading, hideLoading } from '$mp-api/loading';
 import { showToast } from '$mp-api/toast';
-
+import { pageID } from '$mp-api/page';
 //拦截处理
 import { responseInterceptor } from './interceptor';
-
-const { interceptor, tips } = config.request;
-//选择拦截器
-const _responseInterceptor = utils.hook(null, interceptor.response) || responseInterceptor;
 
 //在vue扩展
 export function requestInVue(Vue) {
@@ -39,23 +35,22 @@ function setRequestHeader() {
 
 //request 请求封装
 export default function request(requestOpts) {
-
   //获取到添加login header options
-  let _requestOpts = setExtend(requestOpts);
-
-  const requestOptsTips = _requestOpts.tips;
-
+  requestOpts = setExtend(requestOpts);
+  //请求中的自定义提醒
+  const requestOptsTips = requestOpts.tips;
   //request loading的处理
-  _requestOpts.isShowLoading && showLoading({
-    title: requestOptsTips.loading || tips.loading
+  requestOpts.isShowLoading && showLoading({
+    title: requestOptsTips.loading
   });
-
   //uni.request ,context看需要执行
   return new Promise((resolve, reject) => {
-    const { rawUrl, method } = _requestOpts;
+    //获取当前的pageID
+    const currentPageID = pageID.getCurrentID();
+    const { rawUrl, method } = requestOpts;
+
     let route;
     let blueMpMock;
-
     //只有开发环境存在mock interceptor
     if (process.env.NODE_ENV !== 'production') {
       //项目模拟数据
@@ -71,37 +66,44 @@ export default function request(requestOpts) {
     if (process.env.NODE_ENV !== 'production' && route) {
       const res = blueMpMock.response(route);
       //拦截器
-      _responseInterceptor({
+      responseInterceptor({
         res,
         resolve,
-        reject
+        reject,
+        requestOpts
       });
       //关闭油站
-      _requestOpts.isShowLoading && hideLoading();
+      requestOpts.isShowLoading && hideLoading();
     } else {
       //从设置的配置中扩展
-      uni.request(utils.extend(_requestOpts, {
+      uni.request(utils.extend(requestOpts, {
         success: (res) => {
           //关闭loading
-          _requestOpts.isShowLoading && hideLoading();
+          requestOpts.isShowLoading && hideLoading();
+          //比对当前的页面id，不匹配则不处理
+          if (!pageID.isCurrentID(currentPageID)) return;
           //拦截器
-          _responseInterceptor({
+          responseInterceptor({
             res,
             resolve,
-            reject
+            reject,
+            requestOpts
           });
         },
         fail: (err) => {
-          let msg = requestOptsTips.fail || tips.fail;
+          //关闭loading
+          requestOpts.isShowLoading && hideLoading();
+          //比对当前pageID
+          if (!pageID.isCurrentID(currentPageID)) return;
+          //选取提醒信息
+          let msg = requestOptsTips.fail;
           //超时提醒
           if (err && /timeout/.test(err.errMsg)) {
-            msg = requestOptsTips.timeout || tips.timeout;
+            msg = requestOptsTips.timeout;
           }
           showToast({
-            title: msg,
-            icon: 'none'
+            title: msg
           });
-          _requestOpts.isShowLoading && hideLoading();
           reject(err);
         }
       }));

@@ -1,4 +1,5 @@
 import { requestInVue } from './request';
+import { pageInVue } from './page';
 import { loginInVue } from './login';
 import { locationInVue } from './location';
 import { imageInVue } from './image';
@@ -13,9 +14,11 @@ import { toastInVue } from './toast';
 import { loadingInVue } from './loading';
 import { webViewInVue } from './webview';
 
-export function weChatInVue(Vue) {
+export function mpInVue(Vue) {
   //检查更新小程序版本
   mpUpdate();
+  //页面相关
+  pageInVue(Vue);
   //登录相关
   loginInVue(Vue);
   //设置分享
@@ -44,6 +47,6 @@ export function weChatInVue(Vue) {
   webViewInVue(Vue);
 }
 
-export default weChatInVue;
+export default mpInVue;
 
 

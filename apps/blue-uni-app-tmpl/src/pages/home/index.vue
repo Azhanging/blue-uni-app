@@ -155,8 +155,8 @@
 
 <script>
 
-  import { login } from '$mp-api/login';
   import Vuex from 'vuex';
+  import { pageID } from '$mp-api/page';
   import scrollLower from '$mixin-components/scroll-lower';
   import BvSwitch from '$components/Bv/BvForm/BvSwitch';
 
@@ -199,8 +199,12 @@
     computed: {
       ...mapState(['isLogin'])
     },
+    onLoad(){
+      console.log(`home load:`,pageID.getCurrentID());
+    },
     onShow() {
-      this.$loggedIn().then(()=>{
+      console.log(`home show:`,pageID.getCurrentID());
+      this.$loggedIn().then(() => {
         this.getData();
         this.getData();
         this.getData();

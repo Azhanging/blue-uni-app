@@ -14,8 +14,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -43,7 +43,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/assets/css/blue-zone/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blue-utils" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -188,6 +188,7 @@
       <workItem from="1582725447856" duration="1249000" />
       <workItem from="1582804115648" duration="1718000" />
       <workItem from="1583320752764" duration="1564000" />
+      <workItem from="1585902534877" duration="4902000" />
     </task>
     <servers />
   </component>
@@ -198,29 +199,33 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.wxml" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1581146139938">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585906693597">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581146139938" />
-    <state width="1899" height="215" key="GridCell.Tab.0.bottom" timestamp="1582729750717">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585906693597" />
+    <state width="1899" height="238" key="GridCell.Tab.0.bottom" timestamp="1585896186295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="215" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582729750717" />
-    <state width="1899" height="215" key="GridCell.Tab.0.center" timestamp="1582729750717">
+    <state width="1899" height="238" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585896186295" />
+    <state width="1899" height="238" key="GridCell.Tab.0.center" timestamp="1585896186294">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="215" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582729750717" />
-    <state width="1899" height="215" key="GridCell.Tab.0.left" timestamp="1582729750717">
+    <state width="1899" height="238" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585896186294" />
+    <state width="1899" height="238" key="GridCell.Tab.0.left" timestamp="1585896186294">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="215" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582729750717" />
-    <state width="1899" height="215" key="GridCell.Tab.0.right" timestamp="1582729750717">
+    <state width="1899" height="238" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585896186294" />
+    <state width="1899" height="238" key="GridCell.Tab.0.right" timestamp="1585896186295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="215" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582729750717" />
-    <state x="636" y="253" width="786" height="600" key="find.popup" timestamp="1582725745186">
+    <state width="1899" height="238" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585896186295" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585894125651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="636" y="253" width="786" height="600" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582725745186" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585894125651" />
+    <state x="636" y="253" width="786" height="600" key="find.popup" timestamp="1585894124683">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="636" y="253" width="786" height="600" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585894124683" />
   </component>
 </project>
