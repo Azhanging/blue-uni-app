@@ -43,7 +43,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/assets/css/blue-zone/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blue-utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -189,6 +189,7 @@
       <workItem from="1582804115648" duration="1718000" />
       <workItem from="1583320752764" duration="1564000" />
       <workItem from="1585902534877" duration="4902000" />
+      <workItem from="1586186853178" duration="11000" />
     </task>
     <servers />
   </component>
