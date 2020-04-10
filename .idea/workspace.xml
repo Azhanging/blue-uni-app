@@ -16,6 +16,8 @@
         <option value="SCSS File" />
         <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="tsconfig.json" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -47,22 +49,23 @@
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JSON" />
+    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="ts.external.directory.path" value="E:\achang\github\blue-uni-app-program\apps\blue-uni-app-ts-tmpl\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\achang\github\blue-uni-app-program\apps\GDSY\src\pages\registration\register" />
-      <recent name="E:\achang\github\blue-uni-app-program\apps" />
-      <recent name="$PROJECT_DIR$/vue-config" />
-      <recent name="$PROJECT_DIR$/apps/blue-uni-app-tmpl" />
-      <recent name="$PROJECT_DIR$/apps/blue-uni-app-tmpl/dist" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\achang\github\blue-uni-app-program\mp-api" />
       <recent name="E:\achang\github\blue-uni-app-program\assets\css\blue-zone\src" />
       <recent name="E:\achang\github\blue-uni-app-program\components\Bv\Form" />
       <recent name="E:\achang\github\blue-uni-app-program\components\Bv" />
       <recent name="$PROJECT_DIR$/apps/blue-uni-app-tmpl" />
-      <recent name="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\achang\github\blue-uni-app-program\apps\blue-uni-app-ts-tmpl" />
+      <recent name="E:\achang\github\blue-uni-app-program\apps\GDSY\src\pages\registration\register" />
+      <recent name="E:\achang\github\blue-uni-app-program\apps" />
+      <recent name="$PROJECT_DIR$/vue-config" />
+      <recent name="$PROJECT_DIR$/apps/blue-uni-app-tmpl" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev:mp-weixin">
@@ -190,6 +193,11 @@
       <workItem from="1583320752764" duration="1564000" />
       <workItem from="1585902534877" duration="4902000" />
       <workItem from="1586186853178" duration="11000" />
+      <workItem from="1586493942563" duration="5104000" />
+      <workItem from="1586502689948" duration="665000" />
+      <workItem from="1586503372930" duration="512000" />
+      <workItem from="1586503900501" duration="8356000" />
+      <workItem from="1586513370950" duration="133000" />
     </task>
     <servers />
   </component>
@@ -200,10 +208,10 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.wxml" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1585906693597">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1586504387429">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585906693597" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586504387429" />
     <state width="1899" height="238" key="GridCell.Tab.0.bottom" timestamp="1585896186295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -220,13 +228,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="238" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585896186295" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1586503929266">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586503929266" />
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585894125651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585894125651" />
-    <state x="636" y="253" width="786" height="600" key="find.popup" timestamp="1585894124683">
+    <state x="636" y="253" width="786" height="600" key="find.popup" timestamp="1586505710644">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="636" y="253" width="786" height="600" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585894124683" />
+    <state x="636" y="253" width="786" height="600" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586505710644" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586503493288">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586503493288" />
   </component>
 </project>

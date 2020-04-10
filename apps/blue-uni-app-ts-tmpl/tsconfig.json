@@ -1,0 +1,66 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "baseUrl": "./",
+    "types": [
+      "webpack-env",
+      "@dcloudio/types/uni-app"
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@store": [
+        "./src/store"
+      ],
+      "@config": [
+        "./src/config"
+      ],
+      "@config/*": [
+        "./src/config/*"
+      ],
+      "$assets": [
+        "../../assets/*"
+      ],
+      "$code": [
+        "../../code"
+      ],
+      "$code/*": [
+        "../../code/*"
+      ],
+      "$mp-api": [
+        "../../mp-api"
+      ],
+      "$mp-api/*": [
+        "../../mp-api/*"
+      ],
+      "$use-in-vue": [
+        "../../use-in-vue"
+      ],
+      "$use-in-vue/*": [
+        "../../use-in-vue/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "extends": "../../tsconfig-base",
+  "exclude": [
+    "node_modules",
+    "unpackage",
+    "src/**/*.nvue"
+  ]
+}
