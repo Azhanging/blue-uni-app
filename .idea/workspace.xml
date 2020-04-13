@@ -45,26 +45,26 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/assets/css/blue-zone/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blue-react-program" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
     <property name="ts.external.directory.path" value="E:\achang\github\blue-uni-app-program\apps\blue-uni-app-ts-tmpl\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\achang\github\blue-uni-app-program\mp-api" />
-      <recent name="E:\achang\github\blue-uni-app-program\assets\css\blue-zone\src" />
-      <recent name="E:\achang\github\blue-uni-app-program\components\Bv\Form" />
-      <recent name="E:\achang\github\blue-uni-app-program\components\Bv" />
-      <recent name="$PROJECT_DIR$/apps/blue-uni-app-tmpl" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\achang\github\blue-uni-app-program\apps\blue-uni-app-ts-tmpl" />
       <recent name="E:\achang\github\blue-uni-app-program\apps\GDSY\src\pages\registration\register" />
       <recent name="E:\achang\github\blue-uni-app-program\apps" />
       <recent name="$PROJECT_DIR$/vue-config" />
+      <recent name="$PROJECT_DIR$/apps/blue-uni-app-tmpl" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\achang\github\blue-uni-app-program\mp-api" />
+      <recent name="E:\achang\github\blue-uni-app-program\assets\css\blue-zone\src" />
+      <recent name="E:\achang\github\blue-uni-app-program\components\Bv\Form" />
+      <recent name="E:\achang\github\blue-uni-app-program\components\Bv" />
       <recent name="$PROJECT_DIR$/apps/blue-uni-app-tmpl" />
     </key>
   </component>
@@ -89,16 +89,6 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="build:mp-alipay" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build:mp-alipay" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration name="build:mp-weixin" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/package.json" />
       <command value="run" />
@@ -111,6 +101,16 @@
     </configuration>
     <configuration name="dev:mp-weixin (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/apps/GDSY/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev:mp-weixin" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev:mp-weixin (2)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/apps/blue-uni-app-ts-tmpl/package.json" />
       <command value="run" />
       <scripts>
         <script value="dev:mp-weixin" />
@@ -132,17 +132,17 @@
     <list>
       <item itemvalue="Gulp.js.default" />
       <item itemvalue="npm.dev:mp-weixin" />
-      <item itemvalue="npm.build:mp-alipay" />
       <item itemvalue="npm.build:mp-weixin" />
       <item itemvalue="npm.dev:mp-weixin (1)" />
+      <item itemvalue="npm.dev:mp-weixin (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev:mp-weixin (2)" />
         <item itemvalue="npm.dev:mp-weixin" />
         <item itemvalue="Gulp.js.default" />
         <item itemvalue="npm.dev:mp-weixin (1)" />
         <item itemvalue="npm.build:mp-weixin" />
-        <item itemvalue="npm.build:mp-alipay" />
       </list>
     </recent_temporary>
   </component>
@@ -198,6 +198,12 @@
       <workItem from="1586503372930" duration="512000" />
       <workItem from="1586503900501" duration="8356000" />
       <workItem from="1586513370950" duration="133000" />
+      <workItem from="1586741357480" duration="1321000" />
+      <workItem from="1586742712428" duration="338000" />
+      <workItem from="1586743069779" duration="2232000" />
+      <workItem from="1586747032945" duration="63000" />
+      <workItem from="1586747103940" duration="364000" />
+      <workItem from="1586747483147" duration="10511000" />
     </task>
     <servers />
   </component>
@@ -208,41 +214,49 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.wxml" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1586504387429">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1586767665409">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586504387429" />
-    <state width="1899" height="238" key="GridCell.Tab.0.bottom" timestamp="1585896186295">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586767665409" />
+    <state width="1899" height="391" key="GridCell.Tab.0.bottom" timestamp="1586771896291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="238" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585896186295" />
-    <state width="1899" height="238" key="GridCell.Tab.0.center" timestamp="1585896186294">
+    <state width="1899" height="391" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586771896291" />
+    <state width="1899" height="391" key="GridCell.Tab.0.center" timestamp="1586771896291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="238" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585896186294" />
-    <state width="1899" height="238" key="GridCell.Tab.0.left" timestamp="1585896186294">
+    <state width="1899" height="391" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586771896291" />
+    <state width="1899" height="391" key="GridCell.Tab.0.left" timestamp="1586771896291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="238" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585896186294" />
-    <state width="1899" height="238" key="GridCell.Tab.0.right" timestamp="1585896186295">
+    <state width="1899" height="391" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586771896291" />
+    <state width="1899" height="391" key="GridCell.Tab.0.right" timestamp="1586771896291">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="238" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585896186295" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1586503929266">
+    <state width="1899" height="391" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586771896291" />
+    <state x="271" y="134" width="1419" height="735" key="SettingsEditor" timestamp="1586769814782">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586503929266" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585894125651">
+    <state x="271" y="134" width="1419" height="735" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586769814782" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586766706027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585894125651" />
-    <state x="636" y="253" width="786" height="600" key="find.popup" timestamp="1586505710644">
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586766706027" />
+    <state x="92" y="92" width="1736" height="856" key="dock-window-1" timestamp="1586749301873">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="636" y="253" width="786" height="600" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586505710644" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586503493288">
+    <state x="92" y="92" width="1736" height="856" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1586749301873" />
+    <state x="636" y="253" width="786" height="600" key="find.popup" timestamp="1586771603270">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586503493288" />
+    <state x="636" y="253" width="786" height="600" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586771603270" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1586763079478">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586763079478" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586771515981">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586771515981" />
   </component>
 </project>

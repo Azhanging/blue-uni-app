@@ -1,13 +1,13 @@
 import utils from 'blue-utils';
 
 //default mixin more data config
-function scrollLower(opts = {
+function scrollLower ( opts = {
 	loadKey: 'loadMore'
-}) {
+} ) {
 	return utils.extend({
-		data() {
+		data () {
 			return {
-				[opts.loadKey || 'loadMore']: {
+				[ opts.loadKey || 'loadMore' ]: {
 					//加载的数据相关
 					data: {
 						list: []
@@ -30,9 +30,9 @@ function scrollLower(opts = {
 					//钩子相关
 					hooks: {
 						//拿到数据后执行的钩子
-						got(res) {
+						got ( res ) {
 							try {
-								return res.data['list'];
+								return res.data[ 'list' ];
 							} catch (e) {
 								return [];
 							}
@@ -43,17 +43,17 @@ function scrollLower(opts = {
 		},
 		methods: {
 			//加载方法
-			scrollLower(opts = {
+			scrollLower ( opts = {
 				loadKey: 'loadMore'
-			}) {
-				return new Promise((resolve, reject) => {
+			} ) :Promise<any> {
+				return new Promise(( resolve, reject ) => {
 					const {
 						status,
 						data,
 						ajax,
 						listLen,
 						hooks
-					} = this[opts.loadKey];
+					} = this[ opts.loadKey ];
 
 					//没有数据退出处理
 					if (status.disabled) {
@@ -67,7 +67,7 @@ function scrollLower(opts = {
 					//获取列表数据
 					this.$request({
 						data: ajax.params,
-					}).then((res) => {
+					}).then(( res ) => {
 						//通过got拦截数据
 						const listData = utils.hook(this, hooks.got, [res]) || [];
 						//合并list数据
@@ -83,13 +83,13 @@ function scrollLower(opts = {
 			},
 
 			//清除loadMore的列表和状态
-			resetScrollLower(opts = {
+			resetScrollLower ( opts = {
 				loadKey: `loadMore`
-			}) {
-				return new Promise((resolve, reject) => {
+			} ) {
+				return new Promise(( resolve, reject ) => {
 					try {
-						const {loadKey} = opts;
-						const loadMore = this[loadKey];
+						const { loadKey } = opts;
+						const loadMore = this[ loadKey ];
 						const loadMoreData = loadMore.data;
 						loadMore.params.page = 1;
 						loadMoreData.list = [];

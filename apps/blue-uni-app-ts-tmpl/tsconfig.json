@@ -28,7 +28,19 @@
       "@config/*": [
         "./src/config/*"
       ],
-      "$assets": [
+      "$request": [
+        "../../mp-api/request"
+      ],
+      "$api": [
+        "../../api"
+      ],
+      "$config": [
+        "../../config"
+      ],
+      "$config/*": [
+        "../../config/*"
+      ],
+      "$assets/*": [
         "../../assets/*"
       ],
       "$code": [
@@ -55,12 +67,15 @@
       "dom",
       "dom.iterable",
       "scripthost"
+    ],
+    "rootDirs": [
+      "../.."
     ]
   },
-  "extends": "../../tsconfig-base",
   "exclude": [
     "node_modules",
     "unpackage",
     "src/**/*.nvue"
-  ]
+  ],
+  "extends": "../../tsconfig-base"
 }

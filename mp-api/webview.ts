@@ -1,34 +1,38 @@
 import config from '@config';
 
 class WebView {
-  constructor() {
-    this._init();
-  }
+	webView: any;
 
-  _init() {
-    this.webView = {};
-  }
+	constructor () {
+		this._init();
+	}
 
-  setWebView(webview) {
-    this.webView = webview;
-  }
+	_init () {
+		this.webView = {};
+	}
 
-  getWebView() {
-    return this.webView;
-  }
+	setWebView ( webview: any ) {
+		this.webView = webview;
+	}
 
-  removeWebView() {
-    this._init();
-  }
+	getWebView () {
+		return this.webView;
+	}
 
-  navigateTo(opts = {}) {
-    this.setWebView(opts);
-    uni.navigateTo({
-      url: opts.url || config.path.webview
-    });
-  }
+	removeWebView () {
+		this._init();
+	}
+
+	navigateTo ( opts: {
+		url: string;
+	} ) {
+		this.setWebView(opts);
+		uni.navigateTo({
+			url: opts.url || config.path.webview
+		});
+	}
 }
 
-export function webViewInVue(Vue) {
-  Vue.prototype.$webView = new WebView();
+export function webViewInVue ( Vue: any ) {
+	Vue.prototype.$webView = new WebView();
 }

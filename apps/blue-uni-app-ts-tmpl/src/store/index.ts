@@ -15,7 +15,7 @@ const store = new Vuex.Store({
 
 //mixin vuex store in vue instance
 Vue.mixin({
-  store: store
+  store
 });
 
 export default store;

@@ -25,7 +25,7 @@ function getIcon ( type: string ) {
 }
 
 //显示不同的弹窗
-export function showToast ( opts: any ) {
+export function showToast ( opts: any ): Promise<any> {
 	const { type } = opts;
 	return new Promise(( resolve, reject ) => {
 		uni.showToast(utils.extend({

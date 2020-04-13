@@ -28,7 +28,6 @@ export function responseInterceptor ( opts: any ) {
 			//错误码处理
 			codeHandler({
 				code: requestCode,
-				resolve,
 				reject,
 				res
 			});

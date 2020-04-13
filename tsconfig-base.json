@@ -1,12 +1,5 @@
 {
   "compilerOptions": {
-    "paths": {
-      "$use-in-vue": [
-        "../../use-in-vue"
-      ],
-      "$use-in-vue/*": [
-        "../../use-in-vue/*"
-      ]
-    }
+    
   }
 }

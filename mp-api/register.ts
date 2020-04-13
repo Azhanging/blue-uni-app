@@ -2,7 +2,9 @@ import config from '@config';
 import { setLastPath, getCurrentPath } from "./page";
 
 //跳转到注册页面
-export function redirectRegister(opts = {}) {
+export function redirectRegister ( opts: {
+	path: string;
+} ): void {
 	//设置最后的路由地址
 	setLastPath(opts.path);
 	//跳转绑定手机页面
@@ -12,7 +14,7 @@ export function redirectRegister(opts = {}) {
 }
 
 //是否在绑定手机的页面
-export function isRegisterPage(path) {
+export function isRegisterPage ( path?: string ): boolean {
 	let lastPath = getCurrentPath();
 	if (path) {
 		lastPath = path;
