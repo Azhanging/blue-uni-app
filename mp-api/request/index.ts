@@ -19,7 +19,7 @@ interface TRequestOpts {
 	tips?: TRequestTips;
 	method?: string;
 
-	[param: string]: any;
+	[ param: string ]: any;
 }
 
 //在vue扩展
@@ -44,7 +44,7 @@ function setExtend ( opts: any ): any {
 function setRequestHeader (): any {
 	const header: any = {};
 	utils.each(config.login.storage, ( key: string, _key: string ) => {
-		header[_key] = uni.getStorageSync(_key);
+		header[ _key ] = uni.getStorageSync(_key);
 	});
 	return header;
 }
@@ -53,7 +53,7 @@ function setRequestHeader (): any {
 export default function request ( requestOpts: TRequestOpts ): Promise<any> {
 	//获取到添加login header options
 	requestOpts = setExtend(requestOpts);
-	const {tips, isShowLoading} = requestOpts;
+	const { tips, isShowLoading } = requestOpts;
 	//request loading的处理
 	isShowLoading && showLoading({
 		title: (tips as TRequestTips).loading
@@ -62,7 +62,7 @@ export default function request ( requestOpts: TRequestOpts ): Promise<any> {
 	return new Promise(( resolve, reject ) => {
 		//获取当前的pageID
 		const currentPageID: number = pageID.getCurrentID();
-		const {rawUrl, method} = requestOpts;
+		const { rawUrl, method } = requestOpts;
 		let route: any;
 		let blueMpMock: any;
 		//只有开发环境存在mock interceptor
@@ -78,6 +78,10 @@ export default function request ( requestOpts: TRequestOpts ): Promise<any> {
 
 		//模拟数据
 		if (process.env.NODE_ENV !== 'production' && route) {
+			//关闭loading
+			isShowLoading && hideLoading();
+			//比对当前的页面id，不匹配则不处理
+			if (!pageID.isCurrentID(currentPageID)) return;
 			const res = blueMpMock.response(route);
 			//拦截器
 			responseInterceptor({
@@ -86,8 +90,6 @@ export default function request ( requestOpts: TRequestOpts ): Promise<any> {
 				reject,
 				requestOpts
 			});
-			//关闭油站
-			isShowLoading && hideLoading();
 		} else {
 			//从设置的配置中扩展
 			uni.request(utils.extend(requestOpts, {

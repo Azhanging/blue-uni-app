@@ -70,6 +70,8 @@ export function backLastRoute ( opts: {
 			return uni.redirectTo({
 				url
 			});
+		case 'back':
+			return uni.navigateBack();
 		case 'nav':
 		default :
 			uni.navigateTo({

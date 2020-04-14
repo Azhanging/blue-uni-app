@@ -1,8 +1,7 @@
 {
   "dependencies": {
     "blue-queue-pipe": "^1.1.1",
-    "blue-utils": "^1.1.1",
-    "module-alias": "^2.2.2"
+    "blue-utils": "^1.1.1"
   },
   "devDependencies": {
     "chokidar": "^3.3.0"

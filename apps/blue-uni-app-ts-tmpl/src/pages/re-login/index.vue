@@ -32,8 +32,9 @@
         if (this.reLoginStatus) return;
         this.reLoginStatus = true;
         this.$login().then(() => {
+          const { config, $store } = this;
           //如果是tab的路径，直接使用switchTab执行
-          if (this.config.path.tabBarPath.indexOf(this.$store.state.lastPath) !== -1) {
+          if (config.path.tabBarPath.indexOf($store.state.lastPath) !== -1) {
             //回到最后的路由页面
             backLastRoute({
               type: 'tab'
@@ -41,7 +42,7 @@
           } else {
             //回到最后的路由页面
             backLastRoute({
-              type: 'redirect'
+              type: 'back'
             });
           }
         }).catch(() => {
