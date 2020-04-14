@@ -6,7 +6,7 @@ const defaultToastOpts = {
 };
 
 //获取不同类型的icon
-function getIcon ( type: string ) {
+function getIcon ( type: string ): string {
 	let icon = '';
 	switch (type) {
 		case 'success':
@@ -26,7 +26,7 @@ function getIcon ( type: string ) {
 
 //显示不同的弹窗
 export function showToast ( opts: any ): Promise<any> {
-	const { type } = opts;
+	const {type} = opts;
 	return new Promise(( resolve, reject ) => {
 		uni.showToast(utils.extend({
 				icon: getIcon(type),

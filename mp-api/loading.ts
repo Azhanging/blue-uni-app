@@ -11,18 +11,18 @@ const defaultLoadingOpts = {
 };
 
 //showLoading
-export function showLoading ( opts: any = {} ) {
+export function showLoading ( opts: any = {} ): void {
 	loadingQueue.isEmpty() && uni.showLoading(utils.extend(defaultLoadingOpts, opts));
 	loadingQueue.enqueue(1);
 }
 
 //hide loading
-export function hideLoading () {
+export function hideLoading (): void {
 	loadingQueue.dequeue();
 	loadingQueue.isEmpty() && uni.hideLoading();
 }
 
-export function loadingInVue ( Vue: any ) {
+export function loadingInVue ( Vue: any ): void {
 	Vue.prototype.$showLoading = showLoading;
 	Vue.prototype.$hideLoading = hideLoading;
 }

@@ -7,9 +7,7 @@ const config = {
 	//配置相关
 	app: {
 		name: "",               //小程序名
-		id: "",                 //appid
-		secret: "",             //小程序secret
-		login_form: 0          //来源
+		id: ""                 //appid
 	},
 
 	url: {
@@ -60,7 +58,7 @@ const config = {
 		},
 		//登录状态
 		storage: {
-			[ tokenName ]: "token"
+			[tokenName]: "token"
 		}
 	},
 
@@ -89,7 +87,7 @@ const config = {
 		//手机相关
 		phone: {
 			//get phone 中 参数tokenName的key
-			[ tokenName ]: tokenName
+			[tokenName]: tokenName
 		},
 	},
 
@@ -142,7 +140,7 @@ const config = {
 			method: "GET",
 			dataType: "json",
 			responseType: "text",
-			[ 'content-type' ]: 'application/x-www-form-urlencoded',
+			['content-type']: 'application/x-www-form-urlencoded',
 			//是否显示
 			isShowLoading: true,
 			isShowToast: false,

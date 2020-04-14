@@ -36,6 +36,9 @@
     "@dcloudio/uni-mp-toutiao": "^2.0.0-26920200403001",
     "@dcloudio/uni-mp-weixin": "^2.0.0-26920200403001",
     "@dcloudio/uni-stat": "^2.0.0-26920200403001",
+    "blue-mp-mock-interceptor": "^1.0.0",
+    "blue-queue-pipe": "^1.0.6",
+    "blue-utils": "^1.1.1",
     "core-js": "^3.6.4",
     "flyio": "^0.6.2",
     "regenerator-runtime": "^0.12.1",
@@ -62,7 +65,9 @@
     "cross-env": "^7.0.2",
     "postcss-comment": "^2.0.0",
     "typescript": "^3.0.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.11",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0"
   },
   "browserslist": [
     "Android >= 4",

@@ -15,6 +15,6 @@ export function showModal ( opts: any ): Promise<any> {
 	});
 }
 
-export function modalInVue ( Vue: any ) {
+export function modalInVue ( Vue: any ): void {
 	Vue.prototype.$showModal = showModal;
 }

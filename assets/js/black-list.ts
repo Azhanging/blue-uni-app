@@ -8,16 +8,14 @@ export function blackListFilter ( opts: {
 		path: string | RegExp;
 		sharePath: string;
 	}[]
-} ) {
+} ): string {
 	const {path, blackList} = opts;
-	const homePath = config.path.home;
+	const homePath: string = config.path.home;
 	for (let i = 0; i < blackList.length; i++) {
 		const item = blackList[i];
-		if (typeof item.path === 'string' && item.path === path) {
+		if ((typeof item.path === 'string' && item.path === path) ||
+			(item.path instanceof RegExp && item.path.test(path))) {
 			//匹配字符串类型
-			return utils.hook(null, item.sharePath) || homePath;
-		} else if (item.path instanceof RegExp && item.path.test(path)) {
-			//通过正则匹配
 			return utils.hook(null, item.sharePath) || homePath;
 		}
 	}

@@ -3,7 +3,7 @@ import utils from 'blue-utils';
 import { getCurrentPath } from '$mp-api/page';
 import { blackListFilter } from '$assets/js/black-list';
 
-export function shareInVue ( Vue: any ) {
+export function shareInVue ( Vue: any ): void {
 	//分享地址生成
 	Vue.prototype.$sharePath = sharePath;
 
@@ -23,20 +23,20 @@ export function shareInVue ( Vue: any ) {
 }
 
 //分享地址
-export function sharePath ( path?: string ) {
+export function sharePath ( path?: string ): string {
 	//小程序路由地址
-	const currentPath = path || getCurrentPath();
+	const currentPath: string = path || getCurrentPath();
 	//没参数地址
-	const _path = utils.getNoParamsLink(currentPath);
+	const _path: string = utils.getNoParamsLink(currentPath);
 	//object params
-	const objQuery = utils.parseParams(utils.getLinkParams(currentPath));
+	const objQuery: any = utils.parseParams(utils.getLinkParams(currentPath));
 	//带入忽略参数地址
-	const sharePath = blackListFilter({
+	const sharePath: string = blackListFilter({
 		path: _path,
 		blackList: config.share.blackList
 	});
 	//返回链接
-	const query = utils.stringifyParams(objQuery);
+	const query: any = utils.stringifyParams(objQuery);
 	return `${sharePath}${query ? `?${encodeURIComponent(query)}` : ''}`;
 }
 

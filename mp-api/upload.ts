@@ -3,7 +3,7 @@ import config from '@config';
 import { showLoading, hideLoading } from '$mp-api/loading';
 
 //选择图片,默认上传图片,isUpload为false时，将返回默认chooseImage的数据流
-export function chooseImage ( opts = {} ) {
+export function chooseImage ( opts: any = {} ): Promise<any> {
 	return new Promise(( resolve, reject ) => {
 
 		const _opts = utils.extend({
@@ -39,7 +39,7 @@ export function uploadFile ( opts: {
 	filePaths: []
 } ): Promise<any> {
 	const all: Promise<any>[] = [];
-	const { filePaths } = opts;
+	const {filePaths} = opts;
 	filePaths.forEach(( filePath ) => {
 		all.push(new Promise(( resolve, reject ) => {
 			showLoading();
@@ -69,7 +69,7 @@ export function uploadFile ( opts: {
 }
 
 //扩展到Vue上
-export function uploadInVue ( Vue: any ) {
+export function uploadInVue ( Vue: any ): void {
 	//获取图片文件
 	Vue.prototype.$chooseImage = chooseImage;
 	//上传资源

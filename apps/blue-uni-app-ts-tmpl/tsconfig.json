@@ -16,8 +16,12 @@
       "@dcloudio/types/uni-app"
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
+      "@": [
+        "./src",
+        "./src/*",
+      ],
+      "@mock": [
+        "./mock"
       ],
       "@store": [
         "./src/store"
@@ -25,8 +29,20 @@
       "@config": [
         "./src/config"
       ],
-      "@config/*": [
-        "./src/config/*"
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@css/*": [
+        "./src/css/*"
+      ],
+      "@static/*": [
+        "./static/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "$components/*": [
+        "./src/components/*"
       ],
       "$request": [
         "../../mp-api/request"
@@ -67,15 +83,11 @@
       "dom",
       "dom.iterable",
       "scripthost"
-    ],
-    "rootDirs": [
-      "../.."
     ]
   },
   "exclude": [
     "node_modules",
     "unpackage",
     "src/**/*.nvue"
-  ],
-  "extends": "../../tsconfig-base"
+  ]
 }

@@ -1,7 +1,7 @@
 import utils from 'blue-utils';
 
 //扫二维码
-function scanCode ( opts = {} ) {
+function scanCode ( opts: any = {} ): Promise<any> {
 	return new Promise(( resolve, reject ) => {
 		uni.scanCode(utils.extend({
 			success: ( res: any ) => {
@@ -19,6 +19,6 @@ function scanCode ( opts = {} ) {
 }
 
 //在vue扩展
-export function scanCodeInVue ( Vue: any ) {
+export function scanCodeInVue ( Vue: any ): void {
 	Vue.prototype.$scanCode = scanCode;
 }

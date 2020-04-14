@@ -1,7 +1,7 @@
 import { showModal } from './modal';
 
 //微信小程序更新
-export function mpUpdate () {
+export function mpUpdate (): void {
 	const updateManager = uni.getUpdateManager();
 	updateManager.onUpdateReady(() => {
 		showModal({
@@ -14,7 +14,7 @@ export function mpUpdate () {
 		});
 	});
 
-	updateManager.onCheckForUpdate(( res ) => {
+	updateManager.onCheckForUpdate(( res: any ) => {
 		if (res.hasUpdate) {
 			console.log('发现新版本');
 		} else {

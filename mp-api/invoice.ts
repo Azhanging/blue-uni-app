@@ -1,22 +1,22 @@
 import { authorize, authorizeFail } from './authorize';
 
 //获取发票抬头
-export function invoiceTitle () {
+export function invoiceTitle (): Promise<any> {
 	return authorize({
 		scope: `scope.invoiceTitle`
 	}).then(() => {
 		return new Promise(( resolve, reject ) => {
 			uni.chooseInvoiceTitle({
-				success ( res ) {
+				success ( res: any ) {
 					resolve(res);
 				},
-				fail ( err ) {
+				fail ( err: any ) {
 					reject(err);
 				}
 			});
 		});
-	}).catch(( err ) => {
-		const { errMsg } = err;
+	}).catch(( err: any ) => {
+		const {errMsg} = err;
 		if (/auth/.test(errMsg)) {
 			//提醒授权错误，可跳转授权页面
 			authorizeFail({

@@ -1,7 +1,7 @@
 <script>
   import { getUserInfo } from '$mp-api/user-info';
   import { setQuery } from '$mp-api/page';
-  import { apiErrorReport } from 'index.ts';
+  import { apiErrorReport } from '$api';
 
   export default {
     created() {

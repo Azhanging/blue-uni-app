@@ -1,11 +1,11 @@
 //初始授权验证
-export function getSetting() {
-	return new Promise((resolve, reject) => {
+export function getSetting (): Promise<any> {
+	return new Promise(( resolve, reject ) => {
 		uni.getSetting({
-			success: (res) => {
+			success: ( res ) => {
 				resolve(res);
 			},
-			fail(err) {
+			fail ( err ) {
 				reject(err);
 			}
 		});
@@ -19,7 +19,7 @@ export function getSetting() {
 * camera => scope.camera
 * audioRecord => scope.record
 * */
-export function authSettingScope(authSetting, name) {
+export function authSettingScope ( authSetting, name ) {
 	//做兼容处理
 	let scopeName = ``;
 	if (process.env.VUE_APP_PLATFORM === 'mp-weixin') {

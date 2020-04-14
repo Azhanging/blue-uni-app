@@ -4,7 +4,7 @@ import { authorize, authorizeFail } from "./authorize";
 import { showModal } from "./modal";
 
 //在Vue中扩展
-export function imageInVue ( Vue: any ) {
+export function imageInVue ( Vue: any ): void {
 	//保存图片
 	Vue.prototype.$saveImage = saveImage;
 }
@@ -22,8 +22,7 @@ function saveImage ( opts: any ): Promise<any> {
 			});
 		});
 	}).catch(( err: any ) => {
-		const { errMsg } = err;
-		console.log(errMsg);
+		const {errMsg} = err;
 		//提醒授权错误，可跳转授权页面
 		if (/auth/.test(errMsg)) {
 			authorizeFail({
@@ -45,7 +44,7 @@ function saveImage ( opts: any ): Promise<any> {
 function downFile ( this: any, opts: {
 	url: string;
 } ): Promise<any> {
-	const { url } = opts;
+	const {url} = opts;
 	return new Promise(( resolve, reject ) => {
 		uni.downloadFile({
 			url,
@@ -64,15 +63,15 @@ function downFile ( this: any, opts: {
 }
 
 //保存图片
-function saveImg ( opts: any ) {
+function saveImg ( opts: any ): Promise<any> {
 	return new Promise(( resolve, reject ) => {
-		const { tempFilePath: filePath } = opts;
+		const {tempFilePath: filePath} = opts;
 		uni.saveImageToPhotosAlbum({
 			filePath,
-			success: ( res ) => {
+			success: ( res: any ) => {
 				resolve(res);
 			},
-			fail: ( e ) => {
+			fail: ( e: any ) => {
 				reject(e);
 			}
 		});

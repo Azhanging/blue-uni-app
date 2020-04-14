@@ -4,16 +4,16 @@ import config from '@config';
 import utils from 'blue-utils';
 
 //获取用户信息
-export function getUserInfo () {
+export function getUserInfo (): void {
 	apiGetUserInfo().then(( res: any ) => {
-		const { data } = res;
+		const {data} = res;
 		//设置用户信息
 		setUserInfo(data);
 	});
 }
 
 //设置用户信息
-export function setUserInfo ( data: any ) {
+export function setUserInfo ( data: any ): void {
 	//config中userInfo
 	const configUserInfo = config.userInfo;
 	//设置info信息

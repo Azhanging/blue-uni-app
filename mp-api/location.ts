@@ -5,10 +5,10 @@ import { showLoading, hideLoading } from '$mp-api/loading';
 import { authorize, authorizeFail } from "./authorize";
 
 //定位任务队列
-export const locationQueue = new BlueQueuePipe({
+export const locationQueue: BlueQueuePipe = new BlueQueuePipe({
 	methods: {
 		//执行任务
-		runTask ( fn: Function ) {
+		runTask ( fn: Function ): void {
 			if (getLocationStorage()) {
 				fn();
 			} else {
@@ -29,7 +29,7 @@ export function locationInVue ( Vue: any ) {
 //获取地理位置
 export function getLocation ( opts = {
 	isShowFailModal: false
-} ) {
+} ): Promise<any> {
 	return authorize({
 		scope: 'scope.userLocation'
 	}).then(() => {
@@ -64,7 +64,7 @@ export function getLocation ( opts = {
 				}
 			}, opts));
 		});
-	}).catch(( err ) => {
+	}).catch(( err: any ) => {
 		hideLoading();
 		//针对微信提醒授权使用 不设置isShowFailModal不进行授权提醒
 		if (/auth/.test(err.errMsg) && opts.isShowFailModal) {
@@ -77,13 +77,16 @@ export function getLocation ( opts = {
 }
 
 //设置定位到本地存储
-export function setLocationStorage ( opts = {} ) {
+export function setLocationStorage ( opts: {
+	lat: number;
+	lng: number;
+} ): void {
 	//{lat:0,lng:0}
 	uni.setStorageSync(config.location.storageKey, JSON.stringify(opts));
 }
 
 //获取本地的定位信息
-export function getLocationStorage () {
+export function getLocationStorage (): any {
 	const locationStorage = uni.getStorageSync(config.location.storageKey);
 	return (locationStorage && JSON.parse(locationStorage)) || null;
 }

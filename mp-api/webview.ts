@@ -15,7 +15,7 @@ class WebView {
 		this.webView = webview;
 	}
 
-	getWebView () {
+	getWebView (): any {
 		return this.webView;
 	}
 
@@ -33,6 +33,6 @@ class WebView {
 	}
 }
 
-export function webViewInVue ( Vue: any ) {
+export function webViewInVue ( Vue: any ): void {
 	Vue.prototype.$webView = new WebView();
 }

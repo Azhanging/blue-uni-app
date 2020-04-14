@@ -10,14 +10,14 @@ export function authorize ( opts: {
 		if (process.env.VUE_APP_PLATFORM === 'mp-weixin') {
 			uni.authorize({
 				scope: opts.scope,
-				success: ( res ) => {
+				success: ( res: any ) => {
 					if (/ok/.test(res.errMsg)) {
 						resolve();
 					} else {
 						reject(res);
 					}
 				},
-				fail: ( e ) => {
+				fail: ( e: any ) => {
 					reject(e);
 				}
 			});
@@ -29,8 +29,11 @@ export function authorize ( opts: {
 }
 
 //授权失败
-export function authorizeFail ( opts: any ) {
-	const { type, openSetting } = opts;
+export function authorizeFail ( opts: {
+	type: string;
+	openSetting?: boolean;
+} ): void {
+	const {type, openSetting} = opts;
 	const typeName = (() => {
 		switch (type) {
 			case 'userInfo':
@@ -52,7 +55,7 @@ export function authorizeFail ( opts: any ) {
 		confirmText: '前往设置',
 		showCancel: true
 	}, opts)).then(( res ) => {
-		const { confirm } = res;
+		const {confirm} = res;
 		//openSetting这里的显示设置可配置
 		if (confirm === true && openSetting !== false) {
 			//打开到设置的页面
