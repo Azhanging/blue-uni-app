@@ -93,7 +93,7 @@ export function login (): Promise<any> {
 				}
 				//发送login code
 				sendLoginCode({
-					params: utils.hook(null, config.login.params, [res]) || {}
+					data: utils.hook(null, config.login.request.data, [res]) || {}
 				}).then(() => {
 					// 设置登录状态
 					resolve();
@@ -131,10 +131,9 @@ export function loggedIn (): Promise<any> {
 
 //发送logon code,获取openid
 function sendLoginCode ( opts: {
-	params: any;
+	data: any;
 } ): Promise<any> {
-	const {params} = opts;
-	return apiLogin(params).then(( res: any ) => {
+	return apiLogin(opts).then(( res: any ) => {
 		const {data} = res;
 		if (res.errcode === 50001) {
 			//新用户，前往注册

@@ -10,6 +10,7 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "sourceMap": true,
+    "strictNullChecks": true,
     "baseUrl": "./",
     "types": [
       "webpack-env",
@@ -18,7 +19,7 @@
     "paths": {
       "@": [
         "./src",
-        "./src/*",
+        "./src/*"
       ],
       "@mock": [
         "./mock"

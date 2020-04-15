@@ -22,8 +22,6 @@ export const locationQueue: BlueQueuePipe = new BlueQueuePipe({
 export function locationInVue ( Vue: any ) {
 	//获取定位
 	Vue.prototype.$getLocation = getLocation;
-	//定位队列
-	Vue.prototype.$locationQueue = locationQueue;
 }
 
 //获取地理位置
@@ -37,12 +35,14 @@ export function getLocation ( opts = {
 		return new Promise(( resolve, reject ) => {
 			showLoading();
 			//区分不同端的地理位置类型
-			const type = (() => {
+			const type: string | number = (() => {
 				switch (process.env.VUE_APP_PLATFORM) {
 					case 'mp-weixin':
 						return 'gcj02';
 					case 'mp-alipay':
 						return 1;
+					default:
+						return '';
 				}
 			})();
 			uni.getLocation(utils.extend({
@@ -50,7 +50,10 @@ export function getLocation ( opts = {
 				success ( res: any ) {
 					hideLoading();
 					//定位信息
-					const location = {
+					const location: {
+						lat: number;
+						lng: number;
+					} = {
 						lat: res.latitude,
 						lng: res.longitude
 					};

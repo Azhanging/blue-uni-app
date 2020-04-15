@@ -1,8 +1,47 @@
-//session_key key name
-const tokenName = `token`;
+import { TBlackListOpts } from '$assets/js/black-list';
+
+//配置
+interface TConfigParam<T> {
+	[key: string]: T;
+}
+
+type TConfigParamString = TConfigParam<string>;
+
+interface TConfigPages extends TConfigParam<any> {
+	lastPathBlackList: TBlackListOpts[];
+}
+
+interface TConfigShare extends TConfigParam<any> {
+	params?: any;
+	blackList: TBlackListOpts[];
+}
+
+export interface TConfig extends TConfigParam<any> {
+	app: TConfigParam<any>;
+	url: TConfigParamString;
+	path: TConfigParamString;
+	tabBarPath: string[];
+	pages: TConfigPages;
+	login: {
+		request: TConfigParam<any>;
+		hooks: TConfigParam<Function>;
+		storage: TConfigParam<any>;
+	};
+	userInfo: {
+		request: TConfigParam<any>;
+		hooks: TConfigParam<Function>;
+	};
+	share: TConfigShare;
+	location: TConfigParamString;
+	upload: TConfigParamString;
+	css: TConfigParamString;
+	request: {
+		options: TConfigParam<any>;
+	};
+}
 
 //global config
-const config = {
+const config: TConfig = {
 
 	//配置相关
 	app: {
@@ -19,10 +58,11 @@ const config = {
 	path: {
 		home: "/pages/home/index",       //首页地址
 		webview: "/pages/webview/index",
-		reLogin: "/pages/re-login/index",
-		//底部地址信息，暂时用于relogin的时候的回跳处理
-		tabBarPath: []
+		reLogin: "/pages/re-login/index"
 	},
+
+	//底部地址信息，暂时用于relogin的时候的回跳处理
+	tabBarPath: [],
 
 	//页面相关
 	pages: {
@@ -41,7 +81,7 @@ const config = {
 			url: '/mock/login.json',
 			method: 'post',
 			//登录获取的状态
-			params () {
+			data () {
 				return {};
 			},
 		},
@@ -58,7 +98,7 @@ const config = {
 		},
 		//登录状态
 		storage: {
-			[tokenName]: "token"
+			[`token`]: "token"
 		}
 	},
 
@@ -75,20 +115,6 @@ const config = {
 				return data;
 			}
 		}
-	},
-
-	//绑定相关
-	bind: {
-		//关系绑定
-		relation: {
-			url: 'share_bind'
-		},
-
-		//手机相关
-		phone: {
-			//get phone 中 参数tokenName的key
-			[tokenName]: tokenName
-		},
 	},
 
 	//分享相关的
@@ -117,16 +143,6 @@ const config = {
 	upload: {
 		//上传地址
 		url: `https://portal.kindpetro.com.cn/base/saveMoneySapp/specialCar/uploadPicture`
-	},
-
-	//获取手机相关
-	phone: {
-		url: ``
-	},
-
-	//支付相关
-	pay: {
-		url: ``
 	},
 
 	//css相关

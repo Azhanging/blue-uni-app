@@ -1,15 +1,21 @@
 import config from '@config';
 import utils from 'blue-utils';
 
-//查询黑名单
-export function blackListFilter ( opts: {
+//黑名单列表配置
+export interface TBlackListOpts {
+	path: string | RegExp;
+	sharePath: string | Function;
+}
+
+//黑名单过滤配置选项
+interface TBlackListFilterOpts {
 	path: string;
-	blackList: {
-		path: string | RegExp;
-		sharePath: string;
-	}[]
-} ): string {
-	const {path, blackList} = opts;
+	blackList: TBlackListOpts[]
+}
+
+//查询黑名单
+export function blackListFilter ( opts: TBlackListFilterOpts ): string {
+	const {path, blackList = []} = opts;
 	const homePath: string = config.path.home;
 	for (let i = 0; i < blackList.length; i++) {
 		const item = blackList[i];

@@ -25,6 +25,8 @@ class WebView {
 
 	navigateTo ( opts: {
 		url: string;
+		src: string;
+		title?: string;
 	} ) {
 		this.setWebView(opts);
 		uni.navigateTo({

@@ -1,15 +1,13 @@
 //工具类
 import utils from 'blue-utils';
 //公共的config
-import publicConfig from '$config';
+import publicConfig, { TConfig } from '$config';
 import path from './path';
 
-//项目config
-const config = utils.extend(publicConfig, {
+const programConfig = {
 	app: {
 		name: "blue-wx-program-tmpl",               //小程序名
-		appid: "",                 //appid
-		login_form: 1          //来源
+		appid: ""                 //appid
 	},
 
 	//域名url相关
@@ -35,9 +33,9 @@ const config = utils.extend(publicConfig, {
 				return `/mock/login`;
 			},
 			//登录获取的状态
-			params ( res: any ) {
+			params ( res: any ): any {
 				return {
-					appid: config.app.id,
+					appid: programConfig.app.appid,
 					code: res.code
 				};
 			},
@@ -50,7 +48,9 @@ const config = utils.extend(publicConfig, {
 	},
 
 	userInfo: {
-		url: `/mock/getUserInfo`
+		request: {
+			url: `/mock/getUserInfo`
+		}
 	},
 
 	css: {
@@ -64,6 +64,9 @@ const config = utils.extend(publicConfig, {
 			path: /register|bind-phone/
 		}]
 	}
-});
+};
+
+//项目config
+const config: TConfig = utils.extend(publicConfig, programConfig);
 
 export default config;

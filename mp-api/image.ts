@@ -48,15 +48,15 @@ function downFile ( this: any, opts: {
 	return new Promise(( resolve, reject ) => {
 		uni.downloadFile({
 			url,
-			success: ( res ) => {
+			success: ( res: any ) => {
 				if (res.statusCode === 200) {
 					resolve.call(this, res);
 				} else {
 					reject.call(this, res);
 				}
 			},
-			fail: ( e ) => {
-				reject.call(this, e);
+			fail: ( err: any ) => {
+				reject.call(this, err);
 			}
 		});
 	});
@@ -71,8 +71,8 @@ function saveImg ( opts: any ): Promise<any> {
 			success: ( res: any ) => {
 				resolve(res);
 			},
-			fail: ( e: any ) => {
-				reject(e);
+			fail: ( err: any ) => {
+				reject(err);
 			}
 		});
 	});

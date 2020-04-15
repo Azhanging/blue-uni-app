@@ -1,7 +1,7 @@
 import $request from '$request';
 
 //错误处理 上报
-export function apiErrorReport ( err: any ) {
+export function apiErrorReport ( err: any ): Promise<any> {
 	return $request({
 		url: '',
 		baseUrl: '',
