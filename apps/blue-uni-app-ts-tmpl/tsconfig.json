@@ -1,0 +1,94 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "baseUrl": "./",
+    "types": [
+      "webpack-env",
+      "@dcloudio/types/uni-app"
+    ],
+    "paths": {
+      "@": [
+        "./src",
+        "./src/*"
+      ],
+      "@mock": [
+        "./mock"
+      ],
+      "@store": [
+        "./src/store"
+      ],
+      "@config": [
+        "./src/config"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@css/*": [
+        "./src/css/*"
+      ],
+      "@static/*": [
+        "./static/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "$components/*": [
+        "./src/components/*"
+      ],
+      "$request": [
+        "../../mp-api/request"
+      ],
+      "$api": [
+        "../../api"
+      ],
+      "$config": [
+        "../../config"
+      ],
+      "$config/*": [
+        "../../config/*"
+      ],
+      "$assets/*": [
+        "../../assets/*"
+      ],
+      "$code": [
+        "../../code"
+      ],
+      "$code/*": [
+        "../../code/*"
+      ],
+      "$mp-api": [
+        "../../mp-api"
+      ],
+      "$mp-api/*": [
+        "../../mp-api/*"
+      ],
+      "$use-in-vue": [
+        "../../use-in-vue"
+      ],
+      "$use-in-vue/*": [
+        "../../use-in-vue/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "unpackage",
+    "src/**/*.nvue"
+  ]
+}
