@@ -16,6 +16,7 @@
 <script>
 
   import { backLastRoute } from '$mp-api/page';
+  import {setIsReLoginPage} from '$mp-api/login';
 
   export default {
     name: "index",
@@ -27,13 +28,17 @@
     onShow() {
       this.login();
     },
+    onHide(){
+      setIsReLoginPage(false);
+    },
     methods: {
       login() {
         if (this.reLoginStatus) return;
         this.reLoginStatus = true;
         this.$login().then(() => {
+          const { config, $store } = this;
           //如果是tab的路径，直接使用switchTab执行
-          if (this.config.tabBarPath.indexOf(this.$store.state.lastPath) !== -1) {
+          if (config.tabBarPath.indexOf($store.state.lastPath) !== -1) {
             //回到最后的路由页面
             backLastRoute({
               type: 'tab'
@@ -41,7 +46,7 @@
           } else {
             //回到最后的路由页面
             backLastRoute({
-              type: 'redirect'
+              type: 'back'
             });
           }
         }).catch(() => {
