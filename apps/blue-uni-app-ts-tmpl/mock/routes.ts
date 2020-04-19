@@ -88,4 +88,13 @@ module.exports = [{
 			}
 		};
 	})()
+},{
+	url: `/mock/dara-1`,
+	method: 'get',
+	response () {
+		return {
+			code: 200,
+			data: {}
+		};
+	}
 }];

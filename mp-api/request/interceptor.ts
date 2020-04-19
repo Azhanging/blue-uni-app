@@ -8,14 +8,14 @@ import { getCurrentPath } from "$mp-api/page";
 //拦截处理
 export function responseInterceptor ( opts: any ) {
 	const { res, resolve, reject, requestOpts } = opts;
-	const { isShowToast } = requestOpts;
+	const { showToast } = requestOpts;
 	//http code 处理
 	if (res.statusCode === 200) {
 		const { code: requestCode, msg } = res.data;
 		//业务code处理
 		if (requestCode === code.SUCCESS) {
 			//提醒处理，默认false
-			if (isShowToast) {
+			if (showToast) {
 				showToast({
 					title: msg
 				}).then(() => {

@@ -16,6 +16,7 @@
 <script>
 
   import { backLastRoute } from '$mp-api/page';
+  import {setIsReLoginPage} from '$mp-api/login';
 
   export default {
     name: "index",
@@ -26,6 +27,9 @@
     },
     onShow() {
       this.login();
+    },
+    onHide(){
+      setIsReLoginPage(false);
     },
     methods: {
       login() {

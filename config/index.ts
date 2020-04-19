@@ -158,8 +158,9 @@ const config: TConfig = {
 			responseType: "text",
 			['content-type']: 'application/x-www-form-urlencoded',
 			//是否显示
-			isShowLoading: true,
-			isShowToast: false,
+			showLoading: true,
+			showToast: false,
+			checkPageID: true,
 			tips: {
 				loading: '数据加载中',
 				fail: '连接错误',

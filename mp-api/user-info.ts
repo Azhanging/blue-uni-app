@@ -19,7 +19,7 @@ export function setUserInfo ( data: any ): void {
 	//设置info信息
 	store.commit('SET_USER_INFO', utils.hook(null, configUserInfo.hooks.got, [data]));
 	//设置登录状态
-	store.commit('SET_LOGIN', true);
+	store.commit('SET_IS_LOGIN', true);
 }
 
 

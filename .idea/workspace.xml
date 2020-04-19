@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6e52a0b-5f34-42db-beaa-07c2c2eb5e3c" name="Default" comment="" />
+    <list default="true" id="a6e52a0b-5f34-42db-beaa-07c2c2eb5e3c" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/error.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/error.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/user-info.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/user-info.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/blue-uni-app-ts-tmpl/mock/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/blue-uni-app-ts-tmpl/mock/routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/blue-uni-app-ts-tmpl/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/blue-uni-app-ts-tmpl/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/blue-uni-app-ts-tmpl/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/apps/blue-uni-app-ts-tmpl/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/blue-uni-app-ts-tmpl/src/pages/re-login/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/apps/blue-uni-app-ts-tmpl/src/pages/re-login/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/store/mutations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/store/mutations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/store/state.ts" beforeDir="false" afterPath="$PROJECT_DIR$/config/store/state.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mp-api/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mp-api/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mp-api/request/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mp-api/request/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mp-api/request/interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mp-api/request/interceptor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mp-api/user-info.ts" beforeDir="false" afterPath="$PROJECT_DIR$/mp-api/user-info.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +65,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
-    <property name="ts.external.directory.path" value="D:\Program Files\JetBrains\WebStorm 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/apps/blue-uni-app-ts-tmpl/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -206,6 +221,8 @@
       <workItem from="1586747483147" duration="10511000" />
       <workItem from="1586826708303" duration="22409000" />
       <workItem from="1586871669934" duration="4701000" />
+      <workItem from="1587231986356" duration="1000" />
+      <workItem from="1587262031573" duration="4655000" />
     </task>
     <servers />
   </component>
@@ -228,21 +245,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586831157413" />
-    <state width="1899" height="350" key="GridCell.Tab.0.bottom" timestamp="1586921472242">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1560" height="177" key="GridCell.Tab.0.bottom" timestamp="1587266355531">
+      <screen x="-313" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1560" height="177" key="GridCell.Tab.0.bottom/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587266355531" />
+    <state width="1899" height="336" key="GridCell.Tab.0.bottom/-313.-1200.1920.1200/0.0.1366.768@-313.-1200.1920.1200" timestamp="1587219414995" />
     <state width="1899" height="350" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586921472242" />
-    <state width="1899" height="350" key="GridCell.Tab.0.center" timestamp="1586921472242">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1560" height="177" key="GridCell.Tab.0.center" timestamp="1587266355530">
+      <screen x="-313" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1560" height="177" key="GridCell.Tab.0.center/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587266355530" />
+    <state width="1899" height="336" key="GridCell.Tab.0.center/-313.-1200.1920.1200/0.0.1366.768@-313.-1200.1920.1200" timestamp="1587219414989" />
     <state width="1899" height="350" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586921472242" />
-    <state width="1899" height="350" key="GridCell.Tab.0.left" timestamp="1586921472242">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1560" height="177" key="GridCell.Tab.0.left" timestamp="1587266355528">
+      <screen x="-313" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1560" height="177" key="GridCell.Tab.0.left/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587266355528" />
+    <state width="1899" height="336" key="GridCell.Tab.0.left/-313.-1200.1920.1200/0.0.1366.768@-313.-1200.1920.1200" timestamp="1587219414985" />
     <state width="1899" height="350" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586921472242" />
-    <state width="1899" height="350" key="GridCell.Tab.0.right" timestamp="1586921472242">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1560" height="177" key="GridCell.Tab.0.right" timestamp="1587266355530">
+      <screen x="-313" y="-1177" width="1920" height="1177" />
     </state>
+    <state width="1560" height="177" key="GridCell.Tab.0.right/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587266355530" />
+    <state width="1899" height="336" key="GridCell.Tab.0.right/-313.-1200.1920.1200/0.0.1366.768@-313.-1200.1920.1200" timestamp="1587219414992" />
     <state width="1899" height="350" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586921472242" />
     <state width="1899" height="350" key="GridCell.Tab.1.bottom" timestamp="1586834600208">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -308,13 +333,15 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1586749301873" />
-    <state x="311" y="61" width="1389" height="751" key="find.popup" timestamp="1586921536026">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-2" y="-1108" width="1389" height="850" key="find.popup" timestamp="1587267995836">
+      <screen x="-313" y="-1177" width="1920" height="1177" />
     </state>
+    <state x="-2" y="-1108" width="1389" height="850" key="find.popup/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587267995836" />
     <state x="311" y="61" width="1389" height="751" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586921536026" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1586763079478">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="303" y="-905" key="run.anything.popup" timestamp="1587265073647">
+      <screen x="-313" y="-1177" width="1920" height="1177" />
     </state>
+    <state x="303" y="-905" key="run.anything.popup/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587265073647" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586763079478" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586921718551">
       <screen x="0" y="0" width="1920" height="1040" />

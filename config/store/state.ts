@@ -1,13 +1,7 @@
 import config from '@config';
-import { checkLocalLogin } from '$mp-api/login';
+import {checkLocalLogin} from '$mp-api/login';
 
-interface TState {
-	isLogin: boolean;
-	userInfo: any;
-	lastPath: string;
-}
-
-const state: TState = {
+const state: any = {
 
 	//登录状态
 	isLogin: checkLocalLogin(),
@@ -17,7 +11,6 @@ const state: TState = {
 
 	//业务回退url，默认主页url
 	lastPath: config.path.home
-
 };
 
 export default state;

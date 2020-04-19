@@ -1,7 +1,7 @@
 import $request from '$request';
 
 //错误处理 上报
-export function apiErrorReport ( err: any ): Promise<any> {
+export function apiErrorReport(err: any): Promise<any> {
 	return $request({
 		url: '',
 		baseUrl: '',
@@ -10,6 +10,7 @@ export function apiErrorReport ( err: any ): Promise<any> {
 			error: err,
 			systemInfo: uni.getSystemInfoSync()
 		},
-		isShowLoading: false
+		showLoading: false,
+		checkPageID: false
 	});
 }
