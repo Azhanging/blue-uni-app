@@ -39,6 +39,16 @@
           </button>
         </div>
 
+        <!-- 订阅消息 -->
+        <div class="bz-row bz-pd-20rpx" v-if="isLogin && !isAuthSubMsg">
+          <button class="bz-btn bz-btn-base" @click="requestSubscribeMessage">
+            订阅模板-0
+          </button>
+          <button class="bz-btn bz-btn-base" @click="requestSubscribeMessage1">
+            订阅模板-1
+          </button>
+        </div>
+
         <!-- 没登录显示登录按钮 -->
         <div class="bz-row bz-pd-20rpx">
           <button @click="openWebView" class="bz-btn bz-btn-base">
@@ -156,9 +166,9 @@
 <script>
 
   import Vuex from 'vuex';
-  import { pageID } from '$mp-api/page';
   import scrollLower from '$mixin-components/scroll-lower';
   import BvSwitch from '$components/Bv/BvForm/BvSwitch';
+  import { authorize, authorizeFail } from '$mp-api/authorize';
 
   const { mapState } = Vuex;
 
@@ -193,21 +203,18 @@
           status: false
         }, {
           status: false
-        }]
+        }],
+        isAuthSubMsg: false
       };
     },
     computed: {
       ...mapState(['isLogin'])
     },
-    onLoad(){
-      console.log(`home load:`,pageID.getCurrentID());
+    onLoad() {
     },
     onShow() {
-      console.log(`home show:`,pageID.getCurrentID());
       this.$loggedIn().then(() => {
-        this.getData();
-        this.getData();
-        this.getData();
+        this.init();
       });
     },
     methods: {
@@ -215,10 +222,61 @@
       //登录
       login() {
         this.$login().then(() => {
-          this.getData();
-          this.getData();
-          this.getData();
-          console.log('登录成功');
+          this.init();
+        });
+      },
+
+      init() {
+        authorize({
+          scope: `subscribeMessage`
+        }).then(() => {
+          this.isAuthSubMsg = true;
+        }).catch(() => {
+          this.isAuthSubMsg = false;
+        });
+        this.getData();
+        this.getData();
+        this.getData();
+      },
+
+      requestSubscribeMessage() {
+        const tmplIds = [
+          `2E7cEljT58ilb7sGfy_a3jEJt0az16SEgooy3vFjjB0`,
+          `xP7zr-V6_jeAyH2ONzMs4lm1M0-94zuLb-PV2lxudag`,
+          `Uoj0b6tjmJ2sNjXkT204NZo29ThPjHjAurk9zp-st9c`
+        ];
+        this.$requestSubscribeMessage({
+          tmplIds
+        }).then((res) => {
+          //检查是够授权完整
+          this.$checkSubscribeMessageByTmplIds(tmplIds).then((status) => {
+            if(!status) {
+              authorizeFail({
+                scope: `subscribeMessage`
+              });
+            } else {
+              console.log(`授权成功`);
+            }
+          });
+        });
+      },
+
+      requestSubscribeMessage1() {
+        const tmplIds = [
+          `CFnxXfoWA08PElR3BuiXwg1lCHgT8sHkdhgYs28ppf0`,
+          `mcza6vW7J8Ydza3MwI1XApOgBOAB6nB-SFV2F_u0FuY`
+        ];
+        this.$requestSubscribeMessage({
+          tmplIds
+        }).then((res) => {
+          //检查是够授权完整
+          this.$checkSubscribeMessageByTmplIds(tmplIds).then((status) => {
+            if(!status) {
+              return authorizeFail({
+                scope: `subscribeMessage`
+              });
+            }
+          });
         });
       },
 

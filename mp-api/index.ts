@@ -13,12 +13,16 @@ import { invoiceInVue } from './invoice';
 import { toastInVue } from './toast';
 import { loadingInVue } from './loading';
 import { webViewInVue } from './webview';
+import { messageInVue } from './message';
+import './setting';
 
 export function mpInVue ( Vue: any ) {
 	//检查更新小程序版本
 	mpUpdate();
 	//页面相关
 	pageInVue(Vue);
+	//消息相关
+	messageInVue(Vue);
 	//登录相关
 	loginInVue(Vue);
 	//设置分享

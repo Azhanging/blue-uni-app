@@ -7,7 +7,7 @@ import path from './path';
 const programConfig = {
 	app: {
 		name: "blue-wx-program-tmpl",               //小程序名
-		appid: ""                 //appid
+		appid: "wx17318d9ecf514495"                 //appid
 	},
 
 	//域名url相关
