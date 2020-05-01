@@ -18,7 +18,7 @@ export function authorize ( opts: {
 						reject();
 					} else {
 						const { mainSwitch } = subscriptionsSetting;
-						mainSwitch ? resolve(): reject();
+						mainSwitch ? resolve() : reject();
 					}
 				});
 			} else {

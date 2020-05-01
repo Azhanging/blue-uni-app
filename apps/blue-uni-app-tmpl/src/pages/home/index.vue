@@ -39,13 +39,10 @@
           </button>
         </div>
 
-        <!-- 订阅消息 -->
-        <div class="bz-row bz-pd-20rpx" v-if="isLogin && !isAuthSubMsg">
-          <button class="bz-btn bz-btn-base" @click="requestSubscribeMessage">
-            订阅模板-0
-          </button>
-          <button class="bz-btn bz-btn-base" @click="requestSubscribeMessage1">
-            订阅模板-1
+        <!-- 没登录显示登录按钮 -->
+        <div class="bz-row bz-pd-20rpx">
+          <button @click="requestSubscribeMessage" class="bz-btn bz-btn-base">
+            订阅消息
           </button>
         </div>
 
@@ -168,7 +165,6 @@
   import Vuex from 'vuex';
   import scrollLower from '$mixin-components/scroll-lower';
   import BvSwitch from '$components/Bv/BvForm/BvSwitch';
-  import { authorize, authorizeFail } from '$mp-api/authorize';
 
   const { mapState } = Vuex;
 
@@ -226,58 +222,23 @@
         });
       },
 
-      init() {
-        authorize({
-          scope: `subscribeMessage`
-        }).then(() => {
-          this.isAuthSubMsg = true;
-        }).catch(() => {
-          this.isAuthSubMsg = false;
-        });
-        this.getData();
-        this.getData();
-        this.getData();
-      },
-
       requestSubscribeMessage() {
         const tmplIds = [
-          `2E7cEljT58ilb7sGfy_a3jEJt0az16SEgooy3vFjjB0`,
+          `mcza6vW7J8Ydza3MwI1XApOgBOAB6nB-SFV2F_u0FuY`,
           `xP7zr-V6_jeAyH2ONzMs4lm1M0-94zuLb-PV2lxudag`,
           `Uoj0b6tjmJ2sNjXkT204NZo29ThPjHjAurk9zp-st9c`
         ];
         this.$requestSubscribeMessage({
           tmplIds
         }).then((res) => {
-          //检查是够授权完整
-          this.$checkSubscribeMessageByTmplIds(tmplIds).then((status) => {
-            if(!status) {
-              authorizeFail({
-                scope: `subscribeMessage`
-              });
-            } else {
-              console.log(`授权成功`);
-            }
-          });
+          console.log(res);
         });
       },
 
-      requestSubscribeMessage1() {
-        const tmplIds = [
-          `CFnxXfoWA08PElR3BuiXwg1lCHgT8sHkdhgYs28ppf0`,
-          `mcza6vW7J8Ydza3MwI1XApOgBOAB6nB-SFV2F_u0FuY`
-        ];
-        this.$requestSubscribeMessage({
-          tmplIds
-        }).then((res) => {
-          //检查是够授权完整
-          this.$checkSubscribeMessageByTmplIds(tmplIds).then((status) => {
-            if(!status) {
-              return authorizeFail({
-                scope: `subscribeMessage`
-              });
-            }
-          });
-        });
+      init() {
+        this.getData();
+        this.getData();
+        this.getData();
       },
 
       openWebView() {

@@ -2,8 +2,8 @@ import utils from 'blue-utils';
 import { hideLoading, showLoading } from "$mp-api/loading";
 import { showToast } from "$mp-api/toast";
 import { authorizeFail } from "$mp-api/authorize";
-import { getSetting } from "$mp-api/setting";
 
+//订阅消息提醒
 const subscribeMessageTips = {
 	request: `网络问题，请稍后重试`,
 	default: `订阅消息异常`
@@ -17,7 +17,8 @@ export function messageInVue ( Vue: any ) {
 }
 
 //订阅消息错误处理
-function subscribeMessageErrHandler ( err: any ): void {
+function subscribeMessageErrHandler ( opts: any ): void {
+	const { err, reject } = opts;
 	const { errCode, errMsg } = err;
 	const defaultErrTips = `${subscribeMessageTips.default}:${errCode}`;
 	switch (errCode) {
@@ -33,10 +34,9 @@ function subscribeMessageErrHandler ( err: any ): void {
 			});
 			break;
 		case 20004:
-			authorizeFail({
+			return authorizeFail({
 				type: `subscribeMessage`
 			});
-			break;
 		case 20005:
 			showToast({
 				title: defaultErrTips
@@ -46,24 +46,33 @@ function subscribeMessageErrHandler ( err: any ): void {
 			showToast({
 				title: errMsg
 			});
+			reject(err);
 	}
 }
 
 //授权订阅消息订阅
-export function requestSubscribeMessage ( opts = {} ): Promise<any> {
+export function requestSubscribeMessage ( opts: {
+	tmplIds: string[];
+} ): Promise<any> {
+	const { tmplIds } = opts;
 	return new Promise(( resolve, reject ) => {
 		showLoading();
 		// @ts-ignore
 		uni.requestSubscribeMessage(utils.extend(opts, {
 			success ( res: any ) {
 				hideLoading();
-				resolve(res);
+				resolve(checkSubscribeMessageByTmplIds({
+					subscriptionsSetting: res,
+					tmplIds
+				}));
 			},
 			fail ( err: any ) {
 				hideLoading();
 				//订阅消息错误处理
-				subscribeMessageErrHandler(err);
-				reject(err);
+				subscribeMessageErrHandler({
+					err,
+					reject
+				});
 			}
 		}));
 	});
@@ -73,20 +82,42 @@ export function requestSubscribeMessage ( opts = {} ): Promise<any> {
 * accept reject ban状态
 * 如果未授权=>false
 * 模板id匹配到不授权=>false
+* 检查对于订阅ids的有效性
 * */
-
-//检查对于订阅ids的有效性
-export function checkSubscribeMessageByTmplIds ( ids: string[] = [] ): Promise<boolean> {
-	return getSetting().then(( res: any ) => {
-		const { subscriptionsSetting } = res;
-		if (!subscriptionsSetting) return false;
-		const { itemSettings } = subscriptionsSetting;
-		const reject: string[] = [];
-		ids.forEach(( id: string ) => {
-			if (itemSettings[ id ] === 'accept') return;
+export function checkSubscribeMessageByTmplIds ( opts: {
+	tmplIds: string[];
+	subscriptionsSetting: any;
+} ) {
+	const { tmplIds, subscriptionsSetting } = opts;
+	if (tmplIds.length === 0) return 'cancel';
+	const reject: string[] = [];
+	const accept: string[] = [];
+	tmplIds.forEach(( id: string ) => {
+		if (subscriptionsSetting[ id ] === 'accept') {
+			//收集成功
+			accept.push(id);
+		} else {
 			//收集错误
 			reject.push(id);
-		});
-		return reject.length === 0;
+		}
 	});
+
+	const status = (() => {
+		//取消授权
+		if (reject.length === tmplIds.length) return 'cancel';
+		//全部授权
+		else if (reject.length === 0) return 'accept';
+		//部分授权
+		return 'some';
+	})();
+
+	return {
+		//状态 cancel, accept, some
+		status,
+		//收集
+		accept,
+		reject,
+		//requestSubscribeMessage res数据
+		...subscriptionsSetting
+	};
 }

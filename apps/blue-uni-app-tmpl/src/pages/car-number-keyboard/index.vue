@@ -13,7 +13,7 @@
 
     <!-- 数字键盘 -->
     <BvCarNumberKeyboard :visible.sync="isShowKeyboard" :carNumber.sync="number.value"
-                          :isNewEnergy.sync="number.isNewEnergy"/>
+                         :isNewEnergy.sync="number.isNewEnergy"/>
 
   </div>
 </template>

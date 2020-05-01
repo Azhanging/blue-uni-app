@@ -57,10 +57,9 @@
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
-    <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/assets/css/blue-zone/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blue-mp-program" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -104,11 +103,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="build:mp-weixin" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="dev:mp-qq" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/package.json" />
       <command value="run" />
       <scripts>
-        <script value="build:mp-weixin" />
+        <script value="dev:mp-qq" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -147,17 +146,17 @@
     <list>
       <item itemvalue="Gulp.js.default" />
       <item itemvalue="npm.dev:mp-weixin" />
-      <item itemvalue="npm.build:mp-weixin" />
       <item itemvalue="npm.dev:mp-weixin (1)" />
       <item itemvalue="npm.dev:mp-weixin (2)" />
+      <item itemvalue="npm.dev:mp-qq" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev:mp-weixin" />
+        <item itemvalue="npm.dev:mp-qq" />
         <item itemvalue="npm.dev:mp-weixin (2)" />
         <item itemvalue="Gulp.js.default" />
         <item itemvalue="npm.dev:mp-weixin (1)" />
-        <item itemvalue="npm.build:mp-weixin" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +224,13 @@
       <workItem from="1587262031573" duration="4655000" />
       <workItem from="1587291500274" duration="131000" />
       <workItem from="1587777363784" duration="28282000" />
-      <workItem from="1587818230329" duration="2672000" />
+      <workItem from="1587818230329" duration="2719000" />
+      <workItem from="1587909706549" duration="2043000" />
+      <workItem from="1587990352146" duration="2864000" />
+      <workItem from="1588078975208" duration="8499000" />
+      <workItem from="1588165421982" duration="4699000" />
+      <workItem from="1588254409766" duration="5106000" />
+      <workItem from="1588330655710" duration="23000" />
     </task>
     <servers />
   </component>
@@ -244,34 +249,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1875" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1586834238016" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587780439851">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1588166296510">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587780439851" />
-    <state width="1899" height="163" key="GridCell.Tab.0.bottom" timestamp="1587818213935">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588166296510" />
+    <state width="1899" height="230" key="GridCell.Tab.0.bottom" timestamp="1588262526359">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1560" height="177" key="GridCell.Tab.0.bottom/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587266355531" />
     <state width="1899" height="336" key="GridCell.Tab.0.bottom/-313.-1200.1920.1200/0.0.1366.768@-313.-1200.1920.1200" timestamp="1587219414995" />
-    <state width="1899" height="163" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587818213935" />
-    <state width="1899" height="163" key="GridCell.Tab.0.center" timestamp="1587818213935">
+    <state width="1899" height="230" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588262526359" />
+    <state width="1899" height="230" key="GridCell.Tab.0.center" timestamp="1588262526359">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1560" height="177" key="GridCell.Tab.0.center/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587266355530" />
     <state width="1899" height="336" key="GridCell.Tab.0.center/-313.-1200.1920.1200/0.0.1366.768@-313.-1200.1920.1200" timestamp="1587219414989" />
-    <state width="1899" height="163" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587818213935" />
-    <state width="1899" height="163" key="GridCell.Tab.0.left" timestamp="1587818213935">
+    <state width="1899" height="230" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588262526359" />
+    <state width="1899" height="230" key="GridCell.Tab.0.left" timestamp="1588262526359">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1560" height="177" key="GridCell.Tab.0.left/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587266355528" />
     <state width="1899" height="336" key="GridCell.Tab.0.left/-313.-1200.1920.1200/0.0.1366.768@-313.-1200.1920.1200" timestamp="1587219414985" />
-    <state width="1899" height="163" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587818213935" />
-    <state width="1899" height="163" key="GridCell.Tab.0.right" timestamp="1587818213935">
+    <state width="1899" height="230" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588262526359" />
+    <state width="1899" height="230" key="GridCell.Tab.0.right" timestamp="1588262526359">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1560" height="177" key="GridCell.Tab.0.right/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587266355530" />
     <state width="1899" height="336" key="GridCell.Tab.0.right/-313.-1200.1920.1200/0.0.1366.768@-313.-1200.1920.1200" timestamp="1587219414992" />
-    <state width="1899" height="163" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587818213935" />
+    <state width="1899" height="230" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588262526359" />
     <state width="1899" height="350" key="GridCell.Tab.1.bottom" timestamp="1586834600208">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -324,10 +329,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="271" y="134" width="1419" height="735" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586833191761" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1586850940155">
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1588260939786">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586850940155" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588260939786" />
     <state x="511" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586833764651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -336,16 +341,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1586749301873" />
-    <state x="311" y="61" width="1389" height="751" key="find.popup" timestamp="1587823183903">
+    <state x="311" y="61" width="1389" height="751" key="find.popup" timestamp="1588175198601">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-2" y="-1108" width="1389" height="850" key="find.popup/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587267995836" />
-    <state x="311" y="61" width="1389" height="751" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587823183903" />
-    <state x="303" y="-905" key="run.anything.popup" timestamp="1587265073647">
-      <screen x="-313" y="-1177" width="1920" height="1177" />
+    <state x="311" y="61" width="1389" height="751" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588175198601" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1588084997860">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="303" y="-905" key="run.anything.popup/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587265073647" />
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1586763079478" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588084997860" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1587806484296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
