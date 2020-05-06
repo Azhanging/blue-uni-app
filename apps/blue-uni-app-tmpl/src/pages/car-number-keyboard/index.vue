@@ -12,9 +12,9 @@
     </div>
 
     <!-- 数字键盘 -->
-    <BvCarNumberKeyboard :visible.sync="isShowKeyboard" :carNumber.sync="number.value"
+    <BvCarNumberKeyboard :visible.sync="isShowKeyboard"
+                         v-model="number.value"
                          :isNewEnergy.sync="number.isNewEnergy"/>
-
   </div>
 </template>
 
@@ -24,6 +24,7 @@
     name: "car-number-keyboard",
     data() {
       return {
+        numberValue: ``,
         number: {
           value: ''
         },

@@ -12,7 +12,7 @@
     </div>
 
     <!-- 数字键盘 -->
-    <BvNumberKeyboard :number.sync="number.value" :visible.sync="isShowKeyboard"/>
+    <BvNumberKeyboard :isInt="number.isInt" v-model="number.value" :visible.sync="isShowKeyboard"/>
 
   </div>
 </template>
@@ -27,10 +27,12 @@
           value: ''
         },
         number0: {
-          value: '123'
+          value: '123',
+          isInt: false
         },
         number1: {
-          value: ''
+          value: '',
+          isInt: true
         },
         //显示键盘状态
         isShowKeyboard: false

@@ -59,7 +59,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/assets/css/blue-zone/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blue-mp-program" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -103,21 +103,21 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="dev:mp-qq" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="dev:mp-alipay" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/package.json" />
       <command value="run" />
       <scripts>
-        <script value="dev:mp-qq" />
+        <script value="dev:mp-alipay" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="dev:mp-weixin (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/apps/GDSY/package.json" />
+    <configuration name="dev:mp-qq" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/package.json" />
       <command value="run" />
       <scripts>
-        <script value="dev:mp-weixin" />
+        <script value="dev:mp-qq" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -146,17 +146,17 @@
     <list>
       <item itemvalue="Gulp.js.default" />
       <item itemvalue="npm.dev:mp-weixin" />
-      <item itemvalue="npm.dev:mp-weixin (1)" />
       <item itemvalue="npm.dev:mp-weixin (2)" />
       <item itemvalue="npm.dev:mp-qq" />
+      <item itemvalue="npm.dev:mp-alipay" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev:mp-alipay" />
         <item itemvalue="npm.dev:mp-weixin" />
         <item itemvalue="npm.dev:mp-qq" />
         <item itemvalue="npm.dev:mp-weixin (2)" />
         <item itemvalue="Gulp.js.default" />
-        <item itemvalue="npm.dev:mp-weixin (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -231,6 +231,7 @@
       <workItem from="1588165421982" duration="4699000" />
       <workItem from="1588254409766" duration="5106000" />
       <workItem from="1588330655710" duration="23000" />
+      <workItem from="1588775481766" duration="6143000" />
     </task>
     <servers />
   </component>

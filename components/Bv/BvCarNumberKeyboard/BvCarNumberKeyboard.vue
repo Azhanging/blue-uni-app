@@ -5,14 +5,14 @@
     <!-- 操作菜单 -->
     <div class="bz-flex bz-flex-jc-sb menu">
       <div class="bz-flex-1">
-        <span class="bz-inline-block bz-t-base bz-pd-10rpx" @click.stop="newEnergy">
+        <button class="bz-inline-block bz-t-base bz-pd-10rpx" @click.stop="newEnergy">
           {{isNewEnergy ? '关闭' : '使用' }}新能源号
-        </span>
+        </button>
       </div>
       <div class="bz-flex-1">
-        <span class="bz-inline-block bz-t-base bz-pd-10rpx" @click.stop="hide">
+        <button class="bz-inline-block bz-t-base bz-pd-10rpx" @click.stop="hide">
           关闭
-        </span>
+        </button>
       </div>
     </div>
 
@@ -84,9 +84,9 @@
         default: false
       },
       //输入的数字
-      carNumber: {
+      value: {
         type: String,
-        default: ''
+        default: ``
       }
     },
     computed: {
@@ -100,6 +100,14 @@
             opacity: 0
           });
         }
+      },
+      carNumber: {
+        get() {
+          return this.value;
+        },
+        set(val) {
+          this.$emit('input', val);
+        }
       }
     },
     methods: {
@@ -109,7 +117,7 @@
         const isNewEnergy = !this.isNewEnergy;
         //删掉后面一位
         if (!isNewEnergy && carNumber.length === 8) {
-          this.$emit('update:carNumber', carNumber.substr(0, carNumber.length - 1));
+          this.setCarNumber(carNumber.substr(0, carNumber.length - 1));
         }
         this.$emit('update:isNewEnergy', isNewEnergy);
       },
@@ -121,7 +129,7 @@
       del() {
         const carNumber = this.carNumber;
         if (carNumber.length < 1) return;
-        this.$emit('update:carNumber', carNumber.substr(0, carNumber.length - 1));
+        this.setCarNumber(carNumber.substr(0, carNumber.length - 1));
       },
       //点击数字
       clickNumber(number, index) {
@@ -132,12 +140,16 @@
         if (index === 0 && oldNumber.length < 2) return;
         //新能源规则
         if ((!isNewEnergy && oldNumber.length === 7) || (isNewEnergy && oldNumber.length === 8)) return;
-        this.$emit('update:carNumber', oldNumber + number);
+        this.setCarNumber(oldNumber + number);
       },
       //完成按钮
       result() {
         //关闭键盘
         this.hide();
+      },
+      //设置
+      setCarNumber(val) {
+        this.carNumber = val;
       }
     }
   }
@@ -165,14 +177,17 @@
       flex-align-items: center;
       flex-justify-content: center;
       text-align: center;
+
       .key-btn {
         flex: 1;
         font-size: 16px;
         color: #666;
         padding: 5px;
+
         .key {
           border: 1px solid #f4f4f4;
           padding: 10px 0;
+
           &.disabled {
             background-color: #f4f4f4;
           }
