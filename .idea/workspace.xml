@@ -152,8 +152,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev:mp-alipay" />
         <item itemvalue="npm.dev:mp-weixin" />
+        <item itemvalue="npm.dev:mp-alipay" />
         <item itemvalue="npm.dev:mp-qq" />
         <item itemvalue="npm.dev:mp-weixin (2)" />
         <item itemvalue="Gulp.js.default" />
@@ -334,6 +334,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588260939786" />
+    <state x="524" y="123" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588866628855">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="524" y="123" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588866628855" />
     <state x="511" y="256" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1586833764651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -352,10 +356,10 @@
     </state>
     <state x="303" y="-905" key="run.anything.popup/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587265073647" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588084997860" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1587806484296">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588865280144">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587806484296" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588865280144" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

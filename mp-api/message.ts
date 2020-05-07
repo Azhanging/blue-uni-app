@@ -12,8 +12,6 @@ const subscribeMessageTips = {
 export function messageInVue ( Vue: any ) {
 	//授权订阅消息订阅
 	Vue.prototype.$requestSubscribeMessage = requestSubscribeMessage;
-	//检查对于订阅ids的有效性
-	Vue.prototype.$checkSubscribeMessageByTmplIds = checkSubscribeMessageByTmplIds;
 }
 
 //订阅消息错误处理
@@ -84,7 +82,7 @@ export function requestSubscribeMessage ( opts: {
 * 模板id匹配到不授权=>false
 * 检查对于订阅ids的有效性
 * */
-export function checkSubscribeMessageByTmplIds ( opts: {
+function checkSubscribeMessageByTmplIds ( opts: {
 	tmplIds: string[];
 	subscriptionsSetting: any;
 } ) {

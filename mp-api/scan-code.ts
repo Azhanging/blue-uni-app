@@ -11,7 +11,6 @@ function scanCode ( opts: any = {} ): Promise<any> {
 			},
 			fail: ( err: any ) => {
 				//取消，失败
-				console.log(err);
 				reject(err);
 			}
 		}, opts));

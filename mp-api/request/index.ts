@@ -14,7 +14,7 @@ interface TRequestTips {
 }
 
 //请求类型参数
-interface TRequestOpts {
+interface TRequestOpts extends RequestOptions {
 	//是否显示loading
 	showLoading?: boolean;
 	//是否显示toast
@@ -23,8 +23,7 @@ interface TRequestOpts {
 	checkPageID?: boolean;
 	//请求的提醒
 	tips?: TRequestTips;
-	method?: string;
-
+	//其他参数兼容
 	[ param: string ]: any;
 }
 
