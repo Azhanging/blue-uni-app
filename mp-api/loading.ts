@@ -13,7 +13,7 @@ const defaultLoadingOpts = {
 //showLoading
 export function showLoading ( opts: any = {} ): void {
 	loadingQueue.isEmpty() && uni.showLoading(utils.extend(defaultLoadingOpts, opts));
-	loadingQueue.enqueue(1);
+	loadingQueue.enqueue(true);
 }
 
 //hide loading

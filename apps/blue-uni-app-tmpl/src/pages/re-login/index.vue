@@ -16,7 +16,7 @@
 <script>
 
   import { backLastRoute } from '$mp-api/page';
-  import {setIsReLoginPage} from '$mp-api/login';
+  import { setIsReLoginPage } from '$mp-api/login';
 
   export default {
     name: "index",
@@ -25,10 +25,10 @@
         reLoginStatus: false   //true 中登录中 false 登录失败
       };
     },
-    onShow() {
+    onLoad() {
       this.login();
     },
-    onHide(){
+    onUnload() {
       setIsReLoginPage(false);
     },
     methods: {

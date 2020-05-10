@@ -15,11 +15,6 @@
 		onShow: function (opts) {
 			//设置页面参数
 			setQuery(opts.query);
-			this.$request({
-				url: '/mock/dara-1'
-			}).then(() => {
-				console.log(`app request`);
-			});
 		},
 		//错误处理
 		onError(err) {

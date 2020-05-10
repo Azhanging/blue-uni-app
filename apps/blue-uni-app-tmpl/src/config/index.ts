@@ -26,7 +26,7 @@ const programConfig = {
 		}]
 	},
 
-	//登陆相关
+	//登录相关
 	login: {
 		request: {
 			url () {

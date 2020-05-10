@@ -10,32 +10,22 @@
         <official-account @load="account"></official-account>
         <!--  #endif -->
 
-        <div v-if="!hasUserInfo">
-          <!-- 获取授权 -->
-          <button open-type="getAuthorize" @getAuthorize="$authorizeUserInfo" scope="userInfo"
-                  class="bz-btn bz-btn-danger"
-                  v-if="platform === 'my'">
-            获取授权
-          </button>
-          <!-- 获取授权 -->
-          <button open-type="getUserInfo" @getuserinfo="$authorizeUserInfo" class="bz-btn bz-btn-danger"
-                  v-else-if="platform === 'wx'">
-            获取授权
-          </button>
-        </div>
-        <div v-else>
-          <div>
-            <img :src="userInfo.head_img" :alt="userInfo.nickname" class="user-avatar">
-          </div>
-          <div>
-            {{userInfo.nickname}}
-          </div>
-        </div>
-
         <!-- 没登录显示登录按钮 -->
         <div class="bz-row bz-pd-20rpx" v-if="!isLogin">
           <button @click="login" class="bz-btn bz-btn-base">
             登录
+          </button>
+        </div>
+
+        <div class="bz-row bz-pd-20rpx">
+          <button @click="openSetting" class="bz-btn bz-btn-base">
+            打开设置
+          </button>
+        </div>
+
+        <div class="bz-row bz-pd-20rpx">
+          <button @click="reLogin" class="bz-btn bz-btn-base">
+            跳转重新登录
           </button>
         </div>
 
@@ -165,6 +155,8 @@
   import Vuex from 'vuex';
   import scrollLower from '$mixin-components/scroll-lower';
   import BvSwitch from '$components/Bv/BvForm/BvSwitch';
+  import { navigateToReLogin } from "$mp-api/login";
+  import { getCurrentPath } from '$mp-api/page';
 
   const { mapState } = Vuex;
 
@@ -219,6 +211,17 @@
       login() {
         this.$login().then(() => {
           this.init();
+        });
+      },
+
+      getUserInfo(e) {
+        console.log(e);
+      },
+
+      //跳转重新登录
+      reLogin() {
+        navigateToReLogin({
+          path: getCurrentPath()
         });
       },
 
@@ -292,6 +295,10 @@
         this.$request({
           url: `/mock/data`
         });
+      },
+
+      openSetting() {
+        uni.openSetting();
       }
     },
     created() {

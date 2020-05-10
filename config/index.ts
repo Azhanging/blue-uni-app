@@ -89,7 +89,7 @@ const config: TConfig = {
 			got ( data: any ) {
 				return data;
 			},
-			//登陆成功
+			//登录成功
 			success () {
 			},
 			//清空登录状态
