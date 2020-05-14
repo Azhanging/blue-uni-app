@@ -18,6 +18,11 @@
       "style": {
         "navigationBarTitleText": "重新登录"
       }
+    },{
+      "path": "pages/echarts/index",
+      "style": {
+        "navigationBarTitleText": "echarts"
+      }
     },
     {
       "path": "pages/bind-phone/index",

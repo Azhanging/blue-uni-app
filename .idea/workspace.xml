@@ -29,9 +29,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="SCSS File" />
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
         <option value="tsconfig.json" />
+        <option value="Vue Single File Component" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -57,9 +57,10 @@
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.buildTools.gulp.gulp_package_dir" value="$PROJECT_DIR$/assets/css/blue-zone/node_modules/gulp" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/pages/test-login" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -67,19 +68,19 @@
     <property name="ts.external.directory.path" value="E:\achang\web\blue-uni-app-program\apps\blue-uni-app-tmpl\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\achang\web\blue-uni-app-program\components\Bv\BvEChart" />
+      <recent name="E:\achang\github\blue-uni-app-program\mp-api" />
+      <recent name="E:\achang\github\blue-uni-app-program\assets\css\blue-zone\src" />
+      <recent name="E:\achang\github\blue-uni-app-program\components\Bv\Form" />
+      <recent name="E:\achang\github\blue-uni-app-program\components\Bv" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\achang\web\blue-uni-app-program\apps\blue-uni-app-tmpl\src\pages\test-login" />
       <recent name="E:\achang\github\blue-uni-app-program\apps\blue-uni-app-ts-tmpl" />
       <recent name="E:\achang\github\blue-uni-app-program\apps\GDSY\src\pages\registration\register" />
       <recent name="E:\achang\github\blue-uni-app-program\apps" />
       <recent name="$PROJECT_DIR$/vue-config" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\achang\github\blue-uni-app-program\mp-api" />
-      <recent name="E:\achang\github\blue-uni-app-program\assets\css\blue-zone\src" />
-      <recent name="E:\achang\github\blue-uni-app-program\components\Bv\Form" />
-      <recent name="E:\achang\github\blue-uni-app-program\components\Bv" />
-      <recent name="$PROJECT_DIR$/apps/blue-uni-app-tmpl" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev:mp-weixin">
@@ -235,11 +236,19 @@
       <workItem from="1588948696960" duration="7513000" />
       <workItem from="1589027441355" duration="15801000" />
       <workItem from="1589075033407" duration="11675000" />
+      <workItem from="1589290510682" duration="1359000" />
+      <workItem from="1589469535504" duration="4721000" />
+      <workItem from="1589474273686" duration="1268000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/apps/blue-uni-app-tmpl/src/components/Bv/BvEChart/wx-canvas.js" />
+      </list>
+    </option>
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.wxml" />
@@ -253,34 +262,34 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1875" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1586834238016" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1588166296510">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1589208642090">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588166296510" />
-    <state width="1899" height="325" key="GridCell.Tab.0.bottom" timestamp="1589085584259">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589208642090" />
+    <state width="1899" height="265" key="GridCell.Tab.0.bottom" timestamp="1589475547593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1560" height="177" key="GridCell.Tab.0.bottom/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587266355531" />
     <state width="1899" height="336" key="GridCell.Tab.0.bottom/-313.-1200.1920.1200/0.0.1366.768@-313.-1200.1920.1200" timestamp="1587219414995" />
-    <state width="1899" height="325" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589085584259" />
-    <state width="1899" height="325" key="GridCell.Tab.0.center" timestamp="1589085584258">
+    <state width="1899" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589475547593" />
+    <state width="1899" height="265" key="GridCell.Tab.0.center" timestamp="1589475547593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1560" height="177" key="GridCell.Tab.0.center/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587266355530" />
     <state width="1899" height="336" key="GridCell.Tab.0.center/-313.-1200.1920.1200/0.0.1366.768@-313.-1200.1920.1200" timestamp="1587219414989" />
-    <state width="1899" height="325" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589085584258" />
-    <state width="1899" height="325" key="GridCell.Tab.0.left" timestamp="1589085584258">
+    <state width="1899" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589475547593" />
+    <state width="1899" height="265" key="GridCell.Tab.0.left" timestamp="1589475547592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1560" height="177" key="GridCell.Tab.0.left/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587266355528" />
     <state width="1899" height="336" key="GridCell.Tab.0.left/-313.-1200.1920.1200/0.0.1366.768@-313.-1200.1920.1200" timestamp="1587219414985" />
-    <state width="1899" height="325" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589085584258" />
-    <state width="1899" height="325" key="GridCell.Tab.0.right" timestamp="1589085584258">
+    <state width="1899" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589475547592" />
+    <state width="1899" height="265" key="GridCell.Tab.0.right" timestamp="1589475547593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1560" height="177" key="GridCell.Tab.0.right/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587266355530" />
     <state width="1899" height="336" key="GridCell.Tab.0.right/-313.-1200.1920.1200/0.0.1366.768@-313.-1200.1920.1200" timestamp="1587219414992" />
-    <state width="1899" height="325" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589085584258" />
+    <state width="1899" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589475547593" />
     <state width="1899" height="350" key="GridCell.Tab.1.bottom" timestamp="1586834600208">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -349,11 +358,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1586749301873" />
-    <state x="311" y="61" width="1389" height="751" key="find.popup" timestamp="1589085907061">
+    <state x="311" y="61" width="1389" height="751" key="find.popup" timestamp="1589470120552">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-2" y="-1108" width="1389" height="850" key="find.popup/-313.-1177.1920.1177/38.23.1328.745@-313.-1177.1920.1177" timestamp="1587267995836" />
-    <state x="311" y="61" width="1389" height="751" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589085907061" />
+    <state x="311" y="61" width="1389" height="751" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589470120552" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1588084997860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

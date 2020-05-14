@@ -1,5 +1,5 @@
 <template>
-  <div class="bz-t-c bz-f-28rpx bz-pd-30rpx">
+  <Page>
     <div class="scroll-view-wrap">
       <scroll-view class="scroll-view" scroll-y="true" @scrolltolower="scrollLower"
                    :lower-threshold="loadMore.lowerThreshold">
@@ -17,16 +17,11 @@
           </button>
         </div>
 
+        <!-- 没登录显示登录按钮 -->
         <div class="bz-row bz-pd-20rpx">
-          <button @click="openSetting" class="bz-btn bz-btn-base">
-            打开设置
-          </button>
-        </div>
-
-        <div class="bz-row bz-pd-20rpx">
-          <button @click="reLogin" class="bz-btn bz-btn-base">
-            跳转重新登录
-          </button>
+          <a url="/pages/echarts/index" class="bz-btn bz-btn-base">
+            图表
+          </a>
         </div>
 
         <!-- 没登录显示登录按钮 -->
@@ -146,8 +141,7 @@
         layer 内容
       </div>
     </BvLayer>
-
-  </div>
+  </Page>
 </template>
 
 <script>
@@ -216,13 +210,6 @@
 
       getUserInfo(e) {
         console.log(e);
-      },
-
-      //跳转重新登录
-      reLogin() {
-        navigateToReLogin({
-          path: getCurrentPath()
-        });
       },
 
       requestSubscribeMessage() {
@@ -296,10 +283,6 @@
           url: `/mock/data`
         });
       },
-
-      openSetting() {
-        uni.openSetting();
-      }
     },
     created() {
       this.$loggedIn().then(() => {

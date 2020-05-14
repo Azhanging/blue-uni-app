@@ -1,7 +1,7 @@
 <template>
-  <div class="bz-f-28rpx bz-t-c">
+  <Page>
     <button @click="uploadImg" class="bz-btn bz-btn-primary">点击上传</button>
-  </div>
+  </Page>
 </template>
 
 <script>

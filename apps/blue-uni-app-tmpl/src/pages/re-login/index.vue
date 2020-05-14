@@ -1,5 +1,5 @@
 <template>
-  <div class="bz-pd-24rpx bz-t-c">
+  <Page>
     <div class="bz-mg-b-20rpx">
       <button @click="login" class="bz-btn bz-btn-base bz-bd-radius-6 bz-w-100">
         {{reLoginStatus ? `重新登录中...` : `重新登录`}}
@@ -10,7 +10,7 @@
         回到首页
       </navigator>
     </div>
-  </div>
+  </Page>
 </template>
 
 <script>

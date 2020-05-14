@@ -1,5 +1,5 @@
 <template>
-  <div class="bz-t-333 bz-f-28rpx bz-t-c bz-pd-20rpx">
+  <Page>
 
     <!-- 测试键盘输入 -->
     <div class="bz-flex">
@@ -14,7 +14,7 @@
     <!-- 数字键盘 -->
     <BvNumberKeyboard :isInt="number.isInt" v-model="number.value" :visible.sync="isShowKeyboard"/>
 
-  </div>
+  </Page>
 </template>
 
 <script>

@@ -40,6 +40,7 @@
     "blue-queue-pipe": "^1.0.6",
     "blue-utils": "^1.1.1",
     "core-js": "^3.6.4",
+    "echarts": "^4.7.0",
     "flyio": "^0.6.2",
     "regenerator-runtime": "^0.12.1",
     "vue": "^2.6.11",

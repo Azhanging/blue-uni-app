@@ -1,5 +1,5 @@
 <template>
-  <div class="bz-t-333 bz-f-28rpx bz-t-c bz-pd-20rpx">
+  <Page>
 
     <!-- 测试键盘输入 -->
     <div class="bz-flex">
@@ -15,7 +15,7 @@
     <BvCarNumberKeyboard :visible.sync="isShowKeyboard"
                          v-model="number.value"
                          :isNewEnergy.sync="number.isNewEnergy"/>
-  </div>
+  </Page>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <Page>
     <map id="map"
          :markers="map.markers"
          @callouttap="openMarker"
@@ -8,7 +8,7 @@
          @begin="regionchange"
          style="width:100%;height:100%;position: fixed;top:0;bottom:0;"
     ></map>
-  </div>
+  </Page>
 </template>
 
 <script>
