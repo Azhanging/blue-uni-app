@@ -14,7 +14,8 @@ export const pageID: PageID = new PageID();
 export function pageInVue ( Vue: any ): void {
 	Vue.mixin({
 		onShow () {
-			pageID.setCurrentID();
+			//这里如果通过App执行，将不会进行PageID的处理
+			!this.$mp.app && pageID.setCurrentID();
 		}
 	});
 }
