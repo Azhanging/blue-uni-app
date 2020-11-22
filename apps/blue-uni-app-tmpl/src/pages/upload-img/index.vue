@@ -1,7 +1,7 @@
 <template>
-  <Page>
+  <BvPage class="bz-t-c">
     <button @click="uploadImg" class="bz-btn bz-btn-primary">点击上传</button>
-  </Page>
+  </BvPage>
 </template>
 
 <script>

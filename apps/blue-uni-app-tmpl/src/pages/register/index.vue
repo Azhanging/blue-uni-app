@@ -1,5 +1,5 @@
 <template>
-  <Page>
+  <BvPage>
     <div class="bz-t-c">
       <div class="bz-pd-14rp">
         <button class="bz-btn bz-btn-base" open-type="getUserInfo" @getuserinfo="getUserInfo">
@@ -15,7 +15,7 @@
         </navigator>
       </div>
     </div>
-  </Page>
+  </BvPage>
 </template>
 
 <script>

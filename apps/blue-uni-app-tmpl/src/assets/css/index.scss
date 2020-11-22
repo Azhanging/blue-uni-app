@@ -1,6 +1,16 @@
 //项目配置
 @import './config';
 //工具
-@import '../../../../../assets/css/blue-zone/src/function/index';
+@import '../../../../../../blue-zone/src/function/index';
 //配置
-@import '../../../../../assets/css/blue-zone/src/config/index';
+@import '../../../../../../blue-zone/src/config/index';
+
+@font-face {
+	font-family: 'bp-icon';  /* project id 1270732 */
+	src: url('//at.alicdn.com/t/font_1270732_8tdxo0ksvkf.eot');
+	src: url('//at.alicdn.com/t/font_1270732_8tdxo0ksvkf.eot?#iefix') format('embedded-opentype'),
+	url('//at.alicdn.com/t/font_1270732_8tdxo0ksvkf.woff2') format('woff2'),
+	url('//at.alicdn.com/t/font_1270732_8tdxo0ksvkf.woff') format('woff'),
+	url('//at.alicdn.com/t/font_1270732_8tdxo0ksvkf.ttf') format('truetype'),
+	url('//at.alicdn.com/t/font_1270732_8tdxo0ksvkf.svg#bp-icon') format('svg');
+}

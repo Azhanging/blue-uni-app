@@ -1,5 +1,6 @@
 <template>
-  <Page>
+  <BvPage customNavigation title="首页" class="bz-t-c" navigationColor="white"
+          navigationBackground="linear-gradient(#1b1bfd, #0255a5)">
     <div class="scroll-view-wrap">
       <scroll-view class="scroll-view" scroll-y="true" @scrolltolower="scrollLower"
                    :lower-threshold="loadMore.lowerThreshold">
@@ -87,16 +88,6 @@
           </button>
         </div>
 
-        <!-- switch -->
-        <div class="bz-pd-30rpx bz-flex bz-flex-ai-c bz-flex-jc-c">
-          switch:
-          <BvSwitch
-                  v-for="(item,index) in formSwitch"
-                  :status.sync="item.status"
-                  :key="index"
-          />
-        </div>
-
         <div class="bz-row bz-pd-20rpx">
           <div v-for="item in loadMore.data.list" :key="item">
             {{item}}
@@ -136,19 +127,18 @@
     </BvActionSheet>
 
     <!-- 弹层 -->
-    <BvLayer :visible.sync="layerShow">
+    <BvDialog :visible.sync="dialogShow">
       <div class="bz-bg-white" style="width:200rpx;height:200rpx;">
-        layer 内容
+        dialog内容
       </div>
-    </BvLayer>
-  </Page>
+    </BvDialog>
+  </BvPage>
 </template>
 
 <script>
 
   import Vuex from 'vuex';
   import scrollLower from '$mixin-components/scroll-lower';
-  import BvSwitch from '$components/Bv/BvForm/BvSwitch';
   import { navigateToReLogin } from "$mp-api/login";
   import { getCurrentPath } from '$mp-api/page';
 
@@ -167,9 +157,6 @@
         }
       }
     })],
-    components: {
-      BvSwitch
-    },
     data() {
       return {
         list: (() => {
@@ -180,13 +167,12 @@
           return arr;
         })(),
         actionShow: false,
-        layerShow: false,
+        dialogShow: false,
         formSwitch: [{
           status: false
         }, {
           status: false
-        }],
-        isAuthSubMsg: false
+        }]
       };
     },
     computed: {
@@ -253,7 +239,7 @@
       },
 
       toggleLayer() {
-        this.layerShow = !this.layerShow;
+        this.dialogShow = !this.dialogShow;
       },
 
       kf(query) {

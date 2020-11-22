@@ -9,18 +9,18 @@ import '@css/blue-zone.scss';
 //公共scss
 import '$assets/css/app.scss';
 /*------ 公共组件START -------*/
-import Page from '@components/Page.vue';
 import BvECharts from '$components/Bv/BvECharts/BvECharts.vue';
 import BvActionSheet from '$components/Bv/BvActionSheet/BvActionSheet.vue';
-import BvLayer from '$components/Bv/BvLayer/BvLayer.vue';
+import BvDialog from '$components/Bv/BvDialog/BvDialog.vue';
 import BvCarNumberKeyboard from '$components/Bv/BvCarNumberKeyboard/BvCarNumberKeyboard.vue';
 import BvNumberKeyboard from '$components/Bv/BvNumberKeyboard/BvNumberKeyboard.vue';
+import BvPage from '$components/Bv/BvPage/BvPage.vue';
 
 //注册全局的组件
-Vue.component('Page', Page);
+Vue.component('BvPage', BvPage);
 Vue.component('BvECharts', BvECharts);
 Vue.component('BvActionSheet', BvActionSheet);
-Vue.component('BvLayer', BvLayer);
+Vue.component('BvDialog', BvDialog);
 Vue.component('BvCarNumberKeyboard', BvCarNumberKeyboard);
 Vue.component('BvNumberKeyboard', BvNumberKeyboard);
 /*------ 公共组件END -------*/

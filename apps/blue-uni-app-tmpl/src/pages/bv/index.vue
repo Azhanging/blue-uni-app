@@ -1,5 +1,5 @@
 <template>
-  <Page>
+  <BvPage>
     <div class="bz-pd-24rpx">
       <BvInput type="text" label="账号" placeholder="请输入账号" v-model="username"/>
       <BvInput type="password" label="密码" placeholder="请输入密码" v-model="password"/>
@@ -15,7 +15,7 @@
         提交
       </button>
     </div>
-  </Page>
+  </BvPage>
 </template>
 
 <script>
