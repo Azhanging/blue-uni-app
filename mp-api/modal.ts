@@ -7,11 +7,10 @@ const defaultConfig = {
 };
 
 export function showModal ( opts: any ): Promise<any> {
-	return new Promise(( resolve, reject ) => {
-		uni.showModal(utils.extend(defaultConfig, opts, {
-			success: ( res: any ) => resolve(res),
-			fail: ( err: any ) => reject(err)
-		}));
+	return uni.showModal(utils.extend(defaultConfig, opts)).then(([err: any, res: any]) => {
+	    if (err) return Promise.reject(err);
+	    if (res.cancel) return Promise.reject(res);
+	    return res;
 	});
 }
 
