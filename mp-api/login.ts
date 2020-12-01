@@ -184,14 +184,12 @@ function showLoginModal ( opts: {
 		showCancel: true,
 		confirmText: '重新登录'
 	}).then(( res: any ) => {
-		if (res.confirm === true) {
-			login().then(( res ) => {
-				resolve(res);
-			});
-		} else if (res.cancel === true) {
-			//清空请求的队列
-			reject();
-		}
+		login().then(( res ) => {
+			resolve(res);
+		});
+	}).catch((res)=>{
+		//清空请求的队列
+		reject(res);
 	});
 }
 
