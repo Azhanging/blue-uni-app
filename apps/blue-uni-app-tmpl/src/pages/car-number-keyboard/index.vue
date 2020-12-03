@@ -1,6 +1,6 @@
 <template>
 	<BvPage class="bz-t-c">
-
+		
 		<!-- 测试键盘输入 -->
 		<div class="bz-flex-1" @click="focusNumber(number0)">
 			car-number-0:{{ number0.value }}

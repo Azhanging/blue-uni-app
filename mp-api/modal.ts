@@ -7,18 +7,18 @@ const defaultConfig = {
 };
 
 export function showModal ( opts: any ): Promise<any> {
-	return new Promise((resolve, reject) => {
-	    uni.showModal(utils.extend(defaultConfig, opts, {
-	      success: (res: any) => {
-		if (res.cancel) {
-		  reject(res);
-		} else {
-		  resolve(res)
-		}
-	      },
-	      fail: (err: any) => reject(err)
-	    }));
-	  });
+	return new Promise(( resolve, reject ) => {
+		uni.showModal(utils.extend(defaultConfig, opts, {
+			success: ( res: any ) => {
+				if (res.cancel) {
+					reject(res);
+				} else {
+					resolve(res)
+				}
+			},
+			fail: ( err: any ) => reject(err)
+		}));
+	});
 }
 
 export function modalInVue ( Vue: any ): void {

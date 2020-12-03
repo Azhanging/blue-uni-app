@@ -1,17 +1,18 @@
 import config from '@config';
 import utils from 'blue-utils';
 import store from '@store';
-import { apiLogin } from '$api';
-import { setUserInfo } from '$mp-api/user-info';
-import { getCurrentPath, setLastPath } from "$mp-api/page";
-import { hideLoading, showLoading } from '$mp-api/loading';
-import { redirectRegister } from '$mp-api/register';
-import { showModal } from '$mp-api/modal';
+import {apiLogin} from '$api';
+import {setUserInfo} from '$mp-api/user-info';
+import {getCurrentPath, setLastPath} from "$mp-api/page";
+import {hideLoading, showLoading} from '$mp-api/loading';
+import {redirectRegister} from '$mp-api/register';
+import {showModal} from '$mp-api/modal';
 
 //扩展到Vue中
 export function loginInVue ( Vue: any ): void {
 	Vue.prototype.$login = login;
 	Vue.prototype.$loggedIn = loggedIn;
+	Vue.prototype.$reLoginBack = reLoginBack;
 }
 
 //check session
@@ -132,7 +133,7 @@ function sendLoginCode ( opts: {
 	data: any;
 } ): Promise<any> {
 	return apiLogin(opts).then(( res: any ) => {
-		const { data } = res;
+		const {data} = res;
 		if (res.errcode === 50001) {
 			//新用户，前往注册
 			redirectRegister({
@@ -178,7 +179,7 @@ function showLoginModal ( opts: {
 	resolve: Function,
 	reject: Function
 } ): Promise<any> {
-	const { resolve, reject } = opts;
+	const {resolve, reject} = opts;
 	return showModal({
 		content: '登录失败',
 		showCancel: true,
@@ -187,18 +188,35 @@ function showLoginModal ( opts: {
 		login().then(( res: any ) => {
 			resolve(res);
 		});
-	}).catch(( res: any )=>{
+	}).catch(( res: any ) => {
 		//清空请求的队列
 		reject(res);
 	});
 }
 
 //是否为重登页面
-export let isReLoginPage = false;
+export let isReLoginStatus: boolean = false;
 
 //设置是否重登的状态
-export function setIsReLoginPage ( status: boolean ): void {
-	isReLoginPage = status;
+export function setIsReLoginStatus ( status: boolean ): void {
+	if (!status) {
+		setTimeout(() => {
+			isReLoginStatus = status;
+		}, 1000);
+	} else {
+		isReLoginStatus = status;
+	}
+}
+
+//检查重登
+export function reLoginBack (): Promise<any> {
+	return new Promise(( resolve, reject ) => {
+		if (isReLoginStatus) {
+			resolve();
+		} else {
+			reject();
+		}
+	});
 }
 
 //跳转重登页面
@@ -206,9 +224,9 @@ export function navigateToReLogin ( opts: {
 	path?: string;
 } = {} ): void {
 	//避免
-	if (isReLoginPage) return;
+	if (isReLoginStatus) return;
 	//设置是否重登的状态
-	setIsReLoginPage(true);
+	setIsReLoginStatus(true);
 	//设置最后的路由地址
 	setLastPath(opts.path);
 	//清空登录态
