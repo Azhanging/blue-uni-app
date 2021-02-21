@@ -111,23 +111,23 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../../../Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
-    <property name="ts.external.directory.path" value="D:\Achang\Web\blue-uni-app\apps\blue-uni-app-tmpl\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="E:\achang\web\blue-uni-app-program\apps\blue-uni-app-tmpl\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Achang\Web\blue-uni-app\components\Bv\BvNavigation\icon" />
-      <recent name="D:\Achang\Web\blue-uni-app\apps\blue-uni-app-tmpl\src\pages" />
-      <recent name="D:\Achang\Web\blue-uni-app\apps\blue-uni-app-tmpl\src\page1" />
-      <recent name="D:\Achang\Web\blue-uni-app\components\Bv\BvNaigation" />
-      <recent name="E:\achang\web\blue-uni-app-program\components\Bv\BvEChart" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Achang\Web\blue-uni-app\components\Bv\BvNaigation" />
       <recent name="D:\Achang\Web\blue-uni-app\components\Bv\BvNavigation" />
       <recent name="E:\achang\web\blue-uni-app-program\apps\blue-uni-app-tmpl\src\pages\test-login" />
       <recent name="E:\achang\github\blue-uni-app-program\apps\blue-uni-app-ts-tmpl" />
       <recent name="E:\achang\github\blue-uni-app-program\apps\GDSY\src\pages\registration\register" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\achang\web\blue-uni-app-program\mixins" />
+      <recent name="D:\Achang\Web\blue-uni-app\components\Bv\BvNavigation\icon" />
+      <recent name="D:\Achang\Web\blue-uni-app\apps\blue-uni-app-tmpl\src\pages" />
+      <recent name="D:\Achang\Web\blue-uni-app\apps\blue-uni-app-tmpl\src\page1" />
+      <recent name="D:\Achang\Web\blue-uni-app\components\Bv\BvNaigation" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev:mp-weixin">
@@ -208,7 +208,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -297,11 +297,18 @@
       <workItem from="1605928708443" duration="21016000" />
       <workItem from="1606009991484" duration="2097000" />
       <workItem from="1607001542198" duration="1766000" />
+      <workItem from="1613828525165" duration="7134000" />
+      <workItem from="1613870837001" duration="8123000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="2" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/mixins/scroll-mixin.d.ts" />
+      </list>
+    </option>
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.wxml" />
@@ -331,34 +338,40 @@
       <screen x="0" y="0" width="1728" height="1040" />
     </state>
     <state x="645" y="275" key="FileChooserDialogImpl/0.0.1728.1040@0.0.1728.1040" timestamp="1605885297692" />
-    <state width="1707" height="139" key="GridCell.Tab.0.bottom" timestamp="1605976835521">
-      <screen x="0" y="0" width="1728" height="1040" />
+    <state width="1899" height="308" key="GridCell.Tab.0.bottom" timestamp="1613914768354">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1707" height="139" key="GridCell.Tab.0.bottom/0.0.1728.1040@0.0.1728.1040" timestamp="1605976835521" />
-    <state width="1707" height="139" key="GridCell.Tab.0.center" timestamp="1605976835521">
-      <screen x="0" y="0" width="1728" height="1040" />
+    <state width="1899" height="308" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613914768354" />
+    <state width="1899" height="308" key="GridCell.Tab.0.center" timestamp="1613914768353">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1707" height="139" key="GridCell.Tab.0.center/0.0.1728.1040@0.0.1728.1040" timestamp="1605976835521" />
-    <state width="1707" height="139" key="GridCell.Tab.0.left" timestamp="1605976835521">
-      <screen x="0" y="0" width="1728" height="1040" />
+    <state width="1899" height="308" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613914768353" />
+    <state width="1899" height="308" key="GridCell.Tab.0.left" timestamp="1613914768353">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1707" height="139" key="GridCell.Tab.0.left/0.0.1728.1040@0.0.1728.1040" timestamp="1605976835521" />
-    <state width="1707" height="139" key="GridCell.Tab.0.right" timestamp="1605976835521">
-      <screen x="0" y="0" width="1728" height="1040" />
+    <state width="1899" height="308" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613914768353" />
+    <state width="1899" height="308" key="GridCell.Tab.0.right" timestamp="1613914768354">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1707" height="139" key="GridCell.Tab.0.right/0.0.1728.1040@0.0.1728.1040" timestamp="1605976835521" />
+    <state width="1899" height="308" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613914768354" />
     <state x="366" y="165" key="SettingsEditor" timestamp="1605885674007">
       <screen x="0" y="0" width="1728" height="1040" />
     </state>
     <state x="366" y="165" key="SettingsEditor/0.0.1728.1040@0.0.1728.1040" timestamp="1605885674007" />
-    <state x="400" y="92" width="1023" height="804" key="find.popup" timestamp="1607002461249">
-      <screen x="0" y="0" width="1728" height="1040" />
+    <state x="444" y="92" width="1137" height="804" key="find.popup" timestamp="1613833643732">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="400" y="92" width="1023" height="804" key="find.popup/0.0.1728.1040@0.0.1728.1040" timestamp="1607002461249" />
-    <state x="527" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606010514824">
-      <screen x="0" y="0" width="1728" height="1040" />
+    <state x="444" y="92" width="1137" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613833643732" />
+    <state x="586" y="225" width="747" height="678" key="search.everywhere.popup" timestamp="1613910133676">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="527" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1728.1040@0.0.1728.1040" timestamp="1606010514824" />
+    <state x="586" y="225" width="747" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613910133676" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

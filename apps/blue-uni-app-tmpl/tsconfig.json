@@ -77,6 +77,9 @@
       ],
       "$use-in-vue/*": [
         "../../use-in-vue/*"
+      ],
+      "$mixins/*": [
+        "../../mixins/*"
       ]
     },
     "lib": [

@@ -138,24 +138,15 @@
 <script>
 
   import Vuex from 'vuex';
-  import scrollLower from '$mixin-components/scroll-lower';
-  import { navigateToReLogin } from "$mp-api/login";
-  import { getCurrentPath } from '$mp-api/page';
+  import scrollMixin from '$mixins/scroll-mixin';
 
   const { mapState } = Vuex;
 
   export default {
-    mixins: [scrollLower({
-      data: {
-        loadMore: {
-          ajax: {
-            params: {
-              method: 'koi_gif_list',
-              id: 1
-            }
-          }
-        }
-      }
+    mixins: [scrollMixin({
+      scrolls: [{
+        name: 1,
+      }]
     })],
     data() {
       return {

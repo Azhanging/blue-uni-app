@@ -7,7 +7,8 @@ function resolve(dir) {
 module.exports = {
   configureWebpack: {
     resolve: {
-      alias:{
+      alias: {
+        '$': resolve(`./`),
         '$assets': resolve(`./assets`),
         '$request': resolve(`./mp-api/request`),
         '$config': resolve(`./config`),
@@ -15,7 +16,7 @@ module.exports = {
         '$api': resolve(`./api`),
         '$mp-api': resolve(`./mp-api`),
         '$use-in-vue': resolve(`./use-in-vue`),
-        '$mixin-components': resolve(`./mixin-components`),
+        '$mixins': resolve(`./mixins`),
         '$blue-components': resolve(`./public/css/blue-components/src`),
         '$code': resolve(`./code`)
       }
