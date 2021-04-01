@@ -111,7 +111,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="$PROJECT_DIR$/../../../Program Files/nodejs/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
-    <property name="ts.external.directory.path" value="E:\achang\web\blue-uni-app-program\apps\blue-uni-app-tmpl\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\Achang\Web\blue-uni-app\apps\blue-uni-app-tmpl\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -208,7 +208,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -299,16 +299,14 @@
       <workItem from="1607001542198" duration="1766000" />
       <workItem from="1613828525165" duration="7134000" />
       <workItem from="1613870837001" duration="8123000" />
+      <workItem from="1614415474397" duration="164000" />
+      <workItem from="1614421038620" duration="1822000" />
+      <workItem from="1617287872103" duration="71000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/mixins/scroll-mixin.d.ts" />
-      </list>
-    </option>
+    <option name="version" value="3" />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.wxml" />
@@ -334,10 +332,10 @@
       <screen x="0" y="0" width="1728" height="1040" />
     </state>
     <state x="612" y="389" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1728.1040@0.0.1728.1040" timestamp="1605885298837" />
-    <state x="645" y="275" key="FileChooserDialogImpl" timestamp="1605885297692">
+    <state x="645" y="275" key="FileChooserDialogImpl" timestamp="1614415638205">
       <screen x="0" y="0" width="1728" height="1040" />
     </state>
-    <state x="645" y="275" key="FileChooserDialogImpl/0.0.1728.1040@0.0.1728.1040" timestamp="1605885297692" />
+    <state x="645" y="275" key="FileChooserDialogImpl/0.0.1728.1040@0.0.1728.1040" timestamp="1614415638205" />
     <state width="1899" height="308" key="GridCell.Tab.0.bottom" timestamp="1613914768354">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

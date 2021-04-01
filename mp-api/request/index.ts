@@ -89,7 +89,7 @@ export default function request ( this: any, requestOpts: TRequestOpts ): Promis
 			//关闭loading
 			_showLoading && hideLoading();
 			//比对当前的页面id，不匹配则不处理
-			if ((checkPageID || !inAppUse) && !pageID.isCurrentID(currentPageID)) return;
+			if ((checkPageID && !inAppUse) && !pageID.isCurrentID(currentPageID)) return;
 			const res = blueMpMock.response(route);
 			//拦截器
 			responseInterceptor({
@@ -105,7 +105,7 @@ export default function request ( this: any, requestOpts: TRequestOpts ): Promis
 					//关闭loading
 					_showLoading && hideLoading();
 					//比对当前的页面id，不匹配则不处理
-					if ((checkPageID || !inAppUse) && !pageID.isCurrentID(currentPageID)) return;
+					if ((checkPageID && !inAppUse) && !pageID.isCurrentID(currentPageID)) return;
 					//拦截器
 					responseInterceptor({
 						res,
@@ -118,7 +118,7 @@ export default function request ( this: any, requestOpts: TRequestOpts ): Promis
 					//关闭loading
 					_showLoading && hideLoading();
 					//比对当前pageID
-					if ((checkPageID || !inAppUse) && !pageID.isCurrentID(currentPageID)) return;
+					if ((checkPageID && !inAppUse) && !pageID.isCurrentID(currentPageID)) return;
 					//选取提醒信息
 					let msg = (tips as TRequestTips).fail;
 					//超时提醒
