@@ -1,7 +1,7 @@
 <template>
-  <div class="bz-switch" @click="changeStatus">
-    <div class="bz-switch-btn" :class="status ? 'bz-switch-active' : ''"></div>
-    <div class="bz-switch-bg" :class="status ? 'bz-switch-active' : ''"></div>
+  <div class="ba-switch" @click="changeStatus">
+    <div class="ba-switch-btn" :class="status ? 'ba-switch-active' : ''"></div>
+    <div class="ba-switch-bg" :class="status ? 'ba-switch-active' : ''"></div>
   </div>
 </template>
 
@@ -24,7 +24,7 @@
 </script>
 
 <style scoped lang="scss">
-  .bz-switch {
+  .ba-switch {
     position: relative;
     display: inline-block;
     width: 50px;
@@ -33,7 +33,7 @@
     border-radius: 30px;
     box-sizing: border-box;
     overflow: hidden;
-    .bz-switch-btn {
+    .ba-switch-btn {
       border: 1px solid #f4f4f4;
       border-radius: 30px;
       height: 100%;
@@ -41,11 +41,11 @@
       background-color: #ebebeb;
       box-sizing: border-box;
       transition: 200ms ease all;
-      &.bz-switch-active {
+      &.ba-switch-active {
         transform: translateX(25px);
       }
     }
-    .bz-switch-bg {
+    .ba-switch-bg {
       position: absolute;
       left: 0;
       top: 0;
@@ -54,7 +54,7 @@
       transition: 200ms ease all;
       width: 10px;
       background-color: $color-base;
-      &.bz-switch-active {
+      &.ba-switch-active {
         width: 35px;
       }
     }

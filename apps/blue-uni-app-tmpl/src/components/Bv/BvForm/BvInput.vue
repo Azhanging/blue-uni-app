@@ -1,9 +1,9 @@
 <template>
-  <div class="bz-form-item">
-    <div class="bz-form-item-label" v-if="label">
+  <div class="ba-form-item">
+    <div class="ba-form-item-label" v-if="label">
       {{label}}
     </div>
-    <div class="bz-form-item-elm">
+    <div class="ba-form-item-elm">
       <slot name="input">
         <input :type="type" :placeholder="placeholder" :maxlength="maxlength" v-model="currentValue"/>
       </slot>

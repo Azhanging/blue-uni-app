@@ -3,14 +3,14 @@
   <div class="car-number-key-board" :animation="animation">
 
     <!-- 操作菜单 -->
-    <div class="bz-flex bz-flex-jc-sb menu">
-      <div class="bz-flex-1">
-        <button class="bz-inline-block bz-t-base bz-pd-10rpx" @click.stop="newEnergy">
+    <div class="ba-flex ba-flex-jc-sb menu">
+      <div class="ba-flex-1">
+        <button class="ba-inline-block ba-t-base ba-pd-10rpx" @click.stop="newEnergy">
           {{isNewEnergy ? '关闭' : '使用' }}新能源号
         </button>
       </div>
-      <div class="bz-flex-1">
-        <button class="bz-inline-block bz-t-base bz-pd-10rpx" @click.stop="hide">
+      <div class="ba-flex-1">
+        <button class="ba-inline-block ba-t-base ba-pd-10rpx" @click.stop="hide">
           关闭
         </button>
       </div>
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="bz-row bz-t-c bz-pd-10rpx bz-t-primary" @click="del">
+      <div class="ba-row ba-t-c ba-pd-10rpx ba-t-primary" @click="del">
         删除
       </div>
     </div>
@@ -36,14 +36,14 @@
         <div class="key-btn" v-for="(key,_index) in keys" :key="_index">
           <div class="key"
                :class="index === 0 && carNumber && carNumber.length < 2 && 'disabled'"
-               :hover-class="'bz-btn-hover'"
+               :hover-class="'ba-btn-hover'"
                @click.stop="clickNumber(key,index)"
           >
             {{key}}
           </div>
         </div>
       </div>
-      <div class="bz-row bz-t-c bz-pd-10rpx bz-t-primary" @click="del">
+      <div class="ba-row ba-t-c ba-pd-10rpx ba-t-primary" @click="del">
         删除
       </div>
     </div>

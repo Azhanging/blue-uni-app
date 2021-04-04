@@ -4,8 +4,8 @@ import App from './App.vue';
 import useInVue from '$use-in-vue';
 //use vuex
 import './store';
-//全局blue-components
-import '@css/blue-zone.scss';
+//全局blue-atom
+import '@css/blue-atom.scss';
 //公共scss
 import '$assets/css/app.scss';
 /*------ 公共组件START -------*/

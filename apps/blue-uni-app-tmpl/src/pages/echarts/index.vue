@@ -1,5 +1,5 @@
 <template>
-  <BvPage customNavigation title="ECHARTSECHARTS" class="bz-t-c" navigationColor="white"
+  <BvPage customNavigation title="ECHARTSECHARTS" class="ba-t-c" navigationColor="white"
           navigationBackground="linear-gradient(#009fff, #639cd2)">
 	  <div class="echart-wrap">
 		  <BvECharts :echarts="echarts" @onInit="onInit" canvasId="canvasId" ref="chart"/>

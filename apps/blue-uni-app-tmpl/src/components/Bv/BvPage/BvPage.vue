@@ -1,5 +1,5 @@
 <template>
-	<div class="bz-f-28rpx"
+	<div class="ba-f-28rpx"
 	     :style="'padding-top:' + (menuButtonRect.top + menuButtonRect.height + menuButtonRect.paddingBottom) + 'px;'">
 		<BvNavigation
 				v-if="customNavigation"

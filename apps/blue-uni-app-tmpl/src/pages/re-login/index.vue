@@ -1,12 +1,12 @@
 <template>
   <BvPage>
-    <div class="bz-mg-b-20rpx">
-      <button @click="login" class="bz-btn bz-btn-base bz-bd-radius-6 bz-w-100">
+    <div class="ba-mg-b-20rpx">
+      <button @click="login" class="ba-btn ba-btn-base ba-bd-radius-6 ba-w-100">
         {{reLoginStatus ? `重新登录中...` : `重新登录`}}
       </button>
     </div>
     <div v-if="!reLoginStatus">
-      <navigator open-type="reLaunch" :url="config.path.home" class="bz-btn bz-btn-base bz-bd-radius-6 bz-w-100">
+      <navigator open-type="reLaunch" :url="config.path.home" class="ba-btn ba-btn-base ba-bd-radius-6 ba-w-100">
         回到首页
       </navigator>
     </div>

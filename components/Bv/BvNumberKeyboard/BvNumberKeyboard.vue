@@ -1,36 +1,36 @@
 <template>
 	<!-- 数字键盘 -->
-	<div class="bz-number-keyboard" :animation="animation">
+	<div class="ba-number-keyboard" :animation="animation">
 
 		<!-- 操作菜单 -->
-		<div class="bz-row bz-t-r bz-number-keyboard-menu">
-			<button class="bz-inline-block bz-t-base bz-pd-10rpx" @click.stop="hide">
+		<div class="ba-row ba-t-r ba-number-keyboard-menu">
+			<button class="ba-inline-block ba-t-base ba-pd-10rpx" @click.stop="hide">
 				关闭
 			</button>
 		</div>
 
-		<div class="bz-flex bz-flex-jc-c">
+		<div class="ba-flex ba-flex-jc-c">
 
 			<!-- 数字操作键盘 -->
-			<div class="bz-flex-3">
+			<div class="ba-flex-3">
 				<div class="key-row" v-for="(keys,index) in numberKey" :key="index">
 					<div class="key-btn" v-for="(keyNumber,_index) in keys" :key="_index"
-					     :hover-class="keyNumber !== '' && 'bz-btn-hover'" @click.stop="clickNumber(keyNumber)">
+					     :hover-class="keyNumber !== '' && 'ba-btn-hover'" @click.stop="clickNumber(keyNumber)">
 						{{ (isInt && keyNumber === '.') ? '' : keyNumber }}
 					</div>
 				</div>
 			</div>
 
 			<!-- 其他操作 -->
-			<div class="bz-flex-1">
-				<div class="bz-flex bz-flex-d-c bz-flex-jc-c bz-flex-ai-c other-btn">
-					<div class="bz-flex-1 bz-w-100" @click.stop="del">
-						<div class="bz-flex bz-flex-jc-c bz-flex-d-c del-btn" hover-class="bz-btn-hover">
+			<div class="ba-flex-1">
+				<div class="ba-flex ba-flex-d-c ba-flex-jc-c ba-flex-ai-c other-btn">
+					<div class="ba-flex-1 ba-w-100" @click.stop="del">
+						<div class="ba-flex ba-flex-jc-c ba-flex-d-c del-btn" hover-class="ba-btn-hover">
 							删除
 						</div>
 					</div>
-					<div class="bz-flex-1 bz-w-100" @click.stop="result">
-						<div class="bz-flex bz-flex-jc-c bz-flex-d-c result-btn" hover-class="bz-btn-hover">
+					<div class="ba-flex-1 ba-w-100" @click.stop="result">
+						<div class="ba-flex ba-flex-jc-c ba-flex-d-c result-btn" hover-class="ba-btn-hover">
 							确定
 						</div>
 					</div>
@@ -161,7 +161,7 @@ export default {
 
 <style scoped lang="scss">
 //数字键盘
-.bz-number-keyboard {
+.ba-number-keyboard {
 	position: fixed;
 	bottom: 0;
 	left: 0;
@@ -172,7 +172,7 @@ export default {
 	text-align: center;
 
 	//键盘菜单
-	.bz-number-keyboard-menu {
+	.ba-number-keyboard-menu {
 		border-bottom: 1px solid #f4f4f4;
 	}
 

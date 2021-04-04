@@ -36,6 +36,7 @@
     "@dcloudio/uni-mp-toutiao": "^2.0.0-31220210205003",
     "@dcloudio/uni-mp-weixin": "^2.0.0-31220210205003",
     "@dcloudio/uni-stat": "^2.0.0-31220210205003",
+    "blue-atom": "^1.0.0",
     "blue-mp-mock-interceptor": "^1.0.0",
     "blue-queue-pipe": "^1.0.6",
     "blue-utils": "^1.1.1",

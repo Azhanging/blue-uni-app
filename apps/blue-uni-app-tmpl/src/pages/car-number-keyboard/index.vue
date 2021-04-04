@@ -1,11 +1,11 @@
 <template>
-	<BvPage class="bz-t-c">
+	<BvPage class="ba-t-c">
 		
 		<!-- 测试键盘输入 -->
-		<div class="bz-flex-1" @click="focusNumber(number0)">
+		<div class="ba-flex-1" @click="focusNumber(number0)">
 			car-number-0:{{ number0.value }}
 		</div>
-		<div class="bz-flex-1" @click="focusNumber(number1)">
+		<div class="ba-flex-1" @click="focusNumber(number1)">
 			car-number-1:{{ number1.value }}
 		</div>
 

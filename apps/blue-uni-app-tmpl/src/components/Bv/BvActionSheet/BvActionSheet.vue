@@ -1,6 +1,6 @@
 <template>
   <!-- 遮罩层 -->
-  <div class="bz-shade" :animation="animation" @click.stop="shadeClick">
+  <div class="ba-shade" :animation="animation" @click.stop="shadeClick">
     <div class="action-sheet" @click.stop>
       <div class="action-sheet-header">
         <slot name="header">
@@ -98,7 +98,7 @@
     left: 0;
   }
 
-  .bz-shade {
+  .ba-shade {
     position: fixed;
     z-index: 10000;
     top: 0;

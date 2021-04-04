@@ -1,5 +1,5 @@
 <template>
-	<BvPage class="bz-pd-15rpx bz-t-c">
+	<BvPage class="ba-pd-15rpx ba-t-c">
 
 		<!-- 测试键盘输入 -->
 		<div @click="focusNumber(number0)">

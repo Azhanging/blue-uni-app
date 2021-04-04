@@ -1,5 +1,5 @@
 <template>
-  <BvPage customNavigation title="首页" class="bz-t-c" navigationColor="white"
+  <BvPage customNavigation title="首页" class="ba-t-c" navigationColor="white"
           navigationBackground="linear-gradient(#1b1bfd, #0255a5)">
     <div class="scroll-view-wrap">
       <scroll-view class="scroll-view" scroll-y="true" @scrolltolower="scrollLower"
@@ -12,83 +12,83 @@
         <!--  #endif -->
 
         <!-- 没登录显示登录按钮 -->
-        <div class="bz-row bz-pd-20rpx" v-if="!isLogin">
-          <button @click="login" class="bz-btn bz-btn-base">
+        <div class="ba-row ba-pd-20rpx" v-if="!isLogin">
+          <button @click="login" class="ba-btn ba-btn-base">
             登录
           </button>
         </div>
 
         <!-- 没登录显示登录按钮 -->
-        <div class="bz-row bz-pd-20rpx">
-          <a url="/pages/echarts/index" class="bz-btn bz-btn-base">
+        <div class="ba-row ba-pd-20rpx">
+          <a url="/pages/echarts/index" class="ba-btn ba-btn-base">
             图表
           </a>
         </div>
 
         <!-- 没登录显示登录按钮 -->
-        <div class="bz-row bz-pd-20rpx">
-          <button @click="requestSubscribeMessage" class="bz-btn bz-btn-base">
+        <div class="ba-row ba-pd-20rpx">
+          <button @click="requestSubscribeMessage" class="ba-btn ba-btn-base">
             订阅消息
           </button>
         </div>
 
         <!-- 没登录显示登录按钮 -->
-        <div class="bz-row bz-pd-20rpx">
-          <button @click="openWebView" class="bz-btn bz-btn-base">
+        <div class="ba-row ba-pd-20rpx">
+          <button @click="openWebView" class="ba-btn ba-btn-base">
             webview
           </button>
         </div>
 
-        <div class="bz-row bz-pd-20rpx">
-          <button class="bz-btn bz-btn-base" @click="scanCode">
+        <div class="ba-row ba-pd-20rpx">
+          <button class="ba-btn ba-btn-base" @click="scanCode">
             扫一扫
           </button>
         </div>
 
-        <div class="bz-row bz-pd-20rpx">
-          <button class="bz-btn bz-btn-base" @click="saveImg">
+        <div class="ba-row ba-pd-20rpx">
+          <button class="ba-btn ba-btn-base" @click="saveImg">
             保存图片
           </button>
         </div>
 
-        <div class="bz-row bz-pd-20rpx">
-          <button class="bz-btn bz-btn-base" @click="chooseInvoiceTitle">
+        <div class="ba-row ba-pd-20rpx">
+          <button class="ba-btn ba-btn-base" @click="chooseInvoiceTitle">
             发票抬头
           </button>
         </div>
 
-        <div class="bz-row bz-pd-20rpx">
-          <navigator url="/pages/map/index" class="bz-btn bz-btn-base">
+        <div class="ba-row ba-pd-20rpx">
+          <navigator url="/pages/map/index" class="ba-btn ba-btn-base">
             地图
           </navigator>
         </div>
 
-        <div class="bz-row bz-pd-20rpx">
-          <navigator url="/pages/upload-img/index" class="bz-btn bz-btn-base">
+        <div class="ba-row ba-pd-20rpx">
+          <navigator url="/pages/upload-img/index" class="ba-btn ba-btn-base">
             上传图片
           </navigator>
         </div>
 
-        <div class="bz-row bz-pd-20rpx">
-          <navigator url="/pages/number-keyboard/index" class="bz-btn bz-btn-base">
+        <div class="ba-row ba-pd-20rpx">
+          <navigator url="/pages/number-keyboard/index" class="ba-btn ba-btn-base">
             数字键盘
           </navigator>
         </div>
 
-        <div class="bz-row bz-pd-20rpx">
-          <navigator url="/pages/car-number-keyboard/index" class="bz-btn bz-btn-base">
+        <div class="ba-row ba-pd-20rpx">
+          <navigator url="/pages/car-number-keyboard/index" class="ba-btn ba-btn-base">
             车牌键盘
           </navigator>
         </div>
 
-        <div class="bz-row bz-pd-20rpx">
+        <div class="ba-row ba-pd-20rpx">
           <!-- 微信客服 -->
-          <button open-type="contact" session-from="weapp" class="bz-btn bz-btn-base">
+          <button open-type="contact" session-from="weapp" class="ba-btn ba-btn-base">
             客服测试
           </button>
         </div>
 
-        <div class="bz-row bz-pd-20rpx">
+        <div class="ba-row ba-pd-20rpx">
           <div v-for="item in loadMore.data.list" :key="item">
             {{item}}
           </div>
@@ -102,15 +102,15 @@
     </div>
 
     <!-- 测试animation -->
-    <div class="bz-row bz-pd-20rpx">
-      <button class="bz-btn bz-btn-base" @click="toggleAction">
+    <div class="ba-row ba-pd-20rpx">
+      <button class="ba-btn ba-btn-base" @click="toggleAction">
         测试animation || BvActionSheet组件
       </button>
     </div>
 
     <!-- 测试animation -->
-    <div class="bz-row bz-pd-20rpx">
-      <button class="bz-btn bz-btn-base" @click="toggleLayer">
+    <div class="ba-row ba-pd-20rpx">
+      <button class="ba-btn ba-btn-base" @click="toggleLayer">
         测试BvLayer组件
       </button>
     </div>
@@ -118,8 +118,8 @@
     <!-- 询问层 -->
     <BvActionSheet :visible.sync="actionShow" title="BvActionSheet">
       <scroll-view scroll-y="true" style="height:500rpx;">
-        <ul class="bz-reset-ul">
-          <li v-for="i in list" :key="i" class="bz-pd-20rpx">
+        <ul class="ba-reset-ul">
+          <li v-for="i in list" :key="i" class="ba-pd-20rpx">
             选项{{i}}
           </li>
         </ul>
@@ -128,7 +128,7 @@
 
     <!-- 弹层 -->
     <BvDialog :visible.sync="dialogShow">
-      <div class="bz-bg-white" style="width:200rpx;height:200rpx;">
+      <div class="ba-bg-white" style="width:200rpx;height:200rpx;">
         dialog内容
       </div>
     </BvDialog>
