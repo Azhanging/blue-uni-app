@@ -72,7 +72,7 @@ export function backLastRoute ( opts: {
 				url
 			});
 		case 'back':
-			return uni.navigateBack();
+			return uni.navigateBack({});
 		case 'nav':
 		default :
 			uni.navigateTo({

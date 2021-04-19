@@ -14,7 +14,7 @@ interface TRequestTips {
 }
 
 //请求类型参数
-interface TRequestOpts extends RequestOptions {
+interface TRequestOpts {
 	//是否显示loading
 	showLoading?: boolean;
 	//是否显示toast

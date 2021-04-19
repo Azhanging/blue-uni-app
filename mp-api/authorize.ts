@@ -1,23 +1,23 @@
-import { showModal } from "./modal";
+import {showModal} from "./modal";
 import utils from 'blue-utils';
-import { getSetting } from "$mp-api/setting";
+import {getSetting} from "$mp-api/setting";
 
 //授权信息检查
 export function authorize ( opts: {
 	scope: string;
 } ): Promise<any> {
-	const { scope } = opts;
+	const {scope} = opts;
 	return new Promise(( resolve, reject ) => {
 		//微信检查授权
 		if (process.env.VUE_APP_PLATFORM === 'mp-weixin') {
 			//检订阅消息通知权限
 			if (scope === 'subscribeMessage') {
 				getSetting().then(( res ) => {
-					const { subscriptionsSetting } = res;
+					const {subscriptionsSetting} = res;
 					if (!subscriptionsSetting) {
 						reject();
 					} else {
-						const { mainSwitch } = subscriptionsSetting;
+						const {mainSwitch} = subscriptionsSetting;
 						mainSwitch ? resolve() : reject();
 					}
 				});
@@ -49,7 +49,7 @@ export function authorizeFail ( opts: {
 	type: string;
 	openSetting?: boolean;
 } ): void {
-	const { type, openSetting } = opts;
+	const {type, openSetting} = opts;
 	const typeName = (() => {
 		switch (type) {
 			case `userInfo`:
@@ -73,11 +73,18 @@ export function authorizeFail ( opts: {
 		confirmText: '前往设置',
 		showCancel: true
 	}, opts)).then(( res ) => {
-		const { confirm } = res;
+		const {confirm} = res;
 		//openSetting这里的显示设置可配置
 		if (confirm === true && openSetting !== false) {
 			//打开到设置的页面
-			uni.openSetting();
+			uni.openSetting({
+				success () {
+					console.log(`success-打开到设置的页面`);
+				},
+				fail () {
+					console.log(`fail-打开到设置的页面`);
+				}
+			});
 		}
 	});
 }
