@@ -27,7 +27,7 @@ export function sharePath ( path?: string ): string {
 	//小程序路由地址
 	const currentPath: string = path || getCurrentPath();
 	//没参数地址
-	const _path: string = utils.getNoParamsLink(currentPath);
+	const _path: string = utils.getNotParamsLink(currentPath);
 	//object params
 	const objQuery: any = utils.parseParams(utils.getLinkParams(currentPath));
 	//带入忽略参数地址
